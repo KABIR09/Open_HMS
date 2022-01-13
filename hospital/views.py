@@ -201,11 +201,16 @@ def prescription_patient_view(request,pk):
         # pDD.admitDate=patient.admitDate
         # pDD.releaseDate=date.today()
         # pDD.daySpent=int(d)
-        pDD.medicineName=request.POST['medicineName']
-        pDD.noOfTime=int(request.POST['noOfTime'])
-        pDD.noOfTablets=int(request.POST['noOfTablets'])
-        pDD.syrupsQuantity=int(request.POST['syrupsQuantity'])
-        pDD.test=request.POST['test']
+        pDD.medicationItem==request.POST['medicationItem']
+        pDD.frequency=request.POST['frequency']
+        pDD.dose=request.POST['dose']
+        pDD.doseUnit=request.POST['doseUnit']
+        pDD.directionDuration=request.POST['directionDuration']
+        pDD.form=request.POST['form']
+        pDD.additionalInstruc=request.POST['additionalInstruc']
+        pDD.substance=request.POST['substance']
+
+
         
         pDD.save()
         return render(request,'hospital/patient_final_prescription.html',context=patientDict)
