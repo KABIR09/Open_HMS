@@ -19,30 +19,7 @@
 body{
     font-family: 'Roboto', sans-serif;
   }
-  /*--------------------------------------------------------------
-  # Navigation Menu
-  --------------------------------------------------------------*/
-.nav-back{
-    background: rgba(0, 181, 204,0.8);
-    color: #fff;
-}
-.navbar-brand{
-  color: #000;
-}
-.navbar-brand:hover{
-  color: #fff;
-}
-.nav-link{
-  color: #000;
-}
-.nav-link:hover{
-  color:#fff;
-}
-.navbar-toggler{
-  outline: none!important;
-}
-  
-     
+ 
    
   /*--------------------------------------------------------------
   # Hero Section
@@ -204,59 +181,11 @@ body{
  background: rgba(0, 181, 204,0.8);
  color: #fff;
 } 
-
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-.footer {
-text-align: center;
-font-size: 0.9rem;
-background:rgba(0, 181, 204,0.8);
-}
-.footer .btn-back{
-background: #fff;
-color: rgba(0, 181, 204,0.8);
-}
-.footer .text{
-color: #000;
-}
-
-
  </style>
- 
- 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg nav-back fixed-top" 
-    id="mainNav">
-      <div class="container">
-          <a class="navbar-brand" href="#"><img src="{% static "images/logo.png" %}" width="80" height="40" alt=""></a>
-        
-           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
-           data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
-           aria-label="Toggle navigation"><i class="fas fa-hospital-symbol"></i>
    
-          </button>
-
-
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                
-                  <li class="nav-item"><a class="nav-link" 
-                    href="/doctorclick">Doctor</a></li>
-                  <li class="nav-item"><a class="nav-link" 
-                    href="#">Patient</a></li>
-
-                    <li class="nav-item"><a class="nav-link" 
-                      href="#services">Services</a></li>
-                  <li class="nav-item"><a class="nav-link" 
-                    href="/contactus">Contact Us</a></li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-   
+    {% include "hospital/navbar.html" %}
 <!-- End Header -->    
    <!-- ======= Hero Section ======= -->
    <section id="hero" class="d-flex align-items-center">
@@ -351,25 +280,6 @@ color: #000;
 
 
 
-  <!-- Footer-->
-  <footer class="footer py-4 mt-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 text-lg-left">Copyright © By Group-G</div>
-            <div class="col-lg-4 my-3 my-lg-0">
-                <a class="btn btn-back btn-social mx-2" href="#!">
-                  <i class="fab fa-twitter"></i></a>
-                  <a class="btn btn-back btn-social mx-2" href="#!">
-                    <i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-back btn-social mx-2" href="#!">
-                      <i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="col-lg-4 text-lg-right">
-              <a class="mr-3 text" href="#!">Privacy Policy</a>
-              <a href="#!"class="text">Terms of Use</a></div>
-        </div>
-    </div>
-</footer>
 
 
     <!-- Optional JavaScript -->
@@ -377,5 +287,7 @@ color: #000;
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {% include "hospital/footer.html" %}
+  
   </body>
 </html>
