@@ -88,6 +88,13 @@
               <div class="form-group">
                 {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
               </div>
+
+              <div class="form-group">
+                {% render_field patientForm.problems_list class="form-control" placeholder="Problems" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.allergy_substance class="form-control" placeholder="Substance" %}
+              </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
@@ -102,6 +109,23 @@
               <div class="form-group">
                 {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}
               </div>
+              <div class="form-group">
+                {% render_field patientForm.allergy_criticality class="form-control" placeholder="Criticality" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.immunization class="form-control" placeholder="Immunization" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.history_procedure class="form-control" placeholder="History Procedure" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.diagnostic_results class="form-control" placeholder="Diagnostic Results" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.past_history_of_illness class="form-control" placeholder="Past History" %}
+              </div>
+              
+              
 
             </div>
           </div>
