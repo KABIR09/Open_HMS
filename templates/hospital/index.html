@@ -1,15 +1,231 @@
+
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="style.css">
-<script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+     
+   <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+ 
+ 
+ <style>
+
+body{
+    font-family: 'Roboto', sans-serif;
+  }
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+.nav-back{
+    background: rgba(0, 181, 204,0.8);
+    color: #fff;
+}
+.navbar-brand{
+  color: #000;
+}
+.navbar-brand:hover{
+  color: #fff;
+}
+.nav-link{
+  color: #000;
+}
+.nav-link:hover{
+  color:#fff;
+}
+.navbar-toggler{
+  outline: none!important;
+}
+  
+     
+   
+  /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  #hero {
+      width: 100%;
+      height: 80vh;
+      background: url("/static/images/background.jpg") center center;
+      background-size: cover;
+      position: relative;
+    }
+    
+    #hero .container {
+      padding-top: 80px;
+    }
+    
+    #hero:before {
+      content: "";
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    
+    #hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      color: #fff;
+    }
+    
+    #hero h2 {
+      color: #eee;
+      margin-bottom: 40px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    
+    .main-btn {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    
+     .main-btn:hover {
+      background: rgba(0, 181, 204,0.8);
+      border: 2px solid rgba(0, 181, 204,0.8);
+      text-decoration: none;
+      color:#fff;
+    }
+
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.service {
+  text-align: center;
+  padding: 70px 20px 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 181, 204,0.8);
+  box-shadow: 0px 5px 90px 0px rgba(0, 181, 204,0.8);
+}
+
+.service .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 50px;
+}
+
+ .service .icon i {
+  font-size: 32px;
+  transition: 0.5s;
+  line-height: 1;
+  position: relative;
+}
+
+ .service h4 {
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+}
+
+ .service h4 a {
+  color: #000;
+  transition: ease-in-out 0.3s;
+}
+
+ .service p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+  .services i{
+  color: #47aeff;
+}
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact-box {
+  color: #000;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
+  padding: 20px 0 30px 0;
+  background:rgba(0, 181, 204,0.8);
+}
+
+.contact-box i {
+  font-size: 32px;
+  color: #fff;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.contact-box h3 {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.contact-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.contact button{
+  background: rgba(0, 181, 204,0.8);
+  border: none;
+  padding: 10px;
+}
+
+.contact button:hover{
+ background: rgba(0, 181, 204,0.8);
+ color: #fff;
+} 
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+text-align: center;
+font-size: 0.9rem;
+background:rgba(0, 181, 204,0.8);
+}
+.footer .btn-back{
+background: #fff;
+color: rgba(0, 181, 204,0.8);
+}
+.footer .text{
+color: #000;
+}
+
+
+ </style>
+ 
+ 
   </head>
   <body>
     <nav class="navbar navbar-expand-lg nav-back fixed-top" 
