@@ -66,3 +66,20 @@ class Patient(models.Model):
 
     def __str__(self):
         return self.user.first_name+" ("+self.symptoms+")"
+
+
+class PatientPrescriptionDetails(models.Model):
+    patientId=models.PositiveIntegerField(null=True)
+    medicationItem=models.CharField(max_length=100)
+    frequency=models.PositiveIntegerField(null=False)
+    dose=models.FloatField(null=False)
+    doseUnit=models.CharField(max_length=100)
+    directionDuration=models.PositiveIntegerField(null=False)
+    form=models.CharField(max_length=100)
+    additionalInstruc=models.CharField(max_length=400)
+    substance=models.CharField(max_length=100)
+   
+
+    @property
+    def get_id(self):
+        return self.user.id
