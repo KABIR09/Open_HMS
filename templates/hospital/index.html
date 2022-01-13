@@ -1,73 +1,165 @@
-{% extends 'hospital/homebase.html' %}
-{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg nav-back fixed-top" 
+    id="mainNav">
+      <div class="container">
+          <a class="navbar-brand" href="#"><img src="./images.png" width="80" height="40" alt=""></a>
+        
+           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+           data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
+           aria-label="Toggle navigation"><i class="fas fa-hospital-symbol"></i>
+   
+          </button>
+
+
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" 
+                  href="#services">Services</a></li>
+                  <li class="nav-item"><a class="nav-link" 
+                    href="#">Doctor</a></li>
+                  <li class="nav-item"><a class="nav-link" 
+                    href="#">Patient</a></li>
+                  <li class="nav-item"><a class="nav-link"
+                     href="adminclick.html">Team</a></li>
+                  <li class="nav-item"><a class="nav-link" 
+                    href="contactus.html">Contact Us</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+   
+<!-- End Header -->    
+   <!-- ======= Hero Section ======= -->
+   <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative">
+      <h1>WeCare is available 24/7</h1>
+      
+      <a href="#about" class="main-btn">Take Appointment Now</a>
+    </div>
+  </section>
+  <!-- End Hero -->
+ 
+   <!-- ======= Services Section ======= -->
+   <section id="services" class="services mt-5 mb-3 py-3">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="text-center">Services</h2>
+     
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="service shadow">
+            <div class="icon">
+                <i class="fas fa-tooth"></i>
+            </div>
+            <h4><a href="">Dental Specialist</a></h4>
+            <p>
+              A dentist is a person who is qualified to examine and treat people's teeth. Visit your dentist twice a year for a check-up.  
+              The dentist or the dentist's is used to refer to the surgery or clinic where a dentist works.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+          <div class="service c shadow">
+            <div class="icon">
+                <i class="fas fa-lungs"></i>
+            </div>
+            <h4><a href="">Lungs Specialist</a></h4>
+            <p>A pulmonologist is a physician who specializes in the respiratory system. From the windpipe to the lungs, if your complaint involves the lungs or any part of the respiratory system, a pulmonologist is the doc you want to solve the problem. 
+              Pulmonology is a medical field of study within internal medicine.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+          <div class="service shadow">
+            <div class="icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h4><a href="">Heart Specialist</a></h4>
+            <p>Cardiologists are doctors who specialize in diagnosing and treating diseases or conditions of the heart and blood vessels—the cardiovascular system. You might also visit a cardiologist so you can learn about your 
+              risk factors for heart disease and find out what measures you can take for better heart health.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="service c shadow">
+            <div class="icon">
+                <i class="fas fa-dna"></i>
+            </div>
+            <h4><a href="">DNA Testing</a></h4>
+            <p>DNA, or deoxyribonucleic acid, is the hereditary material in humans and almost all other organisms. Nearly every cell in a person's body has the same DNA. ... The information in DNA is stored as a code made up of four chemical bases: 
+              adenine (A), guanine (G), cytosine (C), and thymine (T).</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="service shadow">
+            <div class="icon">            
+          <i class="fas fa-ambulance"></i>
+            </div>
+            <h4><a href="">Ambulance</a></h4>
+            <p>An ambulance is a type of vehicle made to carry sick or injured people. Normally, ambulances go to people in emergencies to take people to hospital. ... Ambulances normally have emergency medical technicians (EMTs) and paramedics who work on them. 
+              They carry medicines and special equipment that can keep people alive.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="service shadow">
+            <div class="icon">
+            <i class="fas fa-allergies"></i>
+            </div>
+            <h4><a href="">Dermatologist Specialist</a></h4>
+            <p>A dermatologist is a doctor who specializes in the study of skin and the treatment of skin diseases. 
+              A dermatologist is warning about allergic reactions to a common ingredient in hair dye.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
 
 
 
-{% block content %}
+
+  <!-- Footer-->
+  <footer class="footer py-4 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-left">Copyright © By Group-G</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a class="btn btn-back btn-social mx-2" href="#!">
+                  <i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-back btn-social mx-2" href="#!">
+                    <i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-back btn-social mx-2" href="#!">
+                      <i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-lg-4 text-lg-right">
+              <a class="mr-3 text" href="#!">Privacy Policy</a>
+              <a href="#!"class="text">Terms of Use</a></div>
+        </div>
+    </div>
+</footer>
 
 
-<head>
-  <style media="screen">
-    .jumbotron {
-      margin-top: 0px;
-      margin-bottom: 0px;
-      background-image: url('{% static "images/back.jpg" %}');
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    .jumbotron h5,
-    h3 {
-      text-align: center;
-    }
-
-
-    .alert {
-      margin: 0px;
-    }
-
-
-
-    .glow {
-      font-size: 50px;
-      color: white;
-      text-align: center;
-      -webkit-animation: glow 1s ease-in-out infinite alternate;
-      -moz-animation: glow 1s ease-in-out infinite alternate;
-      animation: glow 1s ease-in-out infinite alternate;
-    }
-
-    @-webkit-keyframes glow {
-      from {
-        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
-      }
-
-      to {
-        text-shadow: 0 0 20px #eeeeee, 0 0 30px #fa2d2d, 0 0 40px #fa2d2d, 0 0 50px #fa2d2d, 0 0 60px #fa2d2d, 0 0 70px #fa2d2d, 0 0 80px #fa2d2d;
-      }
-    }
-  </style>
-</head>
-<br>
-<br>
-
-<div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
-  <br>
-  <h5 class="display-3 glow">Hospital Management System</h5>
-  <br><br><br><br><br>
-  <p>
-  <h3>Emergency ?</h3>
-
-  <p class="lead">
-    <a class="btn btn-danger btn-lg" href="/patientclick" role="button">Take Appointment Now!</a>
-  </p>
-  <br><br>
-</div>
-
-<br><br><br><br>
-
-
-<br><br><br>
-
-
-{% endblock content %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
