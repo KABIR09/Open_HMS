@@ -86,14 +86,17 @@
                 {% render_field patientForm.symptoms class="form-control" placeholder="Symptoms" %}
               </div>
               <div class="form-group">
+                Profile Picture
                 {% render_field patientForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
               </div>
-
               <div class="form-group">
-                {% render_field patientForm.problems_list class="form-control" placeholder="Problems" %}
+                {% render_field patientForm.allergy_substance class="form-control" placeholder="Allergy Substance" %}
               </div>
               <div class="form-group">
-                {% render_field patientForm.allergy_substance class="form-control" placeholder="Substance" %}
+                {% render_field patientForm.past_history_of_illness class="form-control" placeholder="Past History" %}
+              </div>
+              <div class="form-group">
+                {% render_field patientForm.immunization class="form-control" placeholder="Immunizations List" %}
               </div>
             </div>
             <div class="col-md-6">
@@ -110,22 +113,19 @@
                 {% render_field patientForm.assignedDoctorId class="form-control" placeholder="Doctor" %}
               </div>
               <div class="form-group">
+                {% render_field patientForm.problems_list class="form-control" placeholder="Problems" %}
+              </div>
+              <div class="form-group">
+                Allergy Level
                 {% render_field patientForm.allergy_criticality class="form-control" placeholder="Criticality" %}
               </div>
               <div class="form-group">
-                {% render_field patientForm.immunization class="form-control" placeholder="Immunization" %}
+                {% render_field patientForm.history_procedure class="form-control" placeholder="History Procedure of Illness" %}
               </div>
               <div class="form-group">
-                {% render_field patientForm.history_procedure class="form-control" placeholder="History Procedure" %}
-              </div>
-              <div class="form-group">
+                Diagnostic Results
                 {% render_field patientForm.diagnostic_results class="form-control" placeholder="Diagnostic Results" %}
               </div>
-              <div class="form-group">
-                {% render_field patientForm.past_history_of_illness class="form-control" placeholder="Past History" %}
-              </div>
-              
-              
 
             </div>
           </div>
