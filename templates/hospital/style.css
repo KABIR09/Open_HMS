@@ -4,25 +4,25 @@ body{
   /*--------------------------------------------------------------
   # Navigation Menu
   --------------------------------------------------------------*/
-  .nav-back{
-      background: rgba(0, 181, 204,0.8);
-      color: #fff;
-  }
-  .navbar-brand{
-    color: #000;
-  }
-  .navbar-brand:hover{
+.nav-back{
+    background: rgba(0, 181, 204,0.8);
     color: #fff;
-  }
-  .nav-link{
-    color: #000;
-  }
-  .nav-link:hover{
-    color:#fff;
-  }
-  .navbar-toggler{
-    outline: none!important;
-  }
+}
+.navbar-brand{
+  color: #000;
+}
+.navbar-brand:hover{
+  color: #fff;
+}
+.nav-link{
+  color: #000;
+}
+.nav-link:hover{
+  color:#fff;
+}
+.navbar-toggler{
+  outline: none!important;
+}
   
      
    
@@ -142,4 +142,64 @@ body{
 
   .services i{
   color: #47aeff;
+}
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact-box {
+  color: #000;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
+  padding: 20px 0 30px 0;
+  background:rgba(0, 181, 204,0.8);
+}
+
+.contact-box i {
+  font-size: 32px;
+  color: #fff;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.contact-box h3 {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.contact-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.contact button{
+  background: rgba(0, 181, 204,0.8);
+  border: none;
+  padding: 10px;
+}
+
+.contact button:hover{
+ background: rgba(0, 181, 204,0.8);
+ color: #fff;
+} 
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+text-align: center;
+font-size: 0.9rem;
+background:rgba(0, 181, 204,0.8);
+}
+.footer .btn-back{
+background: #fff;
+color: rgba(0, 181, 204,0.8);
+}
+.footer .text{
+color: #000;
 }
