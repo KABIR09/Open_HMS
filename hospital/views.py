@@ -46,12 +46,16 @@ def doctor_signup_view(request):
 
 def is_doctor(user):
     return user.groups.filter(name='DOCTOR').exists()
+#change1
+def is_patient(user):
+    return user.groups.filter(name='PATIENT').exists()
 
 def afterlogin_view(request):
     
     if is_doctor(request.user):
-    
         return redirect('doctor-dashboard')
+    elif is_patient(request.user):
+        return redirect('patient-dashboard')
     #return redirect('doctor-dashboard')
 
 
@@ -118,3 +122,23 @@ def patient_signup_view(request):
             my_patient_group[0].user_set.add(user)
         return HttpResponseRedirect('patientlogin')
     return render(request,'hospital/patientsignup.html',context=mydict)
+
+@login_required(login_url='patientlogin')
+@user_passes_test(is_patient)
+def patient_dashboard_view(request):
+    # patient=models.Patient.objects.get(user_id=request.user.id)
+    # doctor=models.Doctor.objects.get(user_id=patient.assignedDoctorId)
+    # mydict={
+    # 'patient':patient,
+    # 'doctorName':doctor.get_name,
+    # 'doctorMobile':doctor.mobile,
+    # 'doctorAddress':doctor.address,
+    # 'symptoms':patient.symptoms,
+    # 'doctorDepartment':doctor.department,
+    # 'admitDate':patient.admitDate,
+    # }
+    mydict= {
+        'patient':models.Patient.objects.get(user_id=request.user.id),
+        }
+
+    return render(request,'hospital/patient_dashboard.html',context=mydict)
