@@ -1,41 +1,41 @@
-
 <!doctype html>
 {% load static %}
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     
-   <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
- 
- 
- <style>
 
-body{
-    font-family: 'Roboto', sans-serif;
-  }
- 
-   
-  /*--------------------------------------------------------------
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+
+    /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
-  #hero {
+    #hero {
       width: 100%;
       height: 80vh;
       background: url("/static/images/background.jpg") center center;
       background-size: cover;
       position: relative;
     }
-    
+
     #hero .container {
       padding-top: 80px;
     }
-    
+
     #hero:before {
       content: "";
       background: rgba(0, 0, 0, 0.6);
@@ -45,7 +45,7 @@ body{
       left: 0;
       right: 0;
     }
-    
+
     #hero h1 {
       margin: 0 0 10px 0;
       font-size: 48px;
@@ -53,7 +53,7 @@ body{
       line-height: 56px;
       color: #fff;
     }
-    
+
     #hero h2 {
       color: #eee;
       margin-bottom: 40px;
@@ -63,7 +63,7 @@ body{
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
-    
+
     .main-btn {
       font-family: "Poppins", sans-serif;
       text-transform: uppercase;
@@ -78,141 +78,302 @@ body{
       border: 2px solid #fff;
       color: #fff;
     }
-    
-     .main-btn:hover {
-      background: rgba(0, 181, 204,0.8);
-      border: 2px solid rgba(0, 181, 204,0.8);
+
+    .main-btn:hover {
+      background: rgba(0, 181, 204, 0.8);
+      border: 2px solid rgba(0, 181, 204, 0.8);
       text-decoration: none;
-      color:#fff;
+      color: #fff;
     }
 
 
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.service {
-  text-align: center;
-  padding: 70px 20px 80px 20px;
-  transition: all ease-in-out 0.3s;
-  background: rgba(0, 181, 204,0.8);
-  box-shadow: 0px 5px 90px 0px rgba(0, 181, 204,0.8);
-}
+    .service {
+      text-align: center;
+      padding: 70px 20px 80px 20px;
+      transition: all ease-in-out 0.3s;
+      background: rgba(0, 181, 204, 0.8);
+      box-shadow: 0px 5px 90px 0px rgba(0, 181, 204, 0.8);
+    }
 
-.service .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
-  position: relative;
-  background: #f5f5f5;
-  border-radius: 50px;
-}
+    .service .icon {
+      margin: 0 auto;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: ease-in-out 0.3s;
+      position: relative;
+      background: #f5f5f5;
+      border-radius: 50px;
+    }
 
- .service .icon i {
-  font-size: 32px;
-  transition: 0.5s;
-  line-height: 1;
-  position: relative;
-}
+    .service .icon i {
+      font-size: 32px;
+      transition: 0.5s;
+      line-height: 1;
+      position: relative;
+    }
 
- .service h4 {
-  font-weight: 600;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
-}
+    .service h4 {
+      font-weight: 600;
+      margin: 10px 0 15px 0;
+      font-size: 22px;
+    }
 
- .service h4 a {
-  color: #000;
-  transition: ease-in-out 0.3s;
-}
+    .service h4 a {
+      color: #000;
+      transition: ease-in-out 0.3s;
+    }
 
- .service p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
+    .service p {
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
 
-  .services i{
-  color: #47aeff;
-}
+    .services i {
+      color: #47aeff;
+    }
+
+    /* -------------------------------------------------------------
+Emergency
+------------------------------------------------------------- */
+    /* .emergency-trigger {
+      left: auto;
+      position: absolute;
+      right: 0;
+      top: 66px;
+      z-index: 20
+    }
+
+    @media (min-width:992px) {
+      .emergency-trigger {
+        left: 0;
+        position: fixed;
+        right: auto;
+        top: 200px
+      }
+    }
+
+    .emergency-trigger-btn {
+      background: #c13434;
+      border: 1px solid #c13434;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 6px;
+      position: relative;
+      text-transform: uppercase;
+      z-index: 2
+    }
+
+    .emergency-trigger-panel {
+      background: #c13434;
+      border-radius: 0 0 10px 10px;
+      bottom: 0;
+      display: none !important;
+      left: 26px;
+      padding: 20px;
+      top: 0;
+      width: 315px
+    }
+
+    @media (min-width:992px) {
+      .emergency-trigger-panel {
+        border-radius: 0 10px 10px 0;
+        position: absolute
+      }
+    }
+
+    .emergency-trigger-close {
+      background: #fff;
+      border-radius: 50%;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .2));
+      height: 32px;
+      position: absolute;
+      right: -13px;
+      top: 0;
+      width: 32px
+    }
+
+    @media (min-width:992px) {
+      .emergency-trigger-close {
+        height: 46px;
+        right: -23px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 46px
+      }
+    }
+
+    .emergency-trigger-close>img {
+      display: block;
+      height: 22px;
+      margin: 0 auto;
+      max-width: 22px;
+      width: 89%
+    }
+
+    .emergency-trigger.is-open .emergency-trigger-panel {
+      display: flex !important
+    }
 
 
-/*--------------------------------------------------------------
+
+
+
+
+
+
+
+
+ */
+
+
+    /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact-box {
-  color: #000;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
-  padding: 20px 0 30px 0;
-  background:rgba(0, 181, 204,0.8);
-}
+    .contact-box {
+      color: #000;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
+      padding: 20px 0 30px 0;
+      background: rgba(0, 181, 204, 0.8);
+    }
 
-.contact-box i {
-  font-size: 32px;
-  color: #fff;
-  border-radius: 50%;
-  padding: 8px;
-}
+    .contact-box i {
+      font-size: 32px;
+      color: #fff;
+      border-radius: 50%;
+      padding: 8px;
+    }
 
-.contact-box h3 {
-  font-size: 20px;
-  color: #000;
-  font-weight: bold;
-  margin: 10px 0;
-}
+    .contact-box h3 {
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+      margin: 10px 0;
+    }
 
-.contact-box p {
-  padding: 0;
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-.contact button{
-  background: rgba(0, 181, 204,0.8);
-  border: none;
-  padding: 10px;
-}
+    .contact-box p {
+      padding: 0;
+      line-height: 24px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
 
-.contact button:hover{
- background: rgba(0, 181, 204,0.8);
- color: #fff;
-} 
- </style>
-  </head>
-  <body>
-   
-    {% include "hospital/navbar.html" %}
-<!-- End Header -->    
-   <!-- ======= Hero Section ======= -->
-   <section id="hero" class="d-flex align-items-center">
+    .contact button {
+      background: rgba(0, 181, 204, 0.8);
+      border: none;
+      padding: 10px;
+    }
+
+    .contact button:hover {
+      background: rgba(0, 181, 204, 0.8);
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  {% include "hospital/navbar.html" %}
+  <!-- End Header -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative">
       <h1>WeCare is available 24/7</h1>
-      
+
       <a href="/patientclick" class="main-btn">Take Appointment Now</a>
     </div>
   </section>
   <!-- End Hero -->
- 
-   <!-- ======= Services Section ======= -->
-   <section id="services" class="services mt-5 mb-3 py-3">
+
+
+
+
+
+  <!-- ======Emergency====== -->
+
+
+
+<!-- 
+
+  <div class="d-none d-lg-block emergency-trigger">
+    <button data-toggle-class-trigger="" data-toggle-class-target=".emergency-trigger" data-toggle-class="is-open"
+      type="button" class="d-none d-lg-block emergency-trigger-btn">
+      e<br>m<br>e<br>r<br>g<br>e<br>n<br>c<br>y
+    </button>
+    <div class="emergency-trigger-panel d-flex align-items-center">
+      <div class="row no-gutters w-100">
+        <div class="col-6">
+          <p class="color-white text-uppercase font-weight-bold">Delhi/NCR:</p>
+          <p class="color-white text-uppercase font-weight-bold">MOHALI:</p>
+          <p class="color-white text-uppercase font-weight-bold">Dehradun:</p>
+          <p class="color-white text-uppercase font-weight-bold">
+            BATHINDA:
+          </p>
+          <p class="color-white text-uppercase font-weight-bold mb-0">
+            BRAIN ATTACK:
+          </p>
+        </div>
+        <div class="col-6">
+          <p>
+            <a href="tel:01140554055" class="hover-color-white color-white font-weight-bold">011-4055 4055</a>
+          </p>
+          <p>
+            <a href="tel:7710777107" class="hover-color-white color-white font-weight-bold">77107-77107</a>
+          </p>
+          <p>
+            <a href="tel:01357193333" class="hover-color-white color-white font-weight-bold">0135-719 3333</a>
+          </p>
+          <p>
+            <a href="tel:01645212000" class="hover-color-white color-white font-weight-bold">0164-5212000</a>
+          </p>
+          <p class="mb-0">
+            <a href="tel:919910204023" class="hover-color-white color-white font-weight-bold">+91 9910204023</a>
+          </p>
+        </div>
+      </div>
+      <button data-toggle-class-trigger="" data-toggle-class-target=".emergency-trigger" data-toggle-class="is-open"
+        class="emergency-trigger-close border-0">
+        <img
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDIyLjg4IDIyLjg4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz4KPHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHlsZT0iIiBkPSJNMC4zMjQsMS45MDljLTAuNDI5LTAuNDI5LTAuNDI5LTEuMTQzLDAtMS41ODdjMC40NDQtMC40MjksMS4xNDMtMC40MjksMS41ODcsMGw5LjUyMyw5LjUzOSAgbDkuNTM5LTkuNTM5YzAuNDI5LTAuNDI5LDEuMTQzLTAuNDI5LDEuNTcxLDBjMC40NDQsMC40NDQsMC40NDQsMS4xNTksMCwxLjU4N2wtOS41MjMsOS41MjRsOS41MjMsOS41MzkgIGMwLjQ0NCwwLjQyOSwwLjQ0NCwxLjE0MywwLDEuNTg3Yy0wLjQyOSwwLjQyOS0xLjE0MywwLjQyOS0xLjU3MSwwbC05LjUzOS05LjUzOWwtOS41MjMsOS41MzljLTAuNDQ0LDAuNDI5LTEuMTQzLDAuNDI5LTEuNTg3LDAgIGMtMC40MjktMC40NDQtMC40MjktMS4xNTksMC0xLjU4N2w5LjUyMy05LjUzOUwwLjMyNCwxLjkwOXoiIGZpbGw9IiNjMTM0MzMiIGRhdGEtb3JpZ2luYWw9IiMxZTIwMWQiIGNsYXNzPSIiPjwvcGF0aD4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==">
+      </button>
+    </div>
+  </div> -->
+
+
+
+  <!-- ======================================= -->
+
+
+
+
+
+
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services mt-5 mb-3 py-3">
     <div class="container">
       <div class="section-title">
         <h2 class="text-center">Services</h2>
-     
+
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="service shadow">
             <div class="icon">
-                <i class="fas fa-tooth"></i>
+              <i class="fas fa-tooth"></i>
             </div>
             <h4><a href="">Dental Specialist</a></h4>
             <p>
-              A dentist is a person who is qualified to examine and treat people's teeth. Visit your dentist twice a year for a check-up.  
+              A dentist is a person who is qualified to examine and treat people's teeth. Visit your dentist twice a
+              year for a check-up.
               The dentist or the dentist's is used to refer to the surgery or clinic where a dentist works.</p>
           </div>
         </div>
@@ -220,10 +381,12 @@ body{
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
           <div class="service c shadow">
             <div class="icon">
-                <i class="fas fa-lungs"></i>
+              <i class="fas fa-lungs"></i>
             </div>
             <h4><a href="">Lungs Specialist</a></h4>
-            <p>A pulmonologist is a physician who specializes in the respiratory system. From the windpipe to the lungs, if your complaint involves the lungs or any part of the respiratory system, a pulmonologist is the doc you want to solve the problem. 
+            <p>A pulmonologist is a physician who specializes in the respiratory system. From the windpipe to the lungs,
+              if your complaint involves the lungs or any part of the respiratory system, a pulmonologist is the doc you
+              want to solve the problem.
               Pulmonology is a medical field of study within internal medicine.</p>
           </div>
         </div>
@@ -231,10 +394,12 @@ body{
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
           <div class="service shadow">
             <div class="icon">
-                <i class="fas fa-heart"></i>
+              <i class="fas fa-heart"></i>
             </div>
             <h4><a href="">Heart Specialist</a></h4>
-            <p>Cardiologists are doctors who specialize in diagnosing and treating diseases or conditions of the heart and blood vessels—the cardiovascular system. You might also visit a cardiologist so you can learn about your 
+            <p>Cardiologists are doctors who specialize in diagnosing and treating diseases or conditions of the heart
+              and blood vessels—the cardiovascular system. You might also visit a cardiologist so you can learn about
+              your
               risk factors for heart disease and find out what measures you can take for better heart health.</p>
           </div>
         </div>
@@ -242,21 +407,25 @@ body{
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
           <div class="service c shadow">
             <div class="icon">
-                <i class="fas fa-dna"></i>
+              <i class="fas fa-dna"></i>
             </div>
             <h4><a href="">DNA Testing</a></h4>
-            <p>DNA, or deoxyribonucleic acid, is the hereditary material in humans and almost all other organisms. Nearly every cell in a person's body has the same DNA. ... The information in DNA is stored as a code made up of four chemical bases: 
+            <p>DNA, or deoxyribonucleic acid, is the hereditary material in humans and almost all other organisms.
+              Nearly every cell in a person's body has the same DNA. ... The information in DNA is stored as a code made
+              up of four chemical bases:
               adenine (A), guanine (G), cytosine (C), and thymine (T).</p>
           </div>
         </div>
 
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
           <div class="service shadow">
-            <div class="icon">            
-          <i class="fas fa-ambulance"></i>
+            <div class="icon">
+              <i class="fas fa-ambulance"></i>
             </div>
             <h4><a href="">Ambulance</a></h4>
-            <p>An ambulance is a type of vehicle made to carry sick or injured people. Normally, ambulances go to people in emergencies to take people to hospital. ... Ambulances normally have emergency medical technicians (EMTs) and paramedics who work on them. 
+            <p>An ambulance is a type of vehicle made to carry sick or injured people. Normally, ambulances go to people
+              in emergencies to take people to hospital. ... Ambulances normally have emergency medical technicians
+              (EMTs) and paramedics who work on them.
               They carry medicines and special equipment that can keep people alive.</p>
           </div>
         </div>
@@ -264,10 +433,10 @@ body{
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
           <div class="service shadow">
             <div class="icon">
-            <i class="fas fa-allergies"></i>
+              <i class="fas fa-allergies"></i>
             </div>
             <h4><a href="">Dermatologist Specialist</a></h4>
-            <p>A dermatologist is a doctor who specializes in the study of skin and the treatment of skin diseases. 
+            <p>A dermatologist is a doctor who specializes in the study of skin and the treatment of skin diseases.
               A dermatologist is warning about allergic reactions to a common ingredient in hair dye.</p>
           </div>
         </div>
@@ -282,12 +451,19 @@ body{
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    {% include "hospital/footer.html" %}
-  
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  {% include "hospital/footer.html" %}
+
+</body>
+
 </html>
