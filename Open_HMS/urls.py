@@ -24,7 +24,8 @@ urlpatterns = [
     path('doctorclick', views.doctorclick_view),
     path('doctorlogin', LoginView.as_view(template_name='hospital/doctorlogin.html')),
     path('doctorsignup', views.doctor_signup_view,name='doctorsignup'),
-    path('doctorlogin', LoginView.as_view(template_name='hospital/doctorlogin.html')),
+    
     path('afterlogin', views.afterlogin_view,name='afterlogin'),
     path('doctor-dashboard', views.doctor_dashboard_view,name='doctor-dashboard'),
+    path('logout', LogoutView.as_view(template_name='hospital/index.html'),name='logout'),
 ]

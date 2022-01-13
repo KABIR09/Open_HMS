@@ -1,0 +1,381 @@
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     
+   <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+ 
+ 
+ <style>
+
+body{
+    font-family: 'Roboto', sans-serif;
+  }
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+.nav-back{
+    background: rgba(0, 181, 204,0.8);
+    color: #fff;
+}
+.navbar-brand{
+  color: #000;
+}
+.navbar-brand:hover{
+  color: #fff;
+}
+.nav-link{
+  color: #000;
+}
+.nav-link:hover{
+  color:#fff;
+}
+.navbar-toggler{
+  outline: none!important;
+}
+  
+     
+   
+  /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  #hero {
+      width: 100%;
+      height: 80vh;
+      background: url("/static/images/background.jpg") center center;
+      background-size: cover;
+      position: relative;
+    }
+    
+    #hero .container {
+      padding-top: 80px;
+    }
+    
+    #hero:before {
+      content: "";
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    
+    #hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      color: #fff;
+    }
+    
+    #hero h2 {
+      color: #eee;
+      margin-bottom: 40px;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    
+    .main-btn {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    
+     .main-btn:hover {
+      background: rgba(0, 181, 204,0.8);
+      border: 2px solid rgba(0, 181, 204,0.8);
+      text-decoration: none;
+      color:#fff;
+    }
+
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.service {
+  text-align: center;
+  padding: 70px 20px 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 181, 204,0.8);
+  box-shadow: 0px 5px 90px 0px rgba(0, 181, 204,0.8);
+}
+
+.service .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 50px;
+}
+
+ .service .icon i {
+  font-size: 32px;
+  transition: 0.5s;
+  line-height: 1;
+  position: relative;
+}
+
+ .service h4 {
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
+}
+
+ .service h4 a {
+  color: #000;
+  transition: ease-in-out 0.3s;
+}
+
+ .service p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+  .services i{
+  color: #47aeff;
+}
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact-box {
+  color: #000;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
+  padding: 20px 0 30px 0;
+  background:rgba(0, 181, 204,0.8);
+}
+
+.contact-box i {
+  font-size: 32px;
+  color: #fff;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.contact-box h3 {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.contact-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.contact button{
+  background: rgba(0, 181, 204,0.8);
+  border: none;
+  padding: 10px;
+}
+
+.contact button:hover{
+ background: rgba(0, 181, 204,0.8);
+ color: #fff;
+} 
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+text-align: center;
+font-size: 0.9rem;
+background:rgba(0, 181, 204,0.8);
+}
+.footer .btn-back{
+background: #fff;
+color: rgba(0, 181, 204,0.8);
+}
+.footer .text{
+color: #000;
+}
+
+
+ </style>
+ 
+ 
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg nav-back fixed-top" 
+    id="mainNav">
+      <div class="container">
+          <a class="navbar-brand" href="#"><img src="{% static "images/logo.png" %}" width="80" height="40" alt=""></a>
+        
+           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 
+           data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
+           aria-label="Toggle navigation"><i class="fas fa-hospital-symbol"></i>
+   
+          </button>
+
+
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                
+                  <li class="nav-item"><a class="nav-link" 
+                    href="/doctorclick">Doctor</a></li>
+                  <li class="nav-item"><a class="nav-link" 
+                    href="#">Patient</a></li>
+
+                    <li class="nav-item"><a class="nav-link" 
+                      href="#services">Services</a></li>
+                  <li class="nav-item"><a class="nav-link" 
+                    href="/contactus">Contact Us</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+   
+<!-- End Header -->    
+   <!-- ======= Hero Section ======= -->
+   <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative">
+      <h1>WeCare is available 24/7</h1>
+      
+      <a href="#about" class="main-btn">Take Appointment Now</a>
+    </div>
+  </section>
+  <!-- End Hero -->
+ 
+   <!-- ======= Services Section ======= -->
+   <section id="services" class="services mt-5 mb-3 py-3">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="text-center">Services</h2>
+     
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="service shadow">
+            <div class="icon">
+                <i class="fas fa-tooth"></i>
+            </div>
+            <h4><a href="">Dental Specialist</a></h4>
+            <p>
+              A dentist is a person who is qualified to examine and treat people's teeth. Visit your dentist twice a year for a check-up.  
+              The dentist or the dentist's is used to refer to the surgery or clinic where a dentist works.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+          <div class="service c shadow">
+            <div class="icon">
+                <i class="fas fa-lungs"></i>
+            </div>
+            <h4><a href="">Lungs Specialist</a></h4>
+            <p>A pulmonologist is a physician who specializes in the respiratory system. From the windpipe to the lungs, if your complaint involves the lungs or any part of the respiratory system, a pulmonologist is the doc you want to solve the problem. 
+              Pulmonology is a medical field of study within internal medicine.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+          <div class="service shadow">
+            <div class="icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h4><a href="">Heart Specialist</a></h4>
+            <p>Cardiologists are doctors who specialize in diagnosing and treating diseases or conditions of the heart and blood vessels—the cardiovascular system. You might also visit a cardiologist so you can learn about your 
+              risk factors for heart disease and find out what measures you can take for better heart health.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="service c shadow">
+            <div class="icon">
+                <i class="fas fa-dna"></i>
+            </div>
+            <h4><a href="">DNA Testing</a></h4>
+            <p>DNA, or deoxyribonucleic acid, is the hereditary material in humans and almost all other organisms. Nearly every cell in a person's body has the same DNA. ... The information in DNA is stored as a code made up of four chemical bases: 
+              adenine (A), guanine (G), cytosine (C), and thymine (T).</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="service shadow">
+            <div class="icon">            
+          <i class="fas fa-ambulance"></i>
+            </div>
+            <h4><a href="">Ambulance</a></h4>
+            <p>An ambulance is a type of vehicle made to carry sick or injured people. Normally, ambulances go to people in emergencies to take people to hospital. ... Ambulances normally have emergency medical technicians (EMTs) and paramedics who work on them. 
+              They carry medicines and special equipment that can keep people alive.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="service shadow">
+            <div class="icon">
+            <i class="fas fa-allergies"></i>
+            </div>
+            <h4><a href="">Dermatologist Specialist</a></h4>
+            <p>A dermatologist is a doctor who specializes in the study of skin and the treatment of skin diseases. 
+              A dermatologist is warning about allergic reactions to a common ingredient in hair dye.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+
+
+
+
+  <!-- Footer-->
+  <footer class="footer py-4 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-left">Copyright © By Group-G</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a class="btn btn-back btn-social mx-2" href="#!">
+                  <i class="fab fa-twitter"></i></a>
+                  <a class="btn btn-back btn-social mx-2" href="#!">
+                    <i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-back btn-social mx-2" href="#!">
+                      <i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-lg-4 text-lg-right">
+              <a class="mr-3 text" href="#!">Privacy Policy</a>
+              <a href="#!"class="text">Terms of Use</a></div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

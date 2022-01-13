@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 {% load widget_tweaks %}
 <html lang="en" dir="ltr">
 
@@ -6,8 +7,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>HMS - Django</title>
-
-
   <style type="text/css">
     body {
       color: #aa082e;
@@ -51,50 +50,69 @@
 
 </head>
 
+
 <body>
   {% include "hospital/navbar.html" %}
   <br>
   <br>
-  <br><br>
+  <br>
+  <br>
 
-  <!--- login page for doctor by admin(sumit)  ---------->
-  <form method="post">
+
+
+
+  <!--- signup page for doctor by admin(sumit)  ---------->
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container register-form">
       <div class="form">
         <div class="note">
-          <p>Doctor Login Page</p>
+          <p>Register In Hospital</p>
         </div>
 
         <div class="form-content">
           <div class="row">
             <div class="col-md-6">
-
               <div class="form-group">
-                {% render_field form.username class="form-control" placeholder="Username" %}
+                {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+              </div>
+              <div class="form-group">
+                {% render_field userForm.username class="form-control" placeholder="Username" %}
+              </div>
+              <div class="form-group">
+                {% render_field doctorForm.department class="form-control" placeholder="Department" %}
+              </div>
+              <div class="form-group">
+                {% render_field doctorForm.address class="form-control" placeholder="Address" %}
               </div>
 
             </div>
             <div class="col-md-6">
-
               <div class="form-group">
-                {% render_field form.password class="form-control" placeholder="Password" %}
+                {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+              </div>
+              <div class="form-group">
+                {% render_field userForm.password class="form-control" placeholder="Password" %}
+              </div>
+              <div class="form-group">
+                {% render_field doctorForm.mobile class="form-control"  placeholder="Contact" %}
+              </div>
+              <div class="form-group">
+                {% render_field doctorForm.profile_pic required="required" class="form-control" placeholder="Profile Picture" %}
               </div>
 
             </div>
           </div>
-          <button type="submit" class="btnSubmit">Login</button>
-          <div class="text-center">Do not have account? <a href="doctorsignup">Signup here</a></div>
+          <button type="submit" class="btnSubmit">Register</button>
+          <div class="text-center">Already have an account? <a href="doctorlogin">Login here</a></div>
         </div>
       </div>
     </div>
 
   </form>
 
-  <br><br><br>
   
-
-  {% include "hospital/footer.html" %}
 </body>
+
 
 </html>

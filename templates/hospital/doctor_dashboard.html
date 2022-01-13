@@ -1,0 +1,38 @@
+{% extends 'hospital/doctor_base.html' %}
+{% load static %}
+{% block content %}
+{%include 'hospital/doctor_dashboard_cards.html'%}
+<br><br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-primary" style="margin-left:2%;">
+      <div class="panel-heading" style="text-align:center;">
+        <h6 class="panel-title">Recent Appointments For You</h6>
+      </div>
+      <table class="table table-hover table-striped" id="dev-table">
+        <thead class="thead-dark">
+          <tr>
+            <th> Name</th>
+            <th>Picture</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        {% for d in doctors %}
+        <tr>
+          
+          <td> <img src="{% static d.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+          
+          <td>{{d.mobile}}</td>
+          <td>{{d.address}}</td>
+          <td>{{d.department}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}
