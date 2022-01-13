@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
     <html lang="en">
       <head>
@@ -67,7 +69,7 @@ color: #000;
         <nav class="navbar navbar-expand-lg nav-back fixed-top" 
         id="mainNav">
           <div class="container">
-              <a class="navbar-brand" href="index.html"><img src="{% static "images/logo.png" %}" width="80" height="40" alt=""></a>
+              <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" width="80" height="40" alt=""></a>
               <!-- <button class="navbar-toggler navbar-toggler-right" type="button"
                data-toggle="collapse" data-target="#navbarResponsive" 
                aria-controls="navbarResponsive" aria-expanded="false" 
@@ -106,8 +108,8 @@ color: #000;
     <hr class="my-4">
    
     <p class="lead">
-      <a class="btn btn-danger btn-lg" href="doctorsignup.html" role="button">Sign Up</a>
-      <a class="btn btn-success btn-lg" href="doctorlogin.html" role="button">Login</a>
+      <a class="btn btn-danger btn-lg" href="/doctorsignup" role="button">Sign Up</a>
+      <a class="btn btn-success btn-lg" href="/doctorlogin" role="button">Login</a>
     </p>
     <br><br>
   </div>
