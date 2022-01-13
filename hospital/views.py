@@ -52,7 +52,7 @@ def afterlogin_view(request):
     if is_doctor(request.user):
     
         return redirect('doctor-dashboard')
-    return redirect('doctor-dashboard')
+    #return redirect('doctor-dashboard')
 
 
 
