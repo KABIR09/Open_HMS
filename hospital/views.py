@@ -54,6 +54,8 @@ def afterlogin_view(request):
         return redirect('doctor-dashboard')
     return redirect('doctor-dashboard')
 
+
+
    
      
     # elif is_patient(request.user):
