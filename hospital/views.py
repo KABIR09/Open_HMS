@@ -142,3 +142,72 @@ def patient_dashboard_view(request):
         }
 
     return render(request,'hospital/patient_dashboard.html',context=mydict)
+
+
+# @login_required(login_url='doctorlogin')
+# @user_passes_test(is_doctor)
+# def doctor_patient_search_view(request):
+#     return render(request,'hospital/doctor_patient_search.html')
+
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def doctor_patient_search_view(request):
+    #request.GET[‘fulltextarea’]
+    mydict={
+    'patients':models.Patient.objects.all().filter(assignedDoctorId=request.user.id)
+    }
+    return render(request,'hospital/doctor_patient.html',context=mydict)
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def prescription_patient_view(request,pk):
+    patient=models.Patient.objects.get(id=pk)
+    days=(date.today()-patient.admitDate) #2 days, 0:00:00
+    assignedDoctor=models.User.objects.all().filter(id=patient.assignedDoctorId)
+    d=days.days # only how many day that is 2
+    patientDict={
+        'patientId':pk,
+        'name':patient.get_name,
+        'mobile':patient.mobile,
+        'address':patient.address,
+        'symptoms':patient.symptoms,
+        'admitDate':patient.admitDate,
+        'todayDate':date.today(),
+        'day':d,
+        'assignedDoctorName':assignedDoctor[0].first_name,
+    }
+    if request.method == 'POST':
+        feeDict ={
+            'medicineName':request.POST['medicineName'],
+            'noOfTime':request.POST['noOfTime'],
+            'noOfTablets' : request.POST['noOfTablets'],
+            'syrupsQuantity' : request.POST['syrupsQuantity'],
+            'test' : request.POST['test']
+            
+        }
+        print("request.POST")
+        patientDict.update(feeDict)
+        #for updating to database patientDischargeDetails (pDD)
+        pDD=models.PatientPrescriptionDetails()
+        pDD.patientId=pk
+        # pDD.patientName=patient.get_name
+        # pDD.assignedDoctorName=assignedDoctor[0].first_name
+        # pDD.address=patient.address
+        # pDD.mobile=patient.mobile
+        # pDD.symptoms=patient.symptoms
+        # pDD.admitDate=patient.admitDate
+        # pDD.releaseDate=date.today()
+        # pDD.daySpent=int(d)
+        pDD.medicineName=request.POST['medicineName']
+        pDD.noOfTime=int(request.POST['noOfTime'])
+        pDD.noOfTablets=int(request.POST['noOfTablets'])
+        pDD.syrupsQuantity=int(request.POST['syrupsQuantity'])
+        pDD.test=request.POST['test']
+        
+        pDD.save()
+        return render(request,'hospital/patient_final_prescription.html',context=patientDict)
+    return render(request,'hospital/patient_generate_prescription.html',context=patientDict)
+
