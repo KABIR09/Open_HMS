@@ -44,3 +44,50 @@ def doctor_signup_view(request):
         return HttpResponseRedirect('doctorlogin')
     return render(request,'hospital/doctorsignup.html',context=mydict)
 
+def is_doctor(user):
+    return user.groups.filter(name='DOCTOR').exists()
+
+def afterlogin_view(request):
+    
+    if is_doctor(request.user):
+    
+        return redirect('doctor-dashboard')
+    return redirect('doctor-dashboard')
+
+   
+     
+    # elif is_patient(request.user):
+    #     accountapproval=models.Patient.objects.all().filter(user_id=request.user.id,status=True)
+    #     if accountapproval:
+    #         return redirect('patient-dashboard')
+    #     else:
+    #         return render(request,'hospital/patient_wait_for_approval.html')
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def doctor_dashboard_view(request):
+    # #for three cards
+    # patientcount=models.Patient.objects.all().filter(status=True,assignedDoctorId=request.user.id).count()
+    # appointmentcount=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id).count()
+    # patientdischarged=models.PatientDischargeDetails.objects.all().distinct().filter(assignedDoctorName=request.user.first_name).count()
+
+    # #for  table in doctor dashboard
+    # appointments=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id).order_by('-id')
+    # patientid=[]
+    # for a in appointments:
+    #     patientid.append(a.patientId)
+    # patients=models.Patient.objects.all().filter(status=True,user_id__in=patientid).order_by('-id')
+    # appointments=zip(appointments,patients)
+    # mydict={
+    # 'patientcount':patientcount,
+    # 'appointmentcount':appointmentcount,
+    # 'patientdischarged':patientdischarged,
+    # 'appointments':appointments,
+    # 'doctor':models.Doctor.objects.get(user_id=request.user.id), #for profile picture of doctor in sidebar
+    # }
+    # return render(request,'hospital/doctor_dashboard.html',context=mydict)
+    mydict={
+        'doctor':models.Doctor.objects.get(user_id=request.user.id),
+        
+    }
+    return render(request,'hospital/doctor_dashboard.html',context=mydict)

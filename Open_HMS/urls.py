@@ -23,5 +23,8 @@ urlpatterns = [
     path('',views.home_view,name=''),
     path('doctorclick', views.doctorclick_view),
     path('doctorlogin', LoginView.as_view(template_name='hospital/doctorlogin.html')),
-    path('doctorsignup', views.doctor_signup_view,name='doctorsignup')
+    path('doctorsignup', views.doctor_signup_view,name='doctorsignup'),
+    path('doctorlogin', LoginView.as_view(template_name='hospital/doctorlogin.html')),
+    path('afterlogin', views.afterlogin_view,name='afterlogin'),
+    path('doctor-dashboard', views.doctor_dashboard_view,name='doctor-dashboard'),
 ]
