@@ -42,6 +42,8 @@ urlpatterns = [
     path('patient-summary/<int:pk>', views.summary_patient_view,name='patient-summary'),
     path('patient-summary', views.patient_summary_view,name='patient-summary'),
 
-    path('add-medicine/<int:pk>',views.doctor_add_medicine_view,name='add-medicine')
+    path('add-medicine/<int:pk>',views.doctor_add_medicine_view,name='add-medicine'),
+    
+    path('new-prescription/<int:pk>',views.new_prescription_patient_view, name='new-prescription')
 
 ]
