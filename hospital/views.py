@@ -251,7 +251,7 @@ def patient_prescription_view(request):
             'patient': patient,
             'patientId': request.user.id,
         }
-    return render(request, 'hospital/patient_final_prescription.html', context=patientDict)
+    return render(request, 'hospital/prescription_patient.html', context=patientDict)
 
 
 @login_required(login_url='doctorlogin')
@@ -301,4 +301,4 @@ def patient_summary_view(request):
         'diagnostic_results': patient.diagnostic_results
     }
 
-    return render(request, 'hospital/patient_summary.html', context=patientDict)
+    return render(request, 'hospital/summary_patient.html', context=patientDict)
