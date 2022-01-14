@@ -168,6 +168,8 @@ def prescription_patient_view(request,pk):
     # days=(date.today()-patient.admitDate) #2 days, 0:00:00
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     # d=days.days # only how many day that is 2
+    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
+    
     patientDict = {
         'patientId': pk,
         'name': patient.get_name,
@@ -177,6 +179,7 @@ def prescription_patient_view(request,pk):
         # 'admitDate': patient.admitDate,
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
+        'pDD':pDD
     }
     return render(request, 'hospital/patient_generate_prescription.html', context=patientDict)
 
@@ -187,10 +190,23 @@ def doctor_add_medicine_view(request, pk):
     # days=(date.today()-patient.admitDate) #2 days, 0:00:00
     #assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     # d=days.days # only how many day that is 2
-    patientDict={}
+    assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
+    pDD0 = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
+    patientDict = {
+        'patientId': pk,
+        'name': patient.get_name,
+        'mobile': patient.mobile,
+        'address': patient.address,
+        'symptoms': patient.symptoms,
+        # 'admitDate': patient.admitDate,
+        # 'day':d,
+        'assignedDoctorName': assignedDoctor[0].first_name,
+        'pDD':pDD0
+    }
+
     if request.method == 'POST':
        
-        patientDict = {
+        feeDict = {
             
             'medicationItem' : request.POST['medicationItem'],
             'frequency' : request.POST['frequency'],
@@ -204,7 +220,7 @@ def doctor_add_medicine_view(request, pk):
 
         }
         
-        #patientDict.update(feeDict)
+        patientDict.update(feeDict)
         # for updating to database patientDischargeDetails (pDD)
         pDD = models.PatientPrescriptionDetails()
         pDD.patientId = pk
@@ -226,8 +242,8 @@ def doctor_add_medicine_view(request, pk):
         pDD.additionalInstruc = request.POST['additionalInstruc']
         pDD.substance = request.POST['substance']
         pDD.save()
-        return render(request, 'hospital/patient_final_prescription.html', context=patientDict)
-    return render(request, 'hospital/patient_generate_prescription.html', context=patientDict)
+        return render(request, 'hospital/patient_generate_prescription.html', context=patientDict)
+    return render(request, 'hospital/doctor_add_medicine.html', context=patientDict)
 
 
 
@@ -236,6 +252,10 @@ def doctor_add_medicine_view(request, pk):
 
 
 # shreyas edited this -for patient
+
+
+
+
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
 def patient_prescription_view(request):

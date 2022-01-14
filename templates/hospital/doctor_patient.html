@@ -34,8 +34,8 @@
           <th>Profile Picture</th>
           <th>Symptoms</th>
           <th>Contact</th>
-          <th>Address</th>
           <th>Add Prescription</th>
+          <th>Old Prescription</th>
           <th>View Summary</th>
 
         </tr>
@@ -46,8 +46,9 @@
         <td> <img src="{% static p.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
         <td>{{p.symptoms}}</td>
         <td>{{p.mobile}}</td>
-        <td>{{p.address}}</td>
+        
         <td><a class="btn btn-primary btn-xs" href="{% url 'patient-prescription' p.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td><a href="{% url 'patient-prescription' p.id  %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a></td>
         <td><a class="btn btn-primary btn-xs" href="{% url 'patient-summary' p.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
       </tr>
       {% endfor %}

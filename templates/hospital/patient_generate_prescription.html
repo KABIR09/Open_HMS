@@ -1,4 +1,3 @@
-
 {% extends 'hospital/doctor_base.html' %}
 {% load static %}
 {% block content %}
@@ -9,7 +8,7 @@
 
   <style>
     .invoice-box {
-      width :100%;
+      width: 100%;
       max-width: 2000px;
       margin: auto;
       padding: 30px;
@@ -119,12 +118,7 @@
             </td>
 
             <td>
-<<<<<<< HEAD
-
-              Date {{date}}
-=======
               Release Date: {{todayDate}}<br>
->>>>>>> 9b5cbae7b3b9ff71ff9210cb72b3e9117f6d58a6
             </td>
           </tr>
         </table>
@@ -172,10 +166,95 @@
       </td>
 
       <td>
-        
+
       </td>
     </tr>
-  
+
+    {% for m in pDD %}
+    <tr class="item">
+      <td>
+        Medication Item
+      </td>
+      <td>
+        {{m.medicationItem}}
+      </td>
+
+
+    </tr>
+
+    <tr class="item">
+      <td>
+        Frequency
+      </td>
+
+      <td>
+        {{m.frequency}}
+      </td>
+    </tr>
+
+    <tr class="item">
+      <td>
+        Dose
+      </td>
+
+      <td>
+        {{m.dose}}
+      </td>
+    </tr>
+
+    <tr class="item">
+      <td>
+        Dose unit
+      </td>
+
+      <td>
+        {{m.doseUnit}}
+      </td>
+    </tr>
+    <tr class="item">
+      <td>
+        Direction Duration
+      </td>
+
+      <td>
+        {{m.directionDuration}}
+      </td>
+    </tr>
+    <tr class="item">
+      <td>
+        Form
+      </td>
+
+      <td>
+        {{m.form}}
+      </td>
+    </tr>
+    <tr class="item">
+      <td>
+        Additional Instructions
+      </td>
+
+      <td>
+        {{m.additionalInstruc}}
+      </td>
+    </tr>
+
+    <tr class="item">
+      <td>
+        Substance
+      </td>
+
+      <td>
+        {{m.substance}}
+      </td>
+    </tr>
+
+
+
+    {% endfor %}
+    
+     <a href="{% url 'add-medicine' patientId %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
+
   </table>
 </div>
 
