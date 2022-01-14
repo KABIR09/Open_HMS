@@ -181,12 +181,17 @@ def prescription_patient_view(request, pk):
         'assignedDoctorName': assignedDoctor[0].first_name,
     }
     if request.method == 'POST':
+       
         feeDict = {
-            'medicineName': request.POST['medicineName'],
-            'noOfTime': request.POST['noOfTime'],
-            'noOfTablets': request.POST['noOfTablets'],
-            'syrupsQuantity': request.POST['syrupsQuantity'],
-            'test': request.POST['test']
+            
+            'medicationItem' : request.POST['medicationItem'],
+            'frequency' : request.POST['frequency'],
+            'dose' : request.POST['dose'],
+            'doseUnit' : request.POST['doseUnit'],
+            'directionDuration' : request.POST['directionDuration'],
+            'form' : request.POST['form'],
+            'additionalInstruc' : request.POST['additionalInstruc'],
+            'substance' : request.POST['substance']
 
         }
         print("request.POST")
