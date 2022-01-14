@@ -165,18 +165,18 @@ def doctor_patient_search_view(request):
 @user_passes_test(is_doctor)
 def prescription_patient_view(request,pk):
     patient=models.Patient.objects.get(id=pk)
-    days=(date.today()-patient.admitDate) #2 days, 0:00:00
+    #days=(date.today()-patient.admitDate) #2 days, 0:00:00
     assignedDoctor=models.User.objects.all().filter(id=patient.assignedDoctorId)
-    d=days.days # only how many day that is 2
+    #d=days.days # only how many day that is 2
     patientDict={
         'patientId':pk,
         'name':patient.get_name,
         'mobile':patient.mobile,
         'address':patient.address,
         'symptoms':patient.symptoms,
-        'admitDate':patient.admitDate,
+        #'admitDate':patient.admitDate,
         'todayDate':date.today(),
-        'day':d,
+        #'day':d,
         'assignedDoctorName':assignedDoctor[0].first_name,
     }
     if request.method == 'POST':
