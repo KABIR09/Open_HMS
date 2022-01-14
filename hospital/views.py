@@ -252,3 +252,28 @@ def patient_prescription_view(request):
             'patientId':request.user.id,
         }
     return render(request,'hospital/patient_final_prescription.html',context=patientDict)
+
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def summary_patient_view(request, pk):
+    patient = models.Patient.objects.get(id=pk)
+    assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
+    patientDict = {
+        'patientId': pk,
+        'name': patient.get_name,
+        'mobile': patient.mobile,
+        'address': patient.address,
+        'symptoms': patient.symptoms,
+        'todayDate': date.today(),
+        'assignedDoctorName': assignedDoctor[0].first_name,
+        'allergy_substance': patient.allergy_substance,
+        'allergy_criticality':patient.allergy_criticality,
+        'problems_list':patient.problems_list,
+        'immunization':patient.immunization,
+        'history_procedure': patient.history_procedure,
+        'past_history_of_illness': patient.past_history_of_illness,
+        'diagnostic_results' : patient.diagnostic_results
+    }
+    
+    return render(request,'hospital/patient_summary.html',context=patientDict)

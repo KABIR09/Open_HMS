@@ -38,5 +38,6 @@ urlpatterns = [
 
     path('patient-prescription/<int:pk>', views.prescription_patient_view,name='patient-prescription'),
     path('patient-prescription', views.patient_prescription_view,name='patient-prescription'),
+    path('patient-summary/<int:pk>', views.summary_patient_view,name='patient-summary'),
 
 ]
