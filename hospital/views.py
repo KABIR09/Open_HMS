@@ -164,23 +164,6 @@ def doctor_patient_search_view(request):
 
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
-<<<<<<< HEAD
-def prescription_patient_view(request,pk):
-    patient=models.Patient.objects.get(id=pk)
-    #days=(date.today()-patient.admitDate) #2 days, 0:00:00
-    assignedDoctor=models.User.objects.all().filter(id=patient.assignedDoctorId)
-    #d=days.days # only how many day that is 2
-    patientDict={
-        'patientId':pk,
-        'name':patient.get_name,
-        'mobile':patient.mobile,
-        'address':patient.address,
-        'symptoms':patient.symptoms,
-        #'admitDate':patient.admitDate,
-        'todayDate':date.today(),
-        #'day':d,
-        'assignedDoctorName':assignedDoctor[0].first_name,
-=======
 def prescription_patient_view(request, pk):
     patient = models.Patient.objects.get(id=pk)
     # days=(date.today()-patient.admitDate) #2 days, 0:00:00
@@ -196,7 +179,6 @@ def prescription_patient_view(request, pk):
         'todayDate': date.today(),
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
->>>>>>> 1ca661a5e773c224b2b29282b9da952eba392523
     }
     if request.method == 'POST':
         feeDict = {
