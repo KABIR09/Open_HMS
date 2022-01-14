@@ -107,6 +107,17 @@
       text-align: center;
       display: block;
     }
+
+    .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-right: -235px;
+    margin-left: 65px;
+    }
+
   </style>
 </head>
 
@@ -237,7 +248,9 @@
     </tr>
     <tr class="details">
       <td>
-        <a href="/static/{{diagnostic_results}}" target="_blank" class="btn btn-primary btn-lg active btn-block" role="button" aria-pressed="true">View Document</a>
+        <div class="row justify-content-center">
+          <a href="/static/{{diagnostic_results}}" target="_blank" class="btn btn-primary btn-lg active btn-block">View Document</a>
+        </div>
       </td>
     </tr>
 
