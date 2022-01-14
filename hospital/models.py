@@ -78,6 +78,7 @@ class PatientPrescriptionDetails(models.Model):
     form=models.CharField(max_length=100)
     additionalInstruc=models.CharField(max_length=400)
     substance=models.CharField(max_length=100)
+    date=models.DateField(auto_now=True)
    
 
     @property
