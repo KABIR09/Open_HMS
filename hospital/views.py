@@ -239,35 +239,35 @@ def doctor_add_medicine_view(request, pk):
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
 def patient_prescription_view(request):
-    patient=models.Patient.objects.get(user_id=request.user.id)
-    pDD=models.PatientPrescriptionDetails.objects.get(patientId=patient.id)
+    patient = models.Patient.objects.get(user_id=request.user.id)
+    pDD = models.PatientPrescriptionDetails.objects.get(patientId=patient.id)
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-    patientDict=None
+    patientDict = None
     if pDD:
-        patientDict ={
-        'patientId': patient.id,
-        'name': patient.get_name,
-        'mobile': patient.mobile,
-        'address': patient.address,
-        'symptoms': patient.symptoms,
-        'date': pDD.date,
-        'assignedDoctorName': assignedDoctor[0].first_name,
-        'medicationItem' : pDD.medicationItem,
-        'frequency' : pDD.frequency,
-        'dose' : pDD.dose,
-        'doseUnit' : pDD.doseUnit,
-        'directionDuration' : pDD.directionDuration,
-        'form' : pDD.form,
-        'additionalInstruc' : pDD.additionalInstruc,
-        'substance' : pDD.substance
+        patientDict = {
+            'patientId': patient.id,
+            'name': patient.get_name,
+            'mobile': patient.mobile,
+            'address': patient.address,
+            'symptoms': patient.symptoms,
+            'todayDate': date.today(),
+            'assignedDoctorName': assignedDoctor[0].first_name,
+            'medicationItem': pDD.medicationItem,
+            'frequency': pDD.frequency,
+            'dose': pDD.dose,
+            'doseUnit': pDD.doseUnit,
+            'directionDuration': pDD.directionDuration,
+            'form': pDD.form,
+            'additionalInstruc': pDD.additionalInstruc,
+            'substance': pDD.substance
         }
         print(patientDict)
     else:
-        patientDict={
-            'patient':patient,
-            'patientId':request.user.id,
+        patientDict = {
+            'patient': patient,
+            'patientId': request.user.id,
         }
-    return render(request,'hospital/patient_final_prescription.html',context=patientDict)
+    return render(request, 'hospital/prescription_patient.html', context=patientDict)
 
 
 @login_required(login_url='doctorlogin')
@@ -284,12 +284,37 @@ def summary_patient_view(request, pk):
         'todayDate': date.today(),
         'assignedDoctorName': assignedDoctor[0].first_name,
         'allergy_substance': patient.allergy_substance,
-        'allergy_criticality':patient.allergy_criticality,
-        'problems_list':patient.problems_list,
-        'immunization':patient.immunization,
+        'allergy_criticality': patient.allergy_criticality,
+        'problems_list': patient.problems_list,
+        'immunization': patient.immunization,
         'history_procedure': patient.history_procedure,
         'past_history_of_illness': patient.past_history_of_illness,
-        'diagnostic_results' : patient.diagnostic_results
+        'diagnostic_results': patient.diagnostic_results
     }
-    
-    return render(request,'hospital/patient_summary.html',context=patientDict)
+
+    return render(request, 'hospital/patient_summary.html', context=patientDict)
+
+
+@login_required(login_url='patientlogin')
+@user_passes_test(is_patient)
+def patient_summary_view(request):
+    patient = models.Patient.objects.get(user_id=request.user.id)
+    assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
+    patientDict = {
+        'patientId': patient.user_id,
+        'name': patient.get_name,
+        'mobile': patient.mobile,
+        'address': patient.address,
+        'symptoms': patient.symptoms,
+        'todayDate': date.today(),
+        'assignedDoctorName': assignedDoctor[0].first_name,
+        'allergy_substance': patient.allergy_substance,
+        'allergy_criticality': patient.allergy_criticality,
+        'problems_list': patient.problems_list,
+        'immunization': patient.immunization,
+        'history_procedure': patient.history_procedure,
+        'past_history_of_illness': patient.past_history_of_illness,
+        'diagnostic_results': patient.diagnostic_results
+    }
+
+    return render(request, 'hospital/summary_patient.html', context=patientDict)
