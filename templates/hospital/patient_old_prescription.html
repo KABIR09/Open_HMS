@@ -1,0 +1,95 @@
+{% extends 'hospital/doctor_base.html' %}
+{% load static %}
+{% block content %}
+{% for m in pDD %}
+<div>
+<table>
+    <tr class="item">
+  <td>
+    Medication Item
+  </td>
+  <td>
+    {{m.medicationItem}}
+  </td>
+
+
+</tr>
+
+<tr class="item">
+  <td>
+    Frequency
+  </td>
+
+  <td>
+    {{m.frequency}}
+  </td>
+</tr>
+
+<tr class="item">
+  <td>
+    Dose
+  </td>
+
+  <td>
+    {{m.dose}}
+  </td>
+</tr>
+
+<tr class="item">
+  <td>
+    Dose unit
+  </td>
+
+  <td>
+    {{m.doseUnit}}
+  </td>
+</tr>
+<tr class="item">
+  <td>
+    Direction Duration
+  </td>
+
+  <td>
+    {{m.directionDuration}}
+  </td>
+</tr>
+<tr class="item">
+  <td>
+    Form
+  </td>
+
+  <td>
+    {{m.form}}
+  </td>
+</tr>
+<tr class="item">
+  <td>
+    Additional Instructions
+  </td>
+
+  <td>
+    {{m.additionalInstruc}}
+  </td>
+</tr>
+
+<tr class="item">
+  <td>
+    Substance
+  </td>
+
+  <td>
+    {{m.substance}}
+  </td>
+</tr>
+
+
+
+{% endfor %}
+
+ 
+
+</table>
+</div>
+
+
+{% endblock content %}
