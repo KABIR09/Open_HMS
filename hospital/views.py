@@ -269,14 +269,31 @@ def doctor_add_medicine_view(request, pk):
 
 
 
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def old_prescription_patient_view(request,pk):
+    patient = models.Patient.objects.get(id=pk)
+    # days=(date.today()-patient.admitDate) #2 days, 0:00:00
+    assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
+    # d=days.days # only how many day that is 2
+    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
+    
+    patientDict = {
+        'patientId': pk,
+        'name': patient.get_name,
+        'mobile': patient.mobile,
+        'address': patient.address,
+        'symptoms': patient.symptoms,
+        # 'admitDate': patient.admitDate,
+        # 'day':d,
+        'assignedDoctorName': assignedDoctor[0].first_name,
+        'pDD':pDD
+    }
+    return render(request, 'hospital/patient_old_prescription.html', context=patientDict)
 
 
 
-
-# shreyas edited this -for patient
-
-
-
+#edited this -for patient Group-G
 
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
