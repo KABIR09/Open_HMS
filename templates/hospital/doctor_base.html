@@ -15,6 +15,15 @@
 
 
   <style media="screen">
+
+.navbar-brand{
+  color: #000;
+}
+.navbar-brand:hover{
+  color: #fff;
+}
+
+
     a:link {
       text-decoration: none;
     }
@@ -35,7 +44,7 @@
     -----------------------------------------*/
     footer {
       padding: 0px 0px 0px 0px;
-      background-color: black;
+      background-color: rgba(0, 181, 204,0.8);
       margin: 0px;
     }
 
@@ -93,6 +102,7 @@
     body {
 
       padding-left: 240px;
+      position: fixed;
     }
     main {
       position: relative;
@@ -100,7 +110,7 @@
     }
 
     .menu {
-      background: #5bc995;
+      background: rgba(0, 181, 204,0.8);
       height: 100vh;
       width: 240px;
       position: fixed;
@@ -291,13 +301,13 @@
   <main>
     <!-- nav start -->
     <div class="bs-example">
-      <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background:#337AB7;">
-        <a href="/doctor-dashboard" class="navbar-brand">HOSPITAL MANAGEMENT</a>
+      <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background:rgba(0, 181, 204,0.8);">
+        <a class="navbar-brand" href="/" ><img src="{% static "images/logo.png" %}" width="80" height="40" style="position: absolute; top: 8px; bottom: 5px;" alt=""></a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-          <div class="navbar-nav" style=" margin-left: 90%;">
+          <div class="navbar-nav" style=" margin-left: 80%;">
 
             <a href="/logout" class="nav-item nav-link">Logout</a>
           </div>
@@ -311,19 +321,21 @@
     {% endblock content %}
     <!-- content end-->
     <br><br><br><br><br><br><br>
+    
     <footer>
-     
-      <br>
+    <br><br>
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12">
             <div style="color:#ffffff;" class="wow fadeInUp footer-copyright">
               <p>
-                Copyright &copy; 2022</p>
+                Copyright &copy; By Group-G </p>
+                
             </div>
           </div>
         </div>
       </div>
+      <br><br>
     </footer>
   </main>
   <!-- partial -->
