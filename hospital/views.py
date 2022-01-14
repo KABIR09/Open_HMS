@@ -161,10 +161,9 @@ def doctor_patient_search_view(request):
     }
     return render(request, 'hospital/doctor_patient.html', context=mydict)
 
-
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
-def prescription_patient_view(request, pk):
+def prescription_patient_view(request,pk):
     patient = models.Patient.objects.get(id=pk)
     # days=(date.today()-patient.admitDate) #2 days, 0:00:00
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
@@ -176,13 +175,22 @@ def prescription_patient_view(request, pk):
         'address': patient.address,
         'symptoms': patient.symptoms,
         # 'admitDate': patient.admitDate,
-        'todayDate': date.today(),
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
     }
+    return render(request, 'hospital/patient_generate_prescription.html', context=patientDict)
+
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def doctor_add_medicine_view(request, pk):
+    patient = models.Patient.objects.get(id=pk)
+    # days=(date.today()-patient.admitDate) #2 days, 0:00:00
+    #assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
+    # d=days.days # only how many day that is 2
+    patientDict={}
     if request.method == 'POST':
        
-        feeDict = {
+        patientDict = {
             
             'medicationItem' : request.POST['medicationItem'],
             'frequency' : request.POST['frequency'],
@@ -191,11 +199,12 @@ def prescription_patient_view(request, pk):
             'directionDuration' : request.POST['directionDuration'],
             'form' : request.POST['form'],
             'additionalInstruc' : request.POST['additionalInstruc'],
-            'substance' : request.POST['substance']
+            'substance' : request.POST['substance'],
+            'day':date.today()
 
         }
-        print("request.POST")
-        patientDict.update(feeDict)
+        
+        #patientDict.update(feeDict)
         # for updating to database patientDischargeDetails (pDD)
         pDD = models.PatientPrescriptionDetails()
         pDD.patientId = pk
@@ -207,6 +216,7 @@ def prescription_patient_view(request, pk):
         # pDD.admitDate=patient.admitDate
         # pDD.releaseDate=date.today()
         # pDD.daySpent=int(d)
+        pDD.date=date.today()
         pDD.medicationItem == request.POST['medicationItem']
         pDD.frequency = request.POST['frequency']
         pDD.dose = request.POST['dose']
@@ -220,6 +230,12 @@ def prescription_patient_view(request, pk):
     return render(request, 'hospital/patient_generate_prescription.html', context=patientDict)
 
 
+
+
+
+
+
+# shreyas edited this -for patient
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
 def patient_prescription_view(request):
@@ -234,7 +250,7 @@ def patient_prescription_view(request):
         'mobile': patient.mobile,
         'address': patient.address,
         'symptoms': patient.symptoms,
-        'todayDate': date.today(),
+        'date': pDD.date,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'medicationItem' : pDD.medicationItem,
         'frequency' : pDD.frequency,
