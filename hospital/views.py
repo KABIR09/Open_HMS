@@ -6,6 +6,13 @@ from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required, user_passes_test
 from datetime import datetime, timedelta, date
 from django.conf import settings
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.contrib.auth.models import User
+from django.contrib import messages
+
+
+
 
 # Create your views here.
 
@@ -41,6 +48,9 @@ def doctor_signup_view(request):
             doctor = doctor.save()
             my_doctor_group = Group.objects.get_or_create(name='DOCTOR')
             my_doctor_group[0].user_set.add(user)
+        else:
+            messages.error(request, "Doctor already exists!!")
+            return redirect('doctorsignup')
         return HttpResponseRedirect('doctorlogin')
     return render(request, 'hospital/doctorsignup.html', context=mydict)
 
@@ -123,6 +133,9 @@ def patient_signup_view(request):
             patient = patient.save()
             my_patient_group = Group.objects.get_or_create(name='PATIENT')
             my_patient_group[0].user_set.add(user)
+        else:
+            messages.error(request, "Patient already exists!!")
+            return redirect('patientsignup')
         return HttpResponseRedirect('patientlogin')
     return render(request, 'hospital/patientsignup.html', context=mydict)
 
