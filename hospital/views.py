@@ -15,6 +15,8 @@ def home_view(request):
     #     return HttpResponseRedirect('afterlogin')
     return render(request, 'hospital/index.html')
 
+def contactus_view(request):
+    return render(request, 'hospital/contactus.html')
 
 # for showing signup/login button for doctor
 def doctorclick_view(request):

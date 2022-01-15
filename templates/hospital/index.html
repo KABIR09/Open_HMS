@@ -142,7 +142,7 @@
     /* -------------------------------------------------------------
 Emergency
 ------------------------------------------------------------- */
-    /* .emergency-trigger {
+     .emergency-trigger {
       left: auto;
       position: absolute;
       right: 0;
@@ -171,7 +171,7 @@ Emergency
       z-index: 2
     }
 
-    .emergency-trigger-panel {
+    /* .emergency-trigger-panel {
       background: #c13434;
       border-radius: 0 0 10px 10px;
       bottom: 0;
@@ -187,8 +187,9 @@ Emergency
         border-radius: 0 10px 10px 0;
         position: absolute
       }
-    }
-
+    } */
+    
+    /*
     .emergency-trigger-close {
       background: #fff;
       border-radius: 50%;
@@ -222,60 +223,8 @@ Emergency
       display: flex !important
     }
 
-
-
-
-
-
-
-
-
-
  */
-
-
-    /*--------------------------------------------------------------
-# Contact
---------------------------------------------------------------*/
-    .contact-box {
-      color: #000;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(65, 76, 100, 0.05);
-      padding: 20px 0 30px 0;
-      background: rgba(0, 181, 204, 0.8);
-    }
-
-    .contact-box i {
-      font-size: 32px;
-      color: #fff;
-      border-radius: 50%;
-      padding: 8px;
-    }
-
-    .contact-box h3 {
-      font-size: 20px;
-      color: #000;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .contact-box p {
-      padding: 0;
-      line-height: 24px;
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-
-    .contact button {
-      background: rgba(0, 181, 204, 0.8);
-      border: none;
-      padding: 10px;
-    }
-
-    .contact button:hover {
-      background: rgba(0, 181, 204, 0.8);
-      color: #fff;
-    }
+    
   </style>
 </head>
 
@@ -294,20 +243,16 @@ Emergency
   <!-- End Hero -->
 
 
-
-
-
   <!-- ======Emergency====== -->
 
-
-
-<!-- 
-
   <div class="d-none d-lg-block emergency-trigger">
-    <button data-toggle-class-trigger="" data-toggle-class-target=".emergency-trigger" data-toggle-class="is-open"
-      type="button" class="d-none d-lg-block emergency-trigger-btn">
+       <a href="/contactus"><button type="button" data-toggle-class-trigger="" data-toggle-class-target=".emergency-trigger" 
+       class="d-none d-lg-block emergency-trigger-btn">
       e<br>m<br>e<br>r<br>g<br>e<br>n<br>c<br>y
-    </button>
+    </button></a>
+  </div>
+
+    <!--  data-toggle-class="is-open"
     <div class="emergency-trigger-panel d-flex align-items-center">
       <div class="row no-gutters w-100">
         <div class="col-6">
@@ -447,11 +392,10 @@ Emergency
   </section><!-- End Services Section -->
 
 
+  <!-- ======================================= -->
 
 
 
-
-  <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -462,6 +406,7 @@ Emergency
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  
   {% include "hospital/footer.html" %}
 
 </body>
