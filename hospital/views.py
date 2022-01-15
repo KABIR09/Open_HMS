@@ -170,11 +170,15 @@ def patient_dashboard_view(request):
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
 def doctor_patient_search_view(request):
-    # request.GET[‘fulltextarea’]
     mydict = {
         'patients': models.Patient.objects.all().filter(assignedDoctorId=request.user.id),
          'doctor': models.Doctor.objects.get(user_id=request.user.id),
     }
+    if request.method == 'POST':
+        mydict = {
+            'patients': models.Patient.objects.all().filter(assignedDoctorId=request.user.id,user_id = request.POST['patId']),
+            'doctor': models.Doctor.objects.get(user_id=request.user.id),
+        }
     return render(request, 'hospital/doctor_patient.html', context=mydict)
 
 @login_required(login_url='doctorlogin')
