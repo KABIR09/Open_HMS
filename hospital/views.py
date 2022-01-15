@@ -190,6 +190,7 @@ def new_prescription_patient_view(request,pk):
     # days=(date.today()-patient.admitDate) #2 days, 0:00:00
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     # d=days.days # only how many day that is 2
+    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
     
     patientDict = {
         'patientId': pk,
@@ -200,6 +201,9 @@ def new_prescription_patient_view(request,pk):
         # 'admitDate': patient.admitDate,
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
+        'pDD':pDD,
+        'todayDate':date.today(),
+        
     }
     return render(request, 'hospital/patient_new_prescription.html', context=patientDict)
 
@@ -238,7 +242,9 @@ def doctor_add_medicine_view(request, pk):
             'form' : request.POST['form'],
             'additionalInstruc' : request.POST['additionalInstruc'],
             'substance' : request.POST['substance'],
-            'day':date.today()
+            'date':date.today(),
+            'todayDate':date.today()
+
 
         }
         
@@ -255,7 +261,7 @@ def doctor_add_medicine_view(request, pk):
         # pDD.releaseDate=date.today()
         # pDD.daySpent=int(d)
         pDD.date=date.today()
-        pDD.medicationItem == request.POST['medicationItem']
+        pDD.medicationItem = request.POST['medicationItem']
         pDD.frequency = request.POST['frequency']
         pDD.dose = request.POST['dose']
         pDD.doseUnit = request.POST['doseUnit']
@@ -309,7 +315,7 @@ def patient_prescription_view(request):
             'mobile': patient.mobile,
             'address': patient.address,
             'symptoms': patient.symptoms,
-            'todayDate': date.today(),
+            'date': pDD.date,
             'assignedDoctorName': assignedDoctor[0].first_name,
             'medicationItem': pDD.medicationItem,
             'frequency': pDD.frequency,
