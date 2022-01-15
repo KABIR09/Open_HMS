@@ -9,8 +9,8 @@
   <style>
     .invoice-box {
       max-width: 800px;
-      margin: 100px 0 100px 0;
-      padding: 100px;
+      margin: auto;
+      padding: 30px;
       border: 1px solid #eee;
       box-shadow: 0 0 10px rgba(0, 0, 0, .15);
       font-size: 16px;
@@ -107,6 +107,17 @@
       text-align: center;
       display: block;
     }
+
+    .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-right: -235px;
+    margin-left: 65px;
+    }
+
   </style>
 </head>
 
@@ -121,7 +132,6 @@
               <h1>Hospital Management</h1>
             </td>
             <td>
-              Date of Prescription: {{todayDate}}<br>
             </td>
           </tr>
         </table>
@@ -135,7 +145,8 @@
             <td>
               Patient Name : {{name}}<br>
               Patient Contact : {{mobile}}<br>
-              Patient Addres : {{address}}<br>
+              Patient Address : {{address}}<br>
+              Patient ID : {{patientId}}<br>
             </td>
 
             <td>
@@ -163,102 +174,91 @@
         {{symptoms}}
       </td>
     </tr>
+
+
     <tr class="heading">
       <td>
-        Item
+        Allergy
       </td>
-
       <td>
-        Value
       </td>
     </tr>
-
-    <tr class="item">
+    <tr class="details">
       <td>
-        Medication Item
+        Allergy substance: {{allergy_substance}}
       </td>
       <td>
-        {{medicationItem}}
-      </td>
-
-      
-    </tr>
-
-    <tr class="item">
-      <td>
-        Frequency
-      </td>
-
-      <td>
-        {{frequency}}
+        Allergy criticality: {{allergy_criticality}}
       </td>
     </tr>
-
-    <tr class="item">
+    <tr class="heading">
       <td>
-        Dose
+        Diagnosed Problem
       </td>
-
       <td>
-        {{dose}}
       </td>
     </tr>
-
-    <tr class="item">
+    <tr class="details">
       <td>
-        Dose unit
-      </td>
-
-      <td>
-        {{doseUnit}}
+        {{problems_list}}
       </td>
     </tr>
-    <tr class="item">
-        <td>
-            Direction Duration
-        </td>
-  
-        <td>
-          {{directionDuration}}
-        </td>
-      </tr>
-      <tr class="item">
-        <td>
-          Form
-        </td>
-  
-        <td>
-          {{form}}
-        </td>
-      </tr>
-      <tr class="item">
-        <td>
-          Additional Instructions
-        </td>
-  
-        <td>
-          {{additionalInstruc}}
-        </td>
-      </tr>
-
-    <tr class="item">
+    <tr class="heading">
       <td>
-        Substance
+        Immunizations
       </td>
-
       <td>
-        {{substance}}
       </td>
     </tr>
-
-
-
+    <tr class="details">
+      <td>
+        {{immunization}}
+      </td>
+    </tr>
+    <tr class="heading">
+      <td>
+        History of Procedures
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr class="details">
+      <td>
+        {{history_procedure}}
+      </td>
+    </tr>
+    <tr class="heading">
+      <td>
+        Past History of Illness
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr class="details">
+      <td>
+        {{past_history_of_illness}}
+      </td>
+    </tr>
+    <tr class="heading">
+      <td>
+        Diagnostic Results
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr class="details">
+      <td>
+        <div class="row justify-content-center">
+          <a href="/static/{{diagnostic_results}}" target="_blank" class="btn btn-primary btn-lg active btn-block">View Document</a>
+        </div>
+      </td>
+    </tr>
 
     
 
   </table>
 </div>
-<br><br><br><br>
+<br><br>
 
 
 
