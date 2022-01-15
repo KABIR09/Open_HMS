@@ -37,7 +37,7 @@
         </tr>
       </table>
     </form>
-    <table class="table table-hover" id="dev-table">
+    <table class="table table-hover" id="dev-table" align="center">
       <thead>
         <tr>
           <th>Name</th>
@@ -53,13 +53,13 @@
       {% for p in patients %}
       <tr>
         <td> {{p.get_name}}</td>
-        <td> <img src="{% static p.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+        <td align="center"> <img src="{% static p.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
         <td>{{p.symptoms}}</td>
         <td>{{p.mobile}}</td>
         
-        <td><a class="btn btn-primary btn-xs" href="{% url 'new-prescription' p.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td align="center"><a class="btn btn-primary btn-xs" href="{% url 'new-prescription' p.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
         <td><a href="{% url 'old-prescription' p.id  %}" class="btn btn-danger active" role="button" aria-pressed="true">Prescription</a></td>
-        <td><a class="btn btn-primary btn-xs" href="{% url 'patient-summary' p.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td align="center"><a class="btn btn-primary btn-xs" href="{% url 'patient-summary' p.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
       </tr>
       {% endfor %}
     </table>
