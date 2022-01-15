@@ -335,7 +335,7 @@ def old_prescription_patient_view(request,pk):
     # days=(date.today()-patient.admitDate) #2 days, 0:00:00
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     # d=days.days # only how many day that is 2
-    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
+    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk).order_by('-date')
     
     patientDict = {
         'patientId': pk,
@@ -359,7 +359,7 @@ def old_prescription_patient_view(request,pk):
 def patient_prescription_view(request):
     patient = models.Patient.objects.get(user_id=request.user.id)
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=patient.id)
+    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=patient.id).order_by('-date')
     
     patientDict = {
         'patientId': patient.user_id,
