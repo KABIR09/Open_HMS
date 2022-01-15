@@ -46,6 +46,7 @@ urlpatterns = [
     path('add-medicine/<int:pk>',views.doctor_add_medicine_view,name='add-medicine'),
     
     path('new-prescription/<int:pk>',views.new_prescription_patient_view, name='new-prescription'),
-    path('old-prescription/<int:pk>',views.old_prescription_patient_view, name='old-prescription')
+    path('old-prescription/<int:pk>',views.old_prescription_patient_view, name='old-prescription'),
+    path('delete-medicine/<int:pk>/<int:mpk>',views.delete_medicine_view, name='delete-medicine')
 
 ]

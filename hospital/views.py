@@ -287,7 +287,47 @@ def doctor_add_medicine_view(request, pk):
     return render(request, 'hospital/doctor_add_medicine.html', context=patientDict)
 
 
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def delete_medicine_view(request,pk,mpk):
+# def post_delete_view(request,id):
+#     #post=Post.objects.filter(id=id)
+#     post=Post.objects.filter(id=id).first()
+#     if request.user==post.author:
+#         if request.method=='POST':
+#             post.delete()
+#             return redirect('posts:list')
+#         else:
+#             return render(request,'posts/delete.html')
+#     else:
+#         return redirect('posts:list')
+    delete_dict={
+        'patientId':pk
+    }
+    medicine = models.PatientPrescriptionDetails.objects.all().filter(pk=mpk)
+    if request.method=='POST':
+        medicine.delete()
+        patient = models.Patient.objects.get(id=pk)
+        # days=(date.today()-patient.admitDate) #2 days, 0:00:00
+        assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
+        # d=days.days # only how many day that is 2
+        pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
+        patientDict = {
+            'patientId': pk,
+            'name': patient.get_name,
+            'mobile': patient.mobile,
+            'address': patient.address,
+            'symptoms': patient.symptoms,
+            # 'admitDate': patient.admitDate,
+            # 'day':d,
+            'assignedDoctorName': assignedDoctor[0].first_name,
+            'pDD':pDD,
+            'todayDate':date.today()
+        }
+        return render(request, 'hospital/patient_new_prescription.html', context=patientDict)
 
+    return render(request,'hospital/doctor_delete_medicine.html',context=delete_dict)
+    
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
 def old_prescription_patient_view(request,pk):

@@ -1,0 +1,18 @@
+{% extends 'hospital/doctor_base.html' %}
+{% load static %}
+{% block content %}
+<div class="container px-5">
+    <div class="row">
+      <h1 class="display-4">Are you sure you want to delete?</h1>
+    </div>
+    <br>
+    <div class="row mr-2">
+      <form method ="POST">
+        {% csrf_token %}
+        <input type ="submit" value="Yes" class="btn btn-md btn-danger"/>
+      <form>
+      <a href="{% url 'new-prescription' patientId %}" class="btn btn-md btn-primary">No</a>
+    </div>
+  </div>
+
+{% endblock %}
