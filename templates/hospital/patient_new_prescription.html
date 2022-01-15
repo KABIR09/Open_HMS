@@ -106,7 +106,7 @@
   </style>
 </head>
 
-<br><br><br>
+<br>
 <div class="invoice-box">
   <table cellpadding="0" cellspacing="0">
     <tr class="top">
@@ -400,7 +400,7 @@
               <a href="{% url 'delete-medicine' patientId m.pk %}" class="btn btn-danger btn-lg active" role="button"aria-pressed="true">Delete Medicine</a>
             </td>
           </tr>
-          
+       
       {% endif %}
       
      
@@ -409,13 +409,11 @@
     {% endfor %}
 
 
-
-
     <a href="{% url 'add-medicine' patientId %}" class="btn btn-danger btn-lg active" role="button"
       aria-pressed="true">Add Medicine</a>
 
   </table>
 </div>
-
+<br> <br> <br>
 
 {% endblock content %}
