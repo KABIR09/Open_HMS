@@ -34,7 +34,7 @@ class Doctor(models.Model):
         return "{} ({})".format(self.user.first_name, self.department)
 
 
-criticality = [('Low', 'Low'), ('Intermediate','Intermediate'), ('High', 'High')]
+criticality = [('None','None'),('Low', 'Low'), ('Intermediate','Intermediate'), ('High', 'High')]
 
 
 class Patient(models.Model):
