@@ -13,7 +13,19 @@ from django.contrib import messages
 
 
 
-
+# safetyAmount
+# safetyDoseUnit
+# safetyAllowedPer
+# orderStatus
+# orderDateDisc
+# orderDateWritten
+# authRepeat
+# authValPer
+# dispInstruc
+# dispDescrip
+# dispAmount
+# dispAmountUnits
+# dispDurution
 # Create your views here.
 
 
@@ -259,7 +271,22 @@ def doctor_add_medicine_view(request, pk):
             'additionalInstruc' : request.POST['additionalInstruc'],
             'substance' : request.POST['substance'],
             'date':date.today(),
-            'todayDate':date.today()
+            'todayDate':date.today(),
+            'safetyAmount':request.POST['safetyAmount'],
+            'safetyDoseUnit':request.POST['safetyDoseUnit'],
+            'safetyAllowedPer':request.POST['safetyAllowedPer'],
+            'orderStatus':request.POST['orderStatus'],
+            'orderDateDisc':request.POST['orderDateDisc'],
+            'orderDateWritten':request.POST['orderDateWritten'],
+            'authRepeat':request.POST['authRepeat'],
+            'authValPer':request.POST['authValPer'],
+            'dispInstruc':request.POST['dispInstruc'],
+            'dispDescrip':request.POST['dispDescrip'],
+            'dispAmount':request.POST['dispAmount'],
+            'dispAmountUnits':request.POST['dispAmountUnits'],
+            'dispDurution':request.POST['dispDurution'],
+            
+
 
 
         }
@@ -285,6 +312,21 @@ def doctor_add_medicine_view(request, pk):
         pDD.form = request.POST['form']
         pDD.additionalInstruc = request.POST['additionalInstruc']
         pDD.substance = request.POST['substance']
+        pDD.safetyAmount=request.POST['safetyAmount']
+        pDD.safetyDoseUnit=request.POST['safetyDoseUnit']
+        pDD.safetyAllowedPer=request.POST['safetyAllowedPer']
+        pDD.orderStatus=request.POST['orderStatus']
+        pDD.orderDateDisc=request.POST['orderDateDisc']
+        pDD.orderDateWritten=request.POST['orderDateWritten']
+        pDD.authRepeat=request.POST['authRepeat']
+        pDD.authValPer=request.POST['authValPer']
+        pDD.dispInstruc=request.POST['dispInstruc']
+        pDD.dispDescrip=request.POST['dispDescrip']
+        pDD.dispAmount=request.POST['dispAmount']
+        pDD.dispAmountUnits=request.POST['dispAmountUnits']
+        pDD.dispDurution=request.POST['dispDurution']
+        
+        
         pDD.save()
         return render(request, 'hospital/patient_new_prescription.html', context=patientDict)
     return render(request, 'hospital/doctor_add_medicine.html', context=patientDict)
@@ -413,7 +455,7 @@ def patient_summary_view(request):
     patient = models.Patient.objects.get(user_id=request.user.id)
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     patientDict = {
-        'patientId': patient.user_id,
+        'patientId': patient.id,
         'name': patient.get_name,
         'mobile': patient.mobile,
         'address': patient.address,

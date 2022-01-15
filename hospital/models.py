@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime 
 
 # Create your models here.
 
@@ -67,6 +68,7 @@ class Patient(models.Model):
     def __str__(self):
         return self.user.first_name+" ("+self.symptoms+")"
 
+#status=[('Active','Active'),('Stopped','Stopped'),('Never active','Never active'),('Completed','Completed'),('Obsolete','Obsolete'),('Suspended','Suspended'),('Draft','Draft')]
 
 class PatientPrescriptionDetails(models.Model):
     patientId=models.PositiveIntegerField(null=True)
@@ -74,11 +76,32 @@ class PatientPrescriptionDetails(models.Model):
     frequency=models.PositiveIntegerField(null=False)
     dose=models.FloatField(null=False)
     doseUnit=models.CharField(max_length=100)
-    directionDuration=models.PositiveIntegerField(null=False)
+    directionDuration=models.CharField(max_length=200)
     form=models.CharField(max_length=100)
     additionalInstruc=models.CharField(max_length=400)
     substance=models.CharField(max_length=100)
     date=models.DateField(auto_now=True)
+
+    safetyAmount=models.PositiveIntegerField(null=False)
+    safetyDoseUnit=models.CharField(max_length=400)
+    safetyAllowedPer=models.CharField(max_length=400)
+    #orderStatus=models.CharField(max_length=20, choices=status, default='')
+    orderStatus=models.CharField(max_length=100)
+
+    orderDateDisc=models.DateTimeField(blank=True,default=datetime.now)
+    orderDateWritten=models.DateTimeField(blank=True,default=datetime.now)
+
+    authRepeat=models.PositiveIntegerField(null=False,blank=True)
+    authValPer=models.DateTimeField(blank=True,default=datetime.now)
+
+
+    dispInstruc=models.CharField(max_length=100,blank=True)
+    dispDescrip=models.CharField(max_length=100,blank=True)
+    dispAmount=models.PositiveIntegerField(null=False,blank=True)
+    dispAmountUnits=models.CharField(max_length=200,blank=True)
+    dispDurution=models.CharField(max_length=200,blank=True)
+
+
    
 
     @property

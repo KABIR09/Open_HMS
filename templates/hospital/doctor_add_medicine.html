@@ -1,6 +1,8 @@
 {% extends 'hospital/doctor_base.html' %}
 {% load static %}
 {% block content %}
+
+{% load widget_tweaks %}
 <form method="POST">
     {% csrf_token %}
 
@@ -33,7 +35,7 @@
             <input type="number" name="dose" placeholder="dose" value="">
         </td>
     </tr>
-    <tr class="item last">
+    <tr class="last">
         <td>
             Dose Unit
         </td>
@@ -43,7 +45,7 @@
         </td>
     </tr>
 
-    <tr class="item last">
+    <tr class="last">
         <td>
             Direction Duration
         </td>
@@ -53,7 +55,7 @@
         </td>
     </tr>
 
-    <tr class="item last">
+    <tr class="last">
         <td>
             Form
         </td>
@@ -63,7 +65,7 @@
         </td>
     </tr>
 
-    <tr class="item last">
+    <tr class="last">
         <td>
             Additional Instruction
         </td>
@@ -73,13 +75,167 @@
         </td>
     </tr>
 
-    <tr class="item last">
+    <tr class="last">
         <td>
             Substance
         </td>
 
         <td>
             <input type="text" name="substance" placeholder="Substance" value="">
+        </td>
+    </tr>
+
+    <tr class="last">
+        <td>
+            <b>Medication safety </b> <br>
+            <b>maxDosePerPeriod</b>
+        </td>
+        <td>
+            Maximum amount
+        </td>
+        
+        <td>
+            <input type="text" name="safetyAmount" placeholder="Maximum Amount" value="">
+        </td>
+    </tr>
+    <tr class="last">
+       
+        <td>
+            Maximum amount dose unit 
+        </td>
+
+
+        <td>
+            <input type="text" name="safetyDoseUnit" placeholder="Substance" value="">
+        </td>
+    </tr>
+    <tr class="last">
+      
+        <td>
+            Allowed period
+        </td>
+
+
+        <td>
+            <input type="text" name="safetyAllowedPer" placeholder="Substance" value="">
+        </td>
+    </tr>
+
+    <tr class="last">
+        <td>
+            <b>Order details</b><br>
+            <b>Course summary</b>
+        </td>
+        <td>
+            Status
+        </td>
+
+        <td>
+                   
+            <select name="orderStatus" >
+                <option value="Active">Active</option>
+                <option value="Stopped">Stopped</option>
+                <option value="Never active">Never active</option>
+                <option value="Completed">Completed</option>
+                <option value="Obsolete">Obsolete</option>
+                <option value="Suspended">Suspended</option>
+                <option value="Draft">Draft</option>
+
+            </select>
+
+        </td>
+    </tr>
+
+    <tr class="last">
+        <td>
+            Date discontinued
+        </td>
+
+        <td>
+            <input type="datetime-local" name="orderDateDisc" placeholder="Substance" value="">
+        </td>
+    </tr>
+    <tr class="last">
+        <td>
+            Date written
+        </td>
+
+        <td>
+            <input type="datetime-local" name="orderDateWritten" placeholder="Substance" value="">
+        </td>
+    </tr>
+ 
+    <tr class="last">
+        <td>
+            <b>Authorisation details</b>
+        </td>
+        <td>
+            numberOfRepeatsAllowed
+        </td>
+
+        <td>
+            <input type="number" name="authRepeat" placeholder="" value="">
+        </td>
+    </tr>
+    <tr class="last">
+        <td>
+            validityPeriod
+        </td>
+
+        <td>
+            <input type="datetime-local" name="authValPer" placeholder="" value="">
+        </td>
+    </tr>
+    <tr class="last">
+        <td>
+            <b>Dispense directions</b> 
+        </td>
+        <td>
+            Dispense instruction
+        </td>
+
+        <td>
+            <input type="text" name="dispInstruc" placeholder="" value="">
+        </td>
+    </tr>
+
+    <tr class="last">
+        <td>
+             <b>Dispense amount</b>  
+        </td>
+        <td>
+            Amount description
+        </td>
+
+        <td>
+            <input type="text" name="dispDescrip" placeholder="" value="">
+        </td>
+    </tr>
+    <tr class="last">
+        <td>
+            Amount
+        </td>
+
+        <td>
+            <input type="number" name="dispAmount" placeholder="" value="">
+        </td>
+    </tr>
+    <tr class="last">
+        <td>
+            Units
+        </td>
+
+        <td>
+            <input type="text" name="dispAmountUnits" placeholder="" value="">
+        </td>
+    </tr>
+    <tr class="last">
+        <td>
+            Duration of supply
+        </td>
+
+        <td>
+            <input type="text" name="dispDurution" placeholder="" value="">
         </td>
     </tr>
 

@@ -35,6 +35,61 @@
             <td>
               Substance
             </td>
+            <td>
+              <b> Medication safety</b>
+            </td>
+            <td>
+              Maximum amount
+            </td>
+            <td>
+              Maximum amount dose unit
+            </td>
+            <td>
+              Allowed period
+            </td>
+            <td>
+              <b>Order details</b>
+            </td>
+            <td>
+              Status
+            </td>
+            <td>
+              Date discontinued
+            </td>
+            <td>
+              Date written
+            </td>
+            <td>
+              <b>Authorisation details</b>
+            </td>
+            <td>
+              numberOfRepeatsAllowed
+            </td>
+            <td>
+              validityPeriod
+            </td>
+            <td>
+              <b> Dispense directions</b>
+            </td>
+            <td>
+              Dispense instruction
+            </td>
+            <td>
+            Amount description
+            </td>
+            <td>
+              Dispense amount
+            </td>
+            <td>
+              Amount 
+            </td>
+            <td>
+              Units
+            </td>
+            <td>
+              Duration of Supply
+            </td>
+
           </tr>
           <tr class="details">
             <td>
@@ -64,6 +119,60 @@
             <td>
               {{m.substance}}
             </td>
+            <td>
+
+            </td>
+            <td>
+              {{m.safetyAmount}}
+            </td>
+            <td>
+              {{m.safetyDoseUnit}}
+            </td>
+            <td>
+              {{m.safetyAllowedPer}}
+            </td>
+            <td>
+
+            </td>
+            <td>
+              {{m.orderStatus}}
+            </td>
+            <td>
+              {{m.orderDateDisc}}
+            </td>
+            <td>
+              {{m.orderDateWritten}}
+            </td>
+            <td>
+
+            </td>
+            <td>
+              {{m.authRepeat}}
+            </td>
+            <td>
+              {{m.authValPer}}
+            </td>
+            <td>
+
+            </td>
+            <td>
+              {{m.dispInstruc}}
+            </td>
+            <td>
+            {{m.dispDescrip}}
+            </td>
+            <td>
+              {{m.dispAmount}}
+            </td>
+            <td>
+              {{m.dispAmountUnits}}
+            </td>
+            <td>
+              {{m.dispDurution}}
+            </td>
+
+
+            
           </tr>
 
           {% endfor %}
