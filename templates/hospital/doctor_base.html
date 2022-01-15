@@ -39,63 +39,17 @@
 
 
 
-    /*---------------------------------------
-       Social section
-    -----------------------------------------*/
-    footer {
-      padding: 0px 0px 0px 0px;
-      background-color: rgba(0, 181, 204,0.8);
-      margin: 0px;
-    }
-
-
-    #ftr {
-
-      padding: 20px;
-    }
-
-    .fa {
-
-      font-size: 23px;
-      width: 60px;
-      text-align: center;
-      text-decoration: none;
-      margin: 5px 2px;
-      border-radius: 50%;
-    }
-
-    .fa:hover {
-      opacity: 0.5;
-      text-decoration: none;
-    }
-
-    .fa-facebook {
-      background: #3B5998;
-      color: white;
-      margin-top: 30px;
-    }
-
-    .fa-whatsapp {
-      background: #25d366;
-      color: white;
-    }
-
-    .fa-twitter {
-      background: #55ACEE;
-      color: white;
-    }
-
-    .fa-instagram {
-      background: #125688;
-      color: white;
-    }
-
-    p {
-      text-align: center;
-
-    }
-
-
+.footer {
+  position: fixed;
+  padding: 20px 250px 0px 0px;
+  left: 240px;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 181, 204,0.8);
+  color: white;
+  text-align: center;
+  height: 65px;
+}
 
 
 
@@ -106,9 +60,9 @@
     }
     main {
       position: relative;
-     width: 80vw;
-      height: 100vh;
-      overflow: scroll;
+      width: 82vw;
+       height: 100vh;
+      overflow-y: scroll;
       
     }
 
@@ -298,7 +252,6 @@
     <ul>
       <li tabindex="0" class="icon-dashboard"> <a style="color:white; text-decoration:none;" href="/doctor-dashboard"><span>Dashboard</span></a> </li>
       <li tabindex="0" class="icon-users"> <a style="color:white; text-decoration:none;" href="/doctor-patient-search"><span>Patient</span></a></li>
-      <li tabindex="0" class="icon-calendar"> <a style="color:white; text-decoration:none;" href="/doctor-appointment"><span>Appointments</span></a></li>
     </ul>
   </nav>
   <main>
@@ -310,7 +263,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-          <div class="navbar-nav" style=" margin-left: 80%;">
+          <div class="navbar-nav" style=" margin-left: 90%;">
 
             <a href="/logout" class="nav-item nav-link">Logout</a>
           </div>
@@ -323,9 +276,9 @@
     {% block content %}
     {% endblock content %}
     <!-- content end-->
-    <br><br><br><br><br><br><br>
     
-    <footer>
+    
+    <!-- <footer>
     <br><br>
       <div class="container">
         <div class="row">
@@ -339,7 +292,11 @@
         </div>
       </div>
       <br><br>
-    </footer>
+    </footer> -->
+    <div class="footer">
+      <p>
+        Copyright &copy; By Group-G </p>
+    </div>
   </main>
   <!-- partial -->
 </body>
