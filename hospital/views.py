@@ -305,33 +305,20 @@ def old_prescription_patient_view(request,pk):
 @user_passes_test(is_patient)
 def patient_prescription_view(request):
     patient = models.Patient.objects.get(user_id=request.user.id)
-    pDD = models.PatientPrescriptionDetails.objects.get(patientId=patient.id)
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-    patientDict = None
-    if pDD:
-        patientDict = {
-            'patientId': patient.id,
-            'name': patient.get_name,
-            'mobile': patient.mobile,
-            'address': patient.address,
-            'symptoms': patient.symptoms,
-            'date': pDD.date,
-            'assignedDoctorName': assignedDoctor[0].first_name,
-            'medicationItem': pDD.medicationItem,
-            'frequency': pDD.frequency,
-            'dose': pDD.dose,
-            'doseUnit': pDD.doseUnit,
-            'directionDuration': pDD.directionDuration,
-            'form': pDD.form,
-            'additionalInstruc': pDD.additionalInstruc,
-            'substance': pDD.substance
-        }
-        print(patientDict)
-    else:
-        patientDict = {
-            'patient': patient,
-            'patientId': request.user.id,
-        }
+    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=patient.id)
+    
+    patientDict = {
+        'patientId': patient.user_id,
+        'name': patient.get_name,
+        'mobile': patient.mobile,
+        'address': patient.address,
+        'symptoms': patient.symptoms,
+        # 'admitDate': patient.admitDate,
+        # 'day':d,
+        'assignedDoctorName': assignedDoctor[0].first_name,
+        'pDD':pDD
+    }
     return render(request, 'hospital/prescription_patient.html', context=patientDict)
 
 
