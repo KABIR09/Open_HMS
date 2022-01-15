@@ -49,7 +49,7 @@ def doctor_signup_view(request):
             my_doctor_group = Group.objects.get_or_create(name='DOCTOR')
             my_doctor_group[0].user_set.add(user)
         else:
-            messages.error(request, "Doctor already exists!!")
+            messages.error(request, "Doctor Already Exists!!")
             return redirect('doctorsignup')
         return HttpResponseRedirect('doctorlogin')
     return render(request, 'hospital/doctorsignup.html', context=mydict)
@@ -134,7 +134,7 @@ def patient_signup_view(request):
             my_patient_group = Group.objects.get_or_create(name='PATIENT')
             my_patient_group[0].user_set.add(user)
         else:
-            messages.error(request, "Patient already exists!!")
+            messages.error(request, "Patient Already Exists!!!")
             return redirect('patientsignup')
         return HttpResponseRedirect('patientlogin')
     return render(request, 'hospital/patientsignup.html', context=mydict)
