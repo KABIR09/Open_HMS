@@ -242,7 +242,9 @@ def doctor_add_medicine_view(request, pk):
             'form' : request.POST['form'],
             'additionalInstruc' : request.POST['additionalInstruc'],
             'substance' : request.POST['substance'],
-            'date':date.today()
+            'date':date.today(),
+            'todayDate':date.today()
+
 
         }
         
