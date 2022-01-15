@@ -359,7 +359,7 @@ def old_prescription_patient_view(request,pk):
 def patient_prescription_view(request):
     patient = models.Patient.objects.get(user_id=request.user.id)
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=patient.id)
+    pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=patient.id).order_by('-date')
     
     patientDict = {
         'patientId': patient.user_id,
