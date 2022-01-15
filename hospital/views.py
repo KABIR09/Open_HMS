@@ -172,7 +172,8 @@ def patient_dashboard_view(request):
 def doctor_patient_search_view(request):
     # request.GET[‘fulltextarea’]
     mydict = {
-        'patients': models.Patient.objects.all().filter(assignedDoctorId=request.user.id)
+        'patients': models.Patient.objects.all().filter(assignedDoctorId=request.user.id),
+         'doctor': models.Doctor.objects.get(user_id=request.user.id),
     }
     return render(request, 'hospital/doctor_patient.html', context=mydict)
 
@@ -216,7 +217,8 @@ def new_prescription_patient_view(request,pk):
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD':pDD,
-        'todayDate':date.today()
+        'todayDate':date.today(),
+         'doctor': models.Doctor.objects.get(user_id=request.user.id),
     }
     return render(request, 'hospital/patient_new_prescription.html', context=patientDict)
 
@@ -240,7 +242,8 @@ def doctor_add_medicine_view(request, pk):
         # 'admitDate': patient.admitDate,
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
-        'pDD':pDD0
+        'pDD':pDD0,
+         'doctor': models.Doctor.objects.get(user_id=request.user.id),
     }
 
     if request.method == 'POST':
@@ -302,7 +305,8 @@ def delete_medicine_view(request,pk,mpk):
 #     else:
 #         return redirect('posts:list')
     delete_dict={
-        'patientId':pk
+        'patientId':pk,
+        'doctor': models.Doctor.objects.get(user_id=request.user.id),
     }
     medicine = models.PatientPrescriptionDetails.objects.all().filter(pk=mpk)
     if request.method=='POST':
@@ -322,7 +326,8 @@ def delete_medicine_view(request,pk,mpk):
             # 'day':d,
             'assignedDoctorName': assignedDoctor[0].first_name,
             'pDD':pDD,
-            'todayDate':date.today()
+            'todayDate':date.today(),
+             'doctor': models.Doctor.objects.get(user_id=request.user.id),
         }
         return render(request, 'hospital/patient_new_prescription.html', context=patientDict)
 
@@ -381,6 +386,7 @@ def summary_patient_view(request, pk):
     patient = models.Patient.objects.get(id=pk)
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     patientDict = {
+        'doctor': models.Doctor.objects.get(user_id=request.user.id),
         'patientId': pk,
         'name': patient.get_name,
         'mobile': patient.mobile,
@@ -411,6 +417,7 @@ def patient_summary_view(request):
         'mobile': patient.mobile,
         'address': patient.address,
         'symptoms': patient.symptoms,
+        
         'todayDate': date.today(),
         'assignedDoctorName': assignedDoctor[0].first_name,
         'allergy_substance': patient.allergy_substance,
