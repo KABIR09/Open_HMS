@@ -30,7 +30,7 @@ urlpatterns = [
     path('doctor-dashboard', views.doctor_dashboard_view,name='doctor-dashboard'),
     path('logout', LogoutView.as_view(template_name='hospital/index.html'),name='logout'),
     path('patientclick', views.patientclick_view),
-    path('patientsignup', views.patient_signup_view),
+    path('patientsignup', views.patient_signup_view,name='patientsignup'),
     path('patientlogin', LoginView.as_view(template_name='hospital/patientlogin.html')),
     path('patient-dashboard', views.patient_dashboard_view,name='patient-dashboard'),
 
