@@ -191,7 +191,6 @@ def new_prescription_patient_view(request,pk):
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     # d=days.days # only how many day that is 2
     pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
-    
     patientDict = {
         'patientId': pk,
         'name': patient.get_name,
@@ -202,8 +201,7 @@ def new_prescription_patient_view(request,pk):
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD':pDD,
-        'todayDate':date.today(),
-        
+        'todayDate':date.today()
     }
     return render(request, 'hospital/patient_new_prescription.html', context=patientDict)
 
