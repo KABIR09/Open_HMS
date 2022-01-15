@@ -375,7 +375,8 @@ def patient_prescription_view(request):
         # 'admitDate': patient.admitDate,
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
-        'pDD':pDD
+        'pDD':pDD,
+        'patient': models.Patient.objects.get(user_id=request.user.id),
     }
     return render(request, 'hospital/prescription_patient.html', context=patientDict)
 
@@ -426,7 +427,8 @@ def patient_summary_view(request):
         'immunization': patient.immunization,
         'history_procedure': patient.history_procedure,
         'past_history_of_illness': patient.past_history_of_illness,
-        'diagnostic_results': patient.diagnostic_results
+        'diagnostic_results': patient.diagnostic_results,
+        'patient': models.Patient.objects.get(user_id=request.user.id),
     }
 
     return render(request, 'hospital/summary_patient.html', context=patientDict)
