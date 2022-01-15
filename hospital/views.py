@@ -283,7 +283,7 @@ def doctor_add_medicine_view(request, pk):
         pDD.additionalInstruc = request.POST['additionalInstruc']
         pDD.substance = request.POST['substance']
         pDD.save()
-        return render(request, 'hospital/patient_generate_prescription.html', context=patientDict)
+        return render(request, 'hospital/patient_new_prescription.html', context=patientDict)
     return render(request, 'hospital/doctor_add_medicine.html', context=patientDict)
 
 
