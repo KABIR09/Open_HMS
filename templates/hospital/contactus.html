@@ -12,7 +12,10 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-      
+            <!-- Favicon Icon -->
+    <link rel="icon" type="image/x-icon" href="images/faviconf.png" />
+    <!-- Google web Font -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,500">
       
     
       
@@ -24,10 +27,10 @@
         {% include "hospital/navbar.html" %}
 
         <div class="layer-ttl">
-            <h1 style="padding-top: 2em;"><span style="color:#3A2A97;"><u>CONTACT </u></span><u> <span style="color:#7FC800" ;=""><u>US</u></span></u></h1>
+            <h1 style="padding-top: 2.5em; font-family: Montserrat, sans-serif;"><span style="color:#3A2A97;"><u>CONTACT </u></span><u> <span style="color:#7FC800" ;=""><u>US</u></span></u></h1>
         </div>
-
-        <div id="contact-page" class="layer-stretch">
+        <br>
+        <div id="contact-page" class="layer-stretch" style="padding-top: 1em">
             <div class="layer-wrapper">
                 <div class="row text-center">
                     <div class="col-md-6 col-lg-3 contact-info-block">
@@ -35,8 +38,7 @@
                             <i class="fa fa-plus-square-o"></i>
                             <br>
                             <br>
-                            <span style="font-weight: bold;">Appointment</span>
-                            <br>
+                            <span>Appointment</span>
                             <br>
                             <p class="paragraph-medium paragraph-black">0120-2842300</p>
                             <p>wecare123@gmail.com</p>
@@ -47,12 +49,10 @@
                             <i class="fa fa-phone"></i>
                             <br>
                             <br>
-                            <span style="font-weight: bold;">Call Us</span>
-                            <br>
+                            <span>Call Us</span>
                             <br>
                             <p>98115-78097</p>
                             <p>78350-68686</p>
-                            <p>0120-2842300</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3 contact-info-block">
@@ -60,11 +60,10 @@
                             <i class="fa fa-envelope"></i>
                             <br>
                             <br>
-                            <span style="font-weight: bold;">Email Us</span>
+                            <span>Email Us</span>
                             <br>
-                            <br>
-                            <p class="paragraph-medium paragraph-black">wecare123@gmail.com </p>
-                        
+                            <p class="paragraph-medium paragraph-black">wecare123@gmail.com </p> 
+                            <p>openEHR7@gmail.com</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3 contact-info-block">
@@ -72,8 +71,7 @@
                             <i class="fa fa-map-marker"></i>
                             <br>
                             <br>
-                            <span style="font-weight: bold;">Location</span>
-                            <br>
+                            <span>Location</span>
                             <br>
                             <p class="paragraph-medium paragraph-black">Block A, Central Delhi</p>
                             <p class="paragraph-medium paragraph-black">Delhi</p>
@@ -84,6 +82,18 @@
         </div> 
 
         <style>
+            /* body {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                line-height: 1.6;
+                padding: 0;
+                font-family: "Montserrat", sans-serif;
+                font-size: 12px;
+                background-color: #FFF;
+                text-rendering: optimizeLegibility !important;
+                -webkit-font-smoothing: antialiased !important;
+            } */
             u {
                 text-decoration: underline;
             }
@@ -95,6 +105,14 @@
             }
             p, span {
                 line-height: 1.6;
+            }
+            p {
+                font-size: 15px;
+                font-family: "Montserrat", sans-serif;
+            } 
+            span {
+                font-family: "Montserrat", sans-serif;
+                font-weight: bold;
             }
             h1 {
                 font-size: 36px;
@@ -135,6 +153,14 @@
                 border: 1px solid #CCC;
                 border-top: 4px solid #CCC;
                 border-radius: 2px;
+            }
+            .contact-info-inner span {
+                position: relative;
+                display: block;
+                font-size: 22px;
+                color: #333;
+                padding: 20px 0;
+                text-transform: uppercase;
             }
             .contact-info-inner .fa {
                 width: 80px;
