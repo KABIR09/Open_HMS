@@ -5,251 +5,10 @@
 {% load widget_tweaks %}
 <form method="POST">
     {% csrf_token %}
-
-    <tr class="item">
-        <td>
-            Medication Item
-        </td>
-
-        <td>
-            <input type="text" name="medicationItem" placeholder="Medicine" value="">
-        </td>
-    </tr>
-
-    <tr class="item">
-        <td>
-            Frequency
-        </td>
-
-        <td>
-            <input type="number" name="frequency" placeholder="Frequency" value="">
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-            Dose
-        </td>
-
-        <td>
-            <input type="number" name="dose" placeholder="dose" value="">
-        </td>
-    </tr>
-    <tr class="last">
-        <td>
-            Dose Unit
-        </td>
-
-        <td>
-            <input type="text" name="doseUnit" placeholder="Dose Unit" value="">
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-            Direction Duration
-        </td>
-
-        <td>
-            <input type="text" name="directionDuration" placeholder="Direction Duration" value="">
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-            Form
-        </td>
-
-        <td>
-            <input type="text" name="form" placeholder="Form" value="">
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-            Additional Instruction
-        </td>
-
-        <td>
-            <input type="text" name="additionalInstruc" placeholder="Additional Instruction" value="">
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-            Substance
-        </td>
-
-        <td>
-            <input type="text" name="substance" placeholder="Substance" value="">
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-            <b>Medication safety </b> <br>
-            <b>maxDosePerPeriod</b>
-        </td>
-        <td>
-            Maximum amount
-        </td>
-        
-        <td>
-            <input type="text" name="safetyAmount" placeholder="Maximum Amount" value="">
-        </td>
-    </tr>
-    <tr class="last">
-       
-        <td>
-            Maximum amount dose unit 
-        </td>
-
-
-        <td>
-            <input type="text" name="safetyDoseUnit" placeholder="Substance" value="">
-        </td>
-    </tr>
-    <tr class="last">
-      
-        <td>
-            Allowed period
-        </td>
-
-
-        <td>
-            <input type="text" name="safetyAllowedPer" placeholder="Substance" value="">
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-            <b>Order details</b><br>
-            <b>Course summary</b>
-        </td>
-        <td>
-            Status
-        </td>
-
-        <td>
-                   
-            <select name="orderStatus" >
-                <option value="Active">Active</option>
-                <option value="Stopped">Stopped</option>
-                <option value="Never active">Never active</option>
-                <option value="Completed">Completed</option>
-                <option value="Obsolete">Obsolete</option>
-                <option value="Suspended">Suspended</option>
-                <option value="Draft">Draft</option>
-
-            </select>
-
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-            Date discontinued
-        </td>
-
-        <td>
-            <input type="datetime-local" name="orderDateDisc" placeholder="Substance" value="">
-        </td>
-    </tr>
-    <tr class="last">
-        <td>
-            Date written
-        </td>
-
-        <td>
-            <input type="datetime-local" name="orderDateWritten" placeholder="Substance" value="">
-        </td>
-    </tr>
- 
-    <tr class="last">
-        <td>
-            <b>Authorisation details</b>
-        </td>
-        <td>
-            numberOfRepeatsAllowed
-        </td>
-
-        <td>
-            <input type="number" name="authRepeat" placeholder="" value="">
-        </td>
-    </tr>
-    <tr class="last">
-        <td>
-            validityPeriod
-        </td>
-
-        <td>
-            <input type="datetime-local" name="authValPer" placeholder="" value="">
-        </td>
-    </tr>
-    <tr class="last">
-        <td>
-            <b>Dispense directions</b> 
-        </td>
-        <td>
-            Dispense instruction
-        </td>
-
-        <td>
-            <input type="text" name="dispInstruc" placeholder="" value="">
-        </td>
-    </tr>
-
-    <tr class="last">
-        <td>
-             <b>Dispense amount</b>  
-        </td>
-        <td>
-            Amount description
-        </td>
-
-        <td>
-            <input type="text" name="dispDescrip" placeholder="" value="">
-        </td>
-    </tr>
-    <tr class="last">
-        <td>
-            Amount
-        </td>
-
-        <td>
-            <input type="number" name="dispAmount" placeholder="" value="">
-        </td>
-    </tr>
-    <tr class="last">
-        <td>
-            Units
-        </td>
-
-        <td>
-            <input type="text" name="dispAmountUnits" placeholder="" value="">
-        </td>
-    </tr>
-    <tr class="last">
-        <td>
-            Duration of supply
-        </td>
-
-        <td>
-            <input type="text" name="dispDurution" placeholder="" value="">
-        </td>
-    </tr>
-
-
-    <tr class="total">
-        <td></td>
-
-        <td>
-            <input type="submit" name="submit" value="Add">
-
-        </td>
-    </tr>
-
     <!-- On tables -->
+    <br>
+    <h2 style="text-align: center; color: brown; font-weight: bold;">Add New Medicine</h2>
+
     <table class="table-info">
         <tr class="table-info">
             <tr>
@@ -257,52 +16,47 @@
                     Medication Item
                 </td>
                 <td>
-                    <input type="text" name="medicationItem" required placeholder="Medicine Name" value="">
+                    <input type="text" required name="medicationItem" required placeholder="Medicine Name" value="">
                 </td>
             </tr>
             <tr>
                 <td class="table-info">
                     Frequency
                 </td>
-        
                 <td>
-                    <input type="number" name="frequency" required placeholder="Frequency" value="">
+                    <input type="number" required name="frequency" required placeholder="Frequency" value="">
                 </td>
             </tr>
             <tr>
                 <td class="table-info">
                     Dose
                 </td>
-        
                 <td>
-                    <input type="number" name="dose" required placeholder="Dose" value="">
+                    <input type="number" required name="dose" required placeholder="Dose" value="">
                 </td>
             </tr>
             <tr>
                 <td class="table-info"> 
                     Dose Unit
                 </td>
-        
                 <td>
-                    <input type="text" name="doseUnit" required placeholder="Dose Unit" value="">
+                    <input type="text" required name="doseUnit" required placeholder="Dose Unit" value="">
                 </td>
             </tr>
             <tr>
                 <td class="table-info">
                     Direction Duration
                 </td>
-        
                 <td>
-                    <input type="text" name="directionDuration" required placeholder="Direction Duration" value="">
+                    <input type="text" required name="directionDuration" required placeholder="Direction Duration" value="">
                 </td>
             </tr>
             <tr>
                 <td class="table-info">
                     Form
                 </td>
-        
                 <td>
-                    <input type="text" name="form" required placeholder="Form" value="">
+                    <input type="text" required name="form" required placeholder="Form" value="">
                 </td>
             </tr>
             <tr>
@@ -310,16 +64,161 @@
                     Additional Instructions
                 </td>
                 <td>
-                    <input type="text" name="additionalInstruc" required placeholder="Additional Instructions" value="">
+                    <input type="text" required name="additionalInstruc" required placeholder="Additional Instructions" value="">
                 </td>
             </tr>
             <tr>
                 <td class="table-info">
                     Substance
                 </td>
-        
                 <td>
-                    <input type="text" name="substance" required placeholder="Substance" value="">
+                    <input type="text" required name="substance" required placeholder="Substance" value="">
+                </td>
+            </tr>
+            <tr class="last">
+                <td class="table-info">
+                    <b>Medication safety </b> 
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    <b>maxDosePerPeriod</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Maximum Amount
+                </td>
+                <td>
+                    <input type="text" required name="safetyAmount" placeholder="Maximum Amount" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Maximum amount dose unit 
+                </td>
+                <td>
+                    <input type="text" required name="safetyDoseUnit" placeholder="Substance" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Allowed period
+                </td>
+                <td>
+                    <input type="text" required name="safetyAllowedPer" placeholder="Substance" value="">
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="table-info">
+                    <b>Order details</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info"> 
+                    <b>Course summary</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Status
+                </td>
+                <td>     
+                    <select required name="orderStatus" >
+                        <option value="Active">Active</option>
+                        <option value="Stopped">Stopped</option>
+                        <option value="Never active">Never active</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Obsolete">Obsolete</option>
+                        <option value="Suspended">Suspended</option>
+                        <option value="Draft">Draft</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Date discontinued
+                </td>
+                <td> 
+                    <input type="datetime-local" required name="orderDateDisc" placeholder="Substance" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Date written
+                </td>
+                <td>
+                    <input type="datetime-local" required name="orderDateWritten" placeholder="Substance" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    <b>Authorisation details</b>
+                </td>
+            <tr>
+                <td class="table-info">
+                    numberOfRepeatsAllowed
+                </td>
+                <td>
+                    <input type="number" required name="authRepeat" placeholder="" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    validityPeriod
+                </td>
+                <td>
+                    <input type="datetime-local" required name="authValPer" placeholder="" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    <b>Dispense directions</b> 
+                </td>
+            <tr>
+                <td class="table-info">
+                    Dispense instruction
+                </td>
+                <td>
+                    <input type="text" required name="dispInstruc" placeholder="" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                     <b>Dispense amount</b>  
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Amount description
+                </td>
+                <td>
+                    <input type="text" required name="dispDescrip" placeholder="" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Amount
+                </td>
+                <td>
+                    <input type="number" required name="dispAmount" placeholder="" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Units
+                </td>
+                <td>
+                    <input type="text" required name="dispAmountUnits" placeholder="" value="">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Duration of supply
+                </td>
+                <td>
+                    <input type="text" required name="dispDurution" placeholder="" value="">
                 </td>
             </tr>
         </tr>
@@ -327,14 +226,14 @@
 
     <center>
         <input type="submit" value="Add" name="submit" class="btn btn-lg btn-warning"></button>
-        <!-- <input type="submit" name="submit" value="Add" style="background-color: #c13434;border-radius: 3px solid #c13434; height: 40px; width: 80px; border-radius: 10px;"> -->
     </center>
-
 
     <style>
         .table-info {
         margin-left: auto;
         margin-right: auto;
+        padding-left: 50px;
+        padding-right: 60px;
         }
         .btn-lg {
             margin-top: 10px;
@@ -344,5 +243,6 @@
 
 </form>
 
+<br><br><br><br>
 
 {% endblock content %}
