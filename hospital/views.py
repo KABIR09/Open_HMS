@@ -98,7 +98,7 @@ def afterlogin_view(request):
 @user_passes_test(is_doctor)
 def doctor_dashboard_view(request):
     # #for three cards
-    # patientcount=models.Patient.objects.all().filter(status=True,assignedDoctorId=request.user.id).count()
+     
     # appointmentcount=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id).count()
     # patientdischarged=models.PatientDischargeDetails.objects.all().distinct().filter(assignedDoctorName=request.user.first_name).count()
 
@@ -119,6 +119,9 @@ def doctor_dashboard_view(request):
     # return render(request,'hospital/doctor_dashboard.html',context=mydict)
     mydict = {
         'doctor': models.Doctor.objects.get(user_id=request.user.id),
+        'patientcount':models.Patient.objects.all().filter(assignedDoctorId=request.user.id).count(),
+         
+
 
     }
     return render(request, 'hospital/doctor_dashboard.html', context=mydict)
