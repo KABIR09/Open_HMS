@@ -388,6 +388,12 @@ def old_prescription_patient_view(request,pk):
     # d=days.days # only how many day that is 2
     pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk).order_by('-date')
     
+    date_list=[]
+    for m in pDD:
+        if m.date not in date_list:
+            date_list.append(m.date)
+
+
     patientDict = {
         'patientId': pk,
         'name': patient.get_name,
@@ -397,8 +403,15 @@ def old_prescription_patient_view(request,pk):
         # 'admitDate': patient.admitDate,
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
-        'pDD':pDD
+        'pDD':pDD,
+        'date_list':date_list
     }
+    
+   
+
+    
+
+        
     return render(request, 'hospital/patient_old_prescription.html', context=patientDict)
 
 
@@ -412,6 +425,11 @@ def patient_prescription_view(request):
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=patient.id).order_by('-date')
     
+
+    date_list=[]
+    for m in pDD:
+        if m.date not in date_list:
+            date_list.append(m.date)
     patientDict = {
         'patientId': patient.user_id,
         'name': patient.get_name,
@@ -423,6 +441,7 @@ def patient_prescription_view(request):
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD':pDD,
         'patient': models.Patient.objects.get(user_id=request.user.id),
+        'date_list':date_list
     }
     return render(request, 'hospital/prescription_patient.html', context=patientDict)
 
