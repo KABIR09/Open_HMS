@@ -403,7 +403,9 @@ def old_prescription_patient_view(request, pk):
         # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD': pDD,
-        'date_list': date_list
+        'date_list': date_list,
+        'doctor': models.Doctor.objects.get(user_id=request.user.id),
+
     }
 
     return render(request, 'hospital/patient_old_prescription.html', context=patientDict)
