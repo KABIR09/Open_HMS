@@ -40,7 +40,6 @@ urlpatterns = [
 
     path('doctor-patient-search', views.doctor_patient_search_view,
          name='doctor-patient-search'),
-    #path('doctor-patient', views.doctor_patient_view,name='doctor-patient'),
 
     path('patient-prescription/<int:pk>',
          views.prescription_patient_view, name='patient-prescription'),

@@ -12,25 +12,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 
-# safetyAmount
-# safetyDoseUnit
-# safetyAllowedPer
-# orderStatus
-# orderDateDisc
-# orderDateWritten
-# authRepeat
-# authValPer
-# dispInstruc
-# dispDescrip
-# dispAmount
-# dispAmountUnits
-# dispDurution
+
 # Create your views here.
 
 
 def home_view(request):
-    # if request.user.is_authenticated:
-    #     return HttpResponseRedirect('afterlogin')
     return render(request, 'hospital/index.html')
 
 
@@ -84,39 +70,12 @@ def afterlogin_view(request):
         return redirect('doctor-dashboard')
     elif is_patient(request.user):
         return redirect('patient-dashboard')
-    # return redirect('doctor-dashboard')
 
-    # elif is_patient(request.user):
-    #     accountapproval=models.Patient.objects.all().filter(user_id=request.user.id,status=True)
-    #     if accountapproval:
-    #         return redirect('patient-dashboard')
-    #     else:
-    #         return render(request,'hospital/patient_wait_for_approval.html')
 
 
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
 def doctor_dashboard_view(request):
-    # #for three cards
-     
-    # appointmentcount=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id).count()
-    # patientdischarged=models.PatientDischargeDetails.objects.all().distinct().filter(assignedDoctorName=request.user.first_name).count()
-
-    # #for  table in doctor dashboard
-    # appointments=models.Appointment.objects.all().filter(status=True,doctorId=request.user.id).order_by('-id')
-    # patientid=[]
-    # for a in appointments:
-    #     patientid.append(a.patientId)
-    # patients=models.Patient.objects.all().filter(status=True,user_id__in=patientid).order_by('-id')
-    # appointments=zip(appointments,patients)
-    # mydict={
-    # 'patientcount':patientcount,
-    # 'appointmentcount':appointmentcount,
-    # 'patientdischarged':patientdischarged,
-    # 'appointments':appointments,
-    # 'doctor':models.Doctor.objects.get(user_id=request.user.id), #for profile picture of doctor in sidebar
-    # }
-    # return render(request,'hospital/doctor_dashboard.html',context=mydict)
     mydict = {
         'doctor': models.Doctor.objects.get(user_id=request.user.id),
         'patientcount':models.Patient.objects.all().filter(assignedDoctorId=request.user.id).count(),
@@ -174,11 +133,6 @@ def patient_dashboard_view(request):
     return render(request, 'hospital/patient_dashboard.html', context=mydict)
 
 
-# @login_required(login_url='doctorlogin')
-# @user_passes_test(is_doctor)
-# def doctor_patient_search_view(request):
-#     return render(request,'hospital/doctor_patient_search.html')
-
 
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
@@ -199,9 +153,7 @@ def doctor_patient_search_view(request):
 @user_passes_test(is_doctor)
 def prescription_patient_view(request, pk):
     patient = models.Patient.objects.get(id=pk)
-    # days=(date.today()-patient.admitDate) #2 days, 0:00:00
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-    # d=days.days # only how many day that is 2
     pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
 
     patientDict = {
@@ -210,8 +162,6 @@ def prescription_patient_view(request, pk):
         'mobile': patient.mobile,
         'address': patient.address,
         'symptoms': patient.symptoms,
-        # 'admitDate': patient.admitDate,
-        # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD': pDD
     }
@@ -222,9 +172,7 @@ def prescription_patient_view(request, pk):
 @user_passes_test(is_doctor)
 def new_prescription_patient_view(request, pk):
     patient = models.Patient.objects.get(id=pk)
-    # days=(date.today()-patient.admitDate) #2 days, 0:00:00
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-    # d=days.days # only how many day that is 2
     pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
     patientDict = {
         'patientId': pk,
@@ -232,8 +180,6 @@ def new_prescription_patient_view(request, pk):
         'mobile': patient.mobile,
         'address': patient.address,
         'symptoms': patient.symptoms,
-        # 'admitDate': patient.admitDate,
-        # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD': pDD,
         'todayDate': date.today(),
@@ -246,9 +192,6 @@ def new_prescription_patient_view(request, pk):
 @user_passes_test(is_doctor)
 def doctor_add_medicine_view(request, pk):
     patient = models.Patient.objects.get(id=pk)
-    # days=(date.today()-patient.admitDate) #2 days, 0:00:00
-    #assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-    # d=days.days # only how many day that is 2
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     pDD0 = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
     patientDict = {
@@ -257,8 +200,6 @@ def doctor_add_medicine_view(request, pk):
         'mobile': patient.mobile,
         'address': patient.address,
         'symptoms': patient.symptoms,
-        # 'admitDate': patient.admitDate,
-        # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD': pDD0,
         'doctor': models.Doctor.objects.get(user_id=request.user.id),
@@ -291,24 +232,11 @@ def doctor_add_medicine_view(request, pk):
             'dispAmount': request.POST['dispAmount'],
             'dispAmountUnits': request.POST['dispAmountUnits'],
             'dispDurution': request.POST['dispDurution'],
-
-
-
-
         }
 
         patientDict.update(feeDict)
-        # for updating to database patientDischargeDetails (pDD)
         pDD = models.PatientPrescriptionDetails()
         pDD.patientId = pk
-        # pDD.patientName=patient.get_name
-        # pDD.assignedDoctorName=assignedDoctor[0].first_name
-        # pDD.address=patient.address
-        # pDD.mobile=patient.mobile
-        # pDD.symptoms=patient.symptoms
-        # pDD.admitDate=patient.admitDate
-        # pDD.releaseDate=date.today()
-        # pDD.daySpent=int(d)
         pDD.date = date.today()
         pDD.medicationItem = request.POST['medicationItem']
         pDD.frequency = request.POST['frequency']
@@ -372,17 +300,6 @@ def update_medicine_view(request,pk,mpk):
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
 def delete_medicine_view(request, pk, mpk):
-    # def post_delete_view(request,id):
-    #     #post=Post.objects.filter(id=id)
-    #     post=Post.objects.filter(id=id).first()
-    #     if request.user==post.author:
-    #         if request.method=='POST':
-    #             post.delete()
-    #             return redirect('posts:list')
-    #         else:
-    #             return render(request,'posts/delete.html')
-    #     else:
-    #         return redirect('posts:list')
     delete_dict = {
         'patientId': pk,
         'doctor': models.Doctor.objects.get(user_id=request.user.id),
@@ -391,9 +308,7 @@ def delete_medicine_view(request, pk, mpk):
     if request.method == 'POST':
         medicine.delete()
         patient = models.Patient.objects.get(id=pk)
-        # days=(date.today()-patient.admitDate) #2 days, 0:00:00
         assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-        # d=days.days # only how many day that is 2
         pDD = models.PatientPrescriptionDetails.objects.all().filter(patientId=pk)
         patientDict = {
             'patientId': pk,
@@ -401,8 +316,6 @@ def delete_medicine_view(request, pk, mpk):
             'mobile': patient.mobile,
             'address': patient.address,
             'symptoms': patient.symptoms,
-            # 'admitDate': patient.admitDate,
-            # 'day':d,
             'assignedDoctorName': assignedDoctor[0].first_name,
             'pDD': pDD,
             'todayDate': date.today(),
@@ -417,9 +330,7 @@ def delete_medicine_view(request, pk, mpk):
 @user_passes_test(is_doctor)
 def old_prescription_patient_view(request, pk):
     patient = models.Patient.objects.get(id=pk)
-    # days=(date.today()-patient.admitDate) #2 days, 0:00:00
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
-    # d=days.days # only how many day that is 2
     pDD = models.PatientPrescriptionDetails.objects.all().filter(
         patientId=pk).order_by('-date')
 
@@ -434,8 +345,6 @@ def old_prescription_patient_view(request, pk):
         'mobile': patient.mobile,
         'address': patient.address,
         'symptoms': patient.symptoms,
-        # 'admitDate': patient.admitDate,
-        # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD': pDD,
         'date_list': date_list,
@@ -446,7 +355,7 @@ def old_prescription_patient_view(request, pk):
     return render(request, 'hospital/patient_old_prescription.html', context=patientDict)
 
 
-# edited this -for patient Group-G
+# edited this -for patient
 
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
@@ -466,8 +375,6 @@ def patient_prescription_view(request):
         'mobile': patient.mobile,
         'address': patient.address,
         'symptoms': patient.symptoms,
-        # 'admitDate': patient.admitDate,
-        # 'day':d,
         'assignedDoctorName': assignedDoctor[0].first_name,
         'pDD': pDD,
         'patient': models.Patient.objects.get(user_id=request.user.id),
