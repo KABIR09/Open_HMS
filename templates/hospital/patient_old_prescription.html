@@ -1,22 +1,29 @@
 {% extends 'hospital/doctor_base.html' %}
-{% load static %}
 {% block content %}
-<style>
-  .details:hover {background-color: #ffff33;}
-  th, td {
-    padding: 5px;
-  }
-  .heading {
-    background-color: #29a329;
-    color: white;
-  }
-</style> 
+{% load static %}
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+      .details:hover {background-color: #ffff33;}
+      th, td {
+        padding: 5px;
+      }
+      .heading {
+        background-color: #29a329;
+        color: white;
+      }
+    </style> 
+</head>
+
 <br>
 {% for date in date_list %}
   <h4>Prescription Date: {{date}}</h4>
     <div>
       <table border="2" align="center">
-        <br><br>
+        <br>
         <tr class="heading" align="center">
           <th rowspan="2" colspan="9">Medication Order</th>
           <th colspan="3">Medication safety</th>
@@ -88,5 +95,4 @@
 </div>
 <br><br><br>
 {% endfor %}
-<br><br><br><br><br>
 {% endblock content %}
