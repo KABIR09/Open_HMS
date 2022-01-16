@@ -1,75 +1,83 @@
 {% extends 'hospital/patient_base.html' %}
-
-  {% load static %}
-  {% block content %} 
-    {% for m in pDD %}
-      <div>
-        <table>
-          <br>
-          <br>
-          <tr class="heading">
-            <td>
-              Date
-            </td>
-            <td>
-              Medication Item
-            </td>
-            <td>
-              Frequency
-            </td>
-            <td>
-              Dose
-            </td>
-            <td>
-              Dose unit
-            </td>
-            <td>
-              Direction Duration
-            </td>
-            <td>
-              Form
-            </td>
-            <td>
-              Additional Instructions
-            </td>
-            <td>
-              Substance
-            </td>
-          </tr>
-          <tr class="details">
-            <td>
-              {{m.date}}
-            </td>
-            <td>
-              {{m.medicationItem}}
-            </td>
-            <td>
-              {{m.frequency}}
-            </td>
-            <td>
-              {{m.dose}}
-            </td>
-            <td>
-              {{m.doseUnit}}
-            </td>
-            <td>
-              {{m.directionDuration}}
-            </td>
-            <td>
-              {{m.form}}
-            </td>
-            <td>
-              {{m.additionalInstruc}}
-            </td>
-            <td>
-              {{m.substance}}
-            </td>
-          </tr>
-
-          {% endfor %}
-
-        </table>
-      </div>
-
-
-  {% endblock content %}
+{% load static %}
+{% block content %}
+<style>
+  .details:hover {background-color: #ffff33;}
+  th, td {
+    padding: 5px;
+  }
+  .heading {
+    background-color: #29a329;
+    color: white;
+  }
+</style> 
+{% for m in pDD %}
+<div>
+  <table border="2" align="center">
+    <br><br>
+    <tr class="heading" align="center">
+      <th rowspan="2" colspan="9">Medication Order</th>
+      <th colspan="3">Medication safety</th>
+      <th colspan="3">Order details</th>
+      <th rowspan="2" colspan="2">Authorisation details</th>
+      <th colspan="5"> Dispense directions</th>
+    </tr>
+    <tr class="heading" align="center">
+      <th colspan="3">maxDosePerPeriod</th>
+      <th colspan="3">Course Summary</th>
+      <th colspan="1">Dispense instruction</th>
+      <th colspan="4">Dispense Amount</th>
+    </tr>
+    <tr align="center">
+      <th>Date</th>
+      <th>Medication Item</th>
+      <th>Frequency</th>
+      <th>Dose</th>
+      <th>Dose unit</th>
+      <th>Direction Duration</th>
+      <th>Form</th>
+      <th>Additional Instructions</th>
+      <th>Substance</th>
+      <th>Maximum amount</th>
+      <th>Maximum amount dose unit</th>
+      <th>Allowed period</th>
+      <th>Status</th>
+      <th>Date discontinued</th>
+      <th>Date written</th>
+      <th>numberOfRepeatsAllowed</th>
+      <th>validityPeriod</th>
+      <th>Amount description</th>
+      <th>Dispense amount</th>
+      <th>Amount</th>
+      <th>Units</th>
+      <th>Duration of Supply</th>
+    </tr>      
+    <tr class="details" align="center">
+      <td>{{m.date}}</td>
+      <td>{{m.medicationItem}}</td>
+      <td>{{m.frequency}}</td>
+      <td>{{m.dose}}</td>
+      <td>{{m.doseUnit}}</td>
+      <td>{{m.directionDuration}}</td>
+      <td>{{m.form}}</td>
+      <td>{{m.additionalInstruc}}</td>
+      <td>{{m.substance}}</td>
+      <td>{{m.safetyAmount}}</td>
+      <td>{{m.safetyDoseUnit}}</td>
+      <td>{{m.safetyAllowedPer}}</td>
+      <td>{{m.orderStatus}}</td>
+      <td>{{m.orderDateDisc}}</td>
+      <td>{{m.orderDateWritten}}</td>
+      <td>{{m.authRepeat}}</td>
+      <td>{{m.authValPer}}</td>
+      <td>{{m.dispInstruc}}</td>
+      <td>{{m.dispDescrip}}</td>
+      <td>{{m.dispAmount}}</td>
+      <td>{{m.dispAmountUnits}}</td>
+      <td>{{m.dispDurution}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<br><br><br><br><br>
+{% endblock content %}
