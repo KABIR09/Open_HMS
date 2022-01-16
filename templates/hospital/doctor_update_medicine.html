@@ -1,0 +1,254 @@
+{% extends 'hospital/doctor_base.html' %}
+{% load static %}
+{% block content %}
+
+{% load widget_tweaks %}
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<form method="POST">
+    {% csrf_token %}
+    <!-- On tables -->
+    <br>
+    <h2 style="text-align: center; color: brown; font-weight: bold;">Update Medicine</h2>
+
+    <table class="table-info">
+        <tr class="table-info">
+            <tr>
+                <td class="table-info">
+                    Medication Item
+                </td>
+                <td>
+                    <input type="text" required name="medicationItem" required placeholder="Medicine Name" value="{{data.medicationItem}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Frequency
+                </td>
+                <td>
+                    <input type="number" required name="frequency" required placeholder="Frequency" value="{{data.frequency}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Dose
+                </td>
+                <td>
+                    <input type="number" required name="dose" required placeholder="Dose" value="{{data.dose}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info"> 
+                    Dose Unit
+                </td>
+                <td>
+                    <input type="text" required name="doseUnit" required placeholder="Dose Unit" value="{{data.doseUnit}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Direction Duration
+                </td>
+                <td>
+                    <input type="text" required name="directionDuration" required placeholder="Direction Duration" value="{{data.directionDuration}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Form
+                </td>
+                <td>
+                    <input type="text" required name="form" required placeholder="Form" value="{{data.form}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Additional Instructions
+                </td>
+                <td>
+                    <input type="text" required name="additionalInstruc" required placeholder="Additional Instructions" value="{{data.additionalInstruc}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Substance
+                </td>
+                <td>
+                    <input type="text" required name="substance" required placeholder="Substance" value="{{data.substance}}">
+                </td>
+            </tr>
+            <tr class="last">
+                <td class="table-info">
+                    <b>Medication safety </b> 
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    <b>maxDosePerPeriod</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Maximum Amount
+                </td>
+                <td>
+                    <input type="text" required name="safetyAmount" placeholder="Maximum Amount" value="{{data.safetyAmount}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Maximum amount dose unit 
+                </td>
+                <td>
+                    <input type="text" required name="safetyDoseUnit" placeholder="Substance" value="{{data.safetyDoseUnit}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Allowed period
+                </td>
+                <td>
+                    <input type="text" required name="safetyAllowedPer" placeholder="Substance" value="{{data.safetyAllowedPer}}">
+                </td>
+            </tr>
+        
+            <tr>
+                <td class="table-info">
+                    <b>Order details</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info"> 
+                    <b>Course summary</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Status
+                </td>
+                <td>     
+                    <select required name="orderStatus" >
+                        <option value="Active">Active</option>
+                        <option value="Stopped">Stopped</option>
+                        <option value="Never active">Never active</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Obsolete">Obsolete</option>
+                        <option value="Suspended">Suspended</option>
+                        <option value="Draft">Draft</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Date discontinued
+                </td>
+                <td> 
+                    <input type="datetime-local" required name="orderDateDisc" placeholder="Substance" value="{{data.orderDateDisc}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Date written
+                </td>
+                <td>
+                    <input type="datetime-local" required name="orderDateWritten" placeholder="Substance" value="{{data.orderDateWritten}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    <b>Authorisation details</b>
+                </td>
+            <tr>
+                <td class="table-info">
+                    numberOfRepeatsAllowed
+                </td>
+                <td>
+                    <input type="number" required name="authRepeat" placeholder="" value="{{data.authRepeat}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    validityPeriod
+                </td>
+                <td>
+                    <input type="datetime-local" required name="authValPer" placeholder="" value="{{data.authValPer}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    <b>Dispense directions</b> 
+                </td>
+            <tr>
+                <td class="table-info">
+                    Dispense instruction
+                </td>
+                <td>
+                    <input type="text" required name="dispInstruc" placeholder="" value="{{data.dispInstruc}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                     <b>Dispense amount</b>  
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Amount description
+                </td>
+                <td>
+                    <input type="text" required name="dispDescrip" placeholder="" value="{{data.dispDescrip}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Amount
+                </td>
+                <td>
+                    <input type="number" required name="dispAmount" placeholder="" value="{{data.dispAmount}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Units
+                </td>
+                <td>
+                    <input type="text" required name="dispAmountUnits" placeholder="" value="{{data.dispAmountUnits}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Duration of supply
+                </td>
+                <td>
+                    <input type="text" required name="dispDurution" placeholder="" value="{{data.dispDurution}}">
+                </td>
+            </tr>
+        </tr>
+    </table>
+
+    <center>
+        <input type="submit" value="Update" name="submit" class="btn btn-lg btn-warning"></button>
+    </center>
+
+    <style>
+        .table-info {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 50px;
+        padding-right: 60px;
+        }
+        .btn-lg {
+            margin-top: 10px;
+            padding: 0.5rem 5rem;
+        }
+    </style>
+
+</form>
+
+<br><br><br><br>
+
+{% endblock content %}

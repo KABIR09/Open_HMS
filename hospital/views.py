@@ -333,6 +333,38 @@ def doctor_add_medicine_view(request, pk):
         return render(request, 'hospital/patient_new_prescription.html', context=patientDict)
     return render(request, 'hospital/doctor_add_medicine.html', context=patientDict)
 
+@login_required(login_url='doctorlogin')
+@user_passes_test(is_doctor)
+def update_medicine_view(request,pk,mpk):
+    medicine = models.PatientPrescriptionDetails.objects.all().filter(pk=mpk).first()
+    patientDict ={
+        'data' :medicine
+    }
+    if request.method=='POST':
+        medicine.medicationItem = request.POST['medicationItem']
+        medicine.frequency = request.POST['frequency']
+        medicine.dose = request.POST['dose']
+        medicine.doseUnit = request.POST['doseUnit']
+        medicine.directionDuration = request.POST['directionDuration']
+        medicine.form = request.POST['form']
+        medicine.additionalInstruc = request.POST['additionalInstruc']
+        medicine.substance = request.POST['substance']
+        medicine.safetyAmount=request.POST['safetyAmount']
+        medicine.safetyDoseUnit=request.POST['safetyDoseUnit']
+        medicine.safetyAllowedPer=request.POST['safetyAllowedPer']
+        medicine.orderStatus=request.POST['orderStatus']
+        medicine.orderDateDisc=request.POST['orderDateDisc']
+        medicine.orderDateWritten=request.POST['orderDateWritten']
+        medicine.authRepeat=request.POST['authRepeat']
+        medicine.authValPer=request.POST['authValPer']
+        medicine.dispInstruc=request.POST['dispInstruc']
+        medicine.dispDescrip=request.POST['dispDescrip']
+        medicine.dispAmount=request.POST['dispAmount']
+        medicine.dispAmountUnits=request.POST['dispAmountUnits']
+        medicine.dispDurution=request.POST['dispDurution']
+        medicine.save()
+        return redirect('doctor-patient-search')
+    return render(request,'hospital/doctor_update_medicine.html',context=patientDict)
 
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
