@@ -68,7 +68,7 @@ class Patient(models.Model):
     def __str__(self):
         return self.user.first_name+" ("+self.symptoms+")"
 
-#status=[('Active','Active'),('Stopped','Stopped'),('Never active','Never active'),('Completed','Completed'),('Obsolete','Obsolete'),('Suspended','Suspended'),('Draft','Draft')]
+
 
 class PatientPrescriptionDetails(models.Model):
     patientId=models.PositiveIntegerField(null=True)
@@ -85,7 +85,7 @@ class PatientPrescriptionDetails(models.Model):
     safetyAmount=models.PositiveIntegerField(null=False)
     safetyDoseUnit=models.CharField(max_length=400)
     safetyAllowedPer=models.CharField(max_length=400)
-    #orderStatus=models.CharField(max_length=20, choices=status, default='')
+  
     orderStatus=models.CharField(max_length=100)
 
     orderDateDisc=models.DateTimeField(blank=True,default=datetime.now)

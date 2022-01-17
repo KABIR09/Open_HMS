@@ -171,59 +171,7 @@ Emergency
       z-index: 2
     }
 
-    /* .emergency-trigger-panel {
-      background: #c13434;
-      border-radius: 0 0 10px 10px;
-      bottom: 0;
-      display: none !important;
-      left: 26px;
-      padding: 20px;
-      top: 0;
-      width: 315px
-    }
-
-    @media (min-width:992px) {
-      .emergency-trigger-panel {
-        border-radius: 0 10px 10px 0;
-        position: absolute
-      }
-    } */
-    
-    /*
-    .emergency-trigger-close {
-      background: #fff;
-      border-radius: 50%;
-      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, .2));
-      height: 32px;
-      position: absolute;
-      right: -13px;
-      top: 0;
-      width: 32px
-    }
-
-    @media (min-width:992px) {
-      .emergency-trigger-close {
-        height: 46px;
-        right: -23px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 46px
-      }
-    }
-
-    .emergency-trigger-close>img {
-      display: block;
-      height: 22px;
-      margin: 0 auto;
-      max-width: 22px;
-      width: 89%
-    }
-
-    .emergency-trigger.is-open .emergency-trigger-panel {
-      display: flex !important
-    }
-
- */
+   
     
   </style>
 </head>
@@ -237,7 +185,7 @@ Emergency
     <div class="container text-center position-relative">
       <h1>WeCare is available 24/7</h1>
 
-      <a href="/patientclick" class="main-btn">Take Appointment Now</a>
+      <a href="/patientclick" class="main-btn">Get Started</a>
     </div>
   </section>
   <!-- End Hero -->
@@ -252,51 +200,7 @@ Emergency
     </button></a>
   </div>
 
-    <!--  data-toggle-class="is-open"
-    <div class="emergency-trigger-panel d-flex align-items-center">
-      <div class="row no-gutters w-100">
-        <div class="col-6">
-          <p class="color-white text-uppercase font-weight-bold">Delhi/NCR:</p>
-          <p class="color-white text-uppercase font-weight-bold">MOHALI:</p>
-          <p class="color-white text-uppercase font-weight-bold">Dehradun:</p>
-          <p class="color-white text-uppercase font-weight-bold">
-            BATHINDA:
-          </p>
-          <p class="color-white text-uppercase font-weight-bold mb-0">
-            BRAIN ATTACK:
-          </p>
-        </div>
-        <div class="col-6">
-          <p>
-            <a href="tel:01140554055" class="hover-color-white color-white font-weight-bold">011-4055 4055</a>
-          </p>
-          <p>
-            <a href="tel:7710777107" class="hover-color-white color-white font-weight-bold">77107-77107</a>
-          </p>
-          <p>
-            <a href="tel:01357193333" class="hover-color-white color-white font-weight-bold">0135-719 3333</a>
-          </p>
-          <p>
-            <a href="tel:01645212000" class="hover-color-white color-white font-weight-bold">0164-5212000</a>
-          </p>
-          <p class="mb-0">
-            <a href="tel:919910204023" class="hover-color-white color-white font-weight-bold">+91 9910204023</a>
-          </p>
-        </div>
-      </div>
-      <button data-toggle-class-trigger="" data-toggle-class-target=".emergency-trigger" data-toggle-class="is-open"
-        class="emergency-trigger-close border-0">
-        <img
-          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDIyLjg4IDIyLjg4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz4KPHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHlsZT0iIiBkPSJNMC4zMjQsMS45MDljLTAuNDI5LTAuNDI5LTAuNDI5LTEuMTQzLDAtMS41ODdjMC40NDQtMC40MjksMS4xNDMtMC40MjksMS41ODcsMGw5LjUyMyw5LjUzOSAgbDkuNTM5LTkuNTM5YzAuNDI5LTAuNDI5LDEuMTQzLTAuNDI5LDEuNTcxLDBjMC40NDQsMC40NDQsMC40NDQsMS4xNTksMCwxLjU4N2wtOS41MjMsOS41MjRsOS41MjMsOS41MzkgIGMwLjQ0NCwwLjQyOSwwLjQ0NCwxLjE0MywwLDEuNTg3Yy0wLjQyOSwwLjQyOS0xLjE0MywwLjQyOS0xLjU3MSwwbC05LjUzOS05LjUzOWwtOS41MjMsOS41MzljLTAuNDQ0LDAuNDI5LTEuMTQzLDAuNDI5LTEuNTg3LDAgIGMtMC40MjktMC40NDQtMC40MjktMS4xNTksMC0xLjU4N2w5LjUyMy05LjUzOUwwLjMyNCwxLjkwOXoiIGZpbGw9IiNjMTM0MzMiIGRhdGEtb3JpZ2luYWw9IiMxZTIwMWQiIGNsYXNzPSIiPjwvcGF0aD4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPC9nPjwvc3ZnPg==">
-      </button>
-    </div>
-  </div> -->
-
-
-
-  <!-- ======================================= -->
-
-
+  
 
 
 
