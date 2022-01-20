@@ -64,15 +64,19 @@
 
       .invoice-box table tr.information table td {
         padding-bottom: 10px;
+        font-weight:700;
         
       }
 
       .invoice-box table tr.heading td {
-        background: #0D98BE;
-        border-bottom: 5px solid #0D98BE;
+        background:#79d1e9;
+        padding-top:5px;
+        
+        /* border-bottom: 5px solid #79d1e9; */
         font-weight: bold;
-        font-size: 14px;
+        font-size: 12px;
       }
+      
 
       
 
@@ -108,7 +112,7 @@
           width: 100%;
           display: block;
           text-align: center;
-         
+          
           
         }
 
@@ -135,7 +139,7 @@
         top: 50px;
       } */
       .btn-white{
-          background-color:#0D98BE
+          background-color:#79d1e9;
 
       }
       .btn:link,.btn:visited{
@@ -179,7 +183,7 @@
             </td>
             <td>
               <a href="{% url 'add-medicine' patientId %}" class="btn btn-white" role="button"
-               aria-pressed="true"><b style="color: #fff;">Add Medicine</b></a>
+               aria-pressed="true"><b style="color: #555;">Add Medicine</b></a>
             </td>
              
           
@@ -221,12 +225,13 @@
       </td>
 
     </tr>
-
-    <tr class="details">
+    <tr></tr>
+    <tr class="details" style="text-transform: uppercase; padding-top: 10px;">
       <td>
         {{symptoms}}
       </td>
     </tr>
+    <br>
     <tr class="heading">
       <td colspan="2">
         Medication Order
@@ -479,7 +484,7 @@
           <td></td>
 
             <td>
-              <a href="{% url 'update-medicine' patientId m.pk %}" class="btn btn-white" role="button"aria-pressed="true"><b style="color: #fff;">Update</b></a>
+              <a href="{% url 'update-medicine' patientId m.pk %}" class="btn btn-white" role="button"aria-pressed="true"><b style="color: #555;">Update</b></a>
             
               <a href="{% url 'delete-medicine' patientId m.pk %}" class="btn btn-danger " role="button"aria-pressed="true"><b style="color: #fff;">Delete</b></a>
             </td>

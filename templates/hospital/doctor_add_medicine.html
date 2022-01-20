@@ -10,7 +10,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <style>
-
+        
         .table-class {
             margin-left: auto;
             margin-right: auto;
@@ -40,10 +40,11 @@
 
         }
         .btn-white{
+            text-transform: uppercase;
           background-color:#0D98BE;
           border-radius: 50px;
           font-size: medium;
-          
+          font-weight: bold;
           color:white;
          
 
@@ -65,8 +66,11 @@
 
           }
         .field {
-            padding-right: 50px;
+            padding-right: 30px;
+            
+            
         }
+        
         .field-top{
             padding-top: 30px;
         }
@@ -85,15 +89,17 @@
         .container{
            
             overflow-y: scroll;
+            
         }
     </style>
+    
 </head>
-<div class="container">
+<div class="container" style="margin-top: -40 px;">
     <form method="POST">
         {% csrf_token %}
         <!-- On tables -->
                  
-                 <h2 >Add New Medicine</h2>
+        <h2 >Add New Medicine</h2>
     
         <table class="table-class">
             <tr class="tr-info">
@@ -176,7 +182,7 @@
                         Maximum Amount
                     </td>
                     <td class="field">
-                        <input type="text" required name="safetyAmount" placeholder="Maximum Amount" value="">
+                        <input type="text" required name="safetyAmount" value="">
                     </td>
                 <!-- </tr>
                 <tr> -->
@@ -184,7 +190,7 @@
                         Maximum amount dose unit 
                     </td>
                     <td class="field">
-                        <input type="text" required name="safetyDoseUnit" placeholder="Substance" value="">
+                        <input type="text" required name="safetyDoseUnit" value="">
                     </td>
                 </tr>
                 <tr>
@@ -192,7 +198,7 @@
                         Allowed period
                     </td>
                     <td class="field">
-                        <input type="text" required name="safetyAllowedPer" placeholder="Substance" value="">
+                        <input type="text" required name="safetyAllowedPer" value="">
                     </td>
                 </tr>
             
@@ -227,7 +233,7 @@
                         Date discontinued
                     </td>
                     <td class="field"> 
-                        <input type="datetime-local" required name="orderDateDisc" placeholder="Substance" value="">
+                        <input type="datetime-local" required name="orderDateDisc" value="">
                     </td>
                 </tr>
                 <tr>
@@ -235,7 +241,7 @@
                         Date written
                     </td>
                     <td class="field">
-                        <input type="datetime-local" required name="orderDateWritten" placeholder="Substance" value="">
+                        <input type="datetime-local" required name="orderDateWritten"  value="">
                     </td>
                 </tr>
                 <tr>
@@ -247,7 +253,7 @@
                         numberOfRepeatsAllowed
                     </td>
                     <td class="field">
-                        <input type="number" required name="authRepeat" placeholder="" value="">
+                        <input type="number" required name="authRepeat"  value="">
                     </td>
                 <!-- </tr>
                 <tr> -->
@@ -255,7 +261,7 @@
                         validityPeriod
                     </td>
                     <td class="field">
-                        <input type="datetime-local" required name="authValPer" placeholder="" value="">
+                        <input type="datetime-local" required name="authValPer"  value="">
                     </td>
                 </tr>
                 <tr>
@@ -267,7 +273,7 @@
                         Dispense instruction
                     </td>
                     <td class="field">
-                        <input type="text" required name="dispInstruc" placeholder="" value="">
+                        <input type="text" required name="dispInstruc"  value="">
                     </td>
                 </tr>
                 <tr>
@@ -280,7 +286,7 @@
                         Amount description
                     </td>
                     <td class="field">
-                        <input type="text" required name="dispDescrip" placeholder="" value="">
+                        <input type="text" required name="dispDescrip"  value="">
                     </td>
                 <!-- </tr>
                 <tr> -->
