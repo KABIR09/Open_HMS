@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -6,6 +7,19 @@
   <title></title>
 
   <style media="screen">
+ 
+    .main{
+      background-image:url("/static/images/groupofdoc.jpg") ;
+    }
+    .market-updates{
+      display: flex;
+      flex-wrap: wrap;
+      margin:2rem;
+      
+    }
+    .market-update-gd{
+      padding-bottom: 0.3rem;
+    }
     .market-update-block {
       padding: 2em 2em;
     
@@ -13,25 +27,25 @@
     }
 
     .market-update-block h3 {
-      color: #fff;
+      color: #0D98BE;
       font-size: 2.5em;
       font-family: 'Carrois Gothic', sans-serif;
     }
 
     .market-update-block h4 {
       font-size: 1.2em;
-      color: #fff;
+      color: #0D98BE;
       margin: 0.3em 0em;
       font-family: 'Carrois Gothic', sans-serif;
     }
 
     .market-update-block p {
-      color: #fff;
+      color: #0D98BE;
       font-size: 0.8em;
       line-height: 1.8em;
     }
 
-    .market-update-block.clr-block-1 {
+    /* .market-update-block.clr-block-1 {
       background: #d89b4c;
       margin-right: 0.8em;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -39,26 +53,37 @@
       -webkit-transition: 0.5s all;
       -moz-transition: 0.5s all;
       -o-transition: 0.5s all;
+    } */
+
+    .market-update-block.clr-block-1 {
+      background:white;
+      margin-right: 0.8em;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border:solid rgba(188, 225, 243, 0.993) 1px ;
+      margin:0;
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -o-transition: 0.5s all;
     }
 
     .market-update-block.clr-block-2 {
-      background: #3B5998;
-      margin-right: 0.8em;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      background: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border:solid rgba(188, 225, 243, 0.993) 1px ;
       transition: 0.5s all;
       -webkit-transition: 0.5s all;
       -moz-transition: 0.5s all;
       -o-transition: 0.5s all;
     }
 
-    .market-update-block.clr-block-3 {
-      background: #4a983b;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    /* .market-update-block.clr-block-1:hover {
+      background: #3C3C3C;
       transition: 0.5s all;
       -webkit-transition: 0.5s all;
       -moz-transition: 0.5s all;
       -o-transition: 0.5s all;
-    }
+    } */
 
     .market-update-block.clr-block-1:hover {
       background: #3C3C3C;
@@ -76,20 +101,12 @@
       -o-transition: 0.5s all;
     }
 
-    .market-update-block.clr-block-3:hover {
-      background: #3C3C3C;
-      transition: 0.5s all;
-      -webkit-transition: 0.5s all;
-      -moz-transition: 0.5s all;
-      -o-transition: 0.5s all;
-    }
-
     .market-update-right i.fa.fa-user-o {
       font-size: 3em;
-      color: #68AE00;
+      color: white;
       width: 80px;
       height: 80px;
-      background: #fff;
+      background:#0D98BE;;
       text-align: center;
       border-radius: 49px;
       -webkit-border-radius: 49px;
@@ -100,10 +117,10 @@
 
     .market-update-right i.fa.fa-check-circle-o {
       font-size: 3em;
-      color: #FC8213;
+      color: white;
       width: 80px;
       height: 80px;
-      background: #fff;
+      background: #0D98BE;
       text-align: center;
       border-radius: 49px;
       -webkit-border-radius: 49px;
@@ -137,25 +154,17 @@
 </head>
 
 <body>
-  {% comment %} <div class="market-updates">
+  <div class="container">
+    
+  </div>
+  <div class="market-updates">
+   
     <div class="col-md-4 market-update-gd" style="width: 350px;">
       <div class="market-update-block clr-block-1">
         <div class="col-md-8 market-update-left">
-          <h3>{{appointmentcount}}</h3>
-          <h4>Appointments</h4>
-        </div>
-        <div class="col-md-4 market-update-right">
-          <i class="fa fa-calendar"> </i>
-        </div>
-        <div class="clearfix"> </div>
-      </div>
-    </div> {% endcomment %}
-    <div class="col-md-4 market-update-gd" style="width: 350px;">
-      <div class="market-update-block clr-block-2">
-        <div class="col-md-8 market-update-left">
           
-          <h4>Patient Under You</h4>
-          <h3>{{patientcount}}</h3>
+          <h4>Patient's Under You</h4>
+          <h4>Total : {{patientcount}}</h4>
         </div>
         <div class="col-md-4 market-update-right">
           <i class="fa fa-user-o"></i>
@@ -164,10 +173,10 @@
       </div>
     </div>
     <div class="col-md-4 market-update-gd" style="width: 350px;">
-      <div class="market-update-block clr-block-3">
+      <div class="market-update-block clr-block-2">
         <div class="col-md-8 market-update-left">
           <h4>Doctor department</h4>
-          <h4><b>{{doctor.department}}</b></h4>
+          <h4>{{doctor.department}}</h4>
 
         </div>
         <div class="col-md-4 market-update-right">
