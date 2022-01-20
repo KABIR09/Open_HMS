@@ -8,17 +8,33 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <style>
+
       .invoice-box {
-        width: 100%;
-        max-width: 2000px;
+        width: 60%;
+        max-width: 3000px;
         margin: auto;
         padding: 30px;
-        border: 1px solid #eee;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-        font-size: 16px;
-        line-height: 24px;
-        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-        color: #555;
+        border: 1px solid #0D98BE;
+        
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border:solid rgba(218, 213, 213, 0.993) 1px ;
+        font-size: 1.25rem;
+        /* font-weight: 500; */
+         line-height: 14px;
+        font-family:-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        color: #555; 
+        
+              
+
+        /* max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+      font-size: 16px;
+      line-height: 24px;
+      font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      color: #555; */
       }
 
       .invoice-box table {
@@ -28,8 +44,8 @@
       }
 
       .invoice-box table td {
-        padding: 5px;
-        vertical-align: top;
+        padding-bottom: 5px;
+        /* vertical-align: top; */
       }
 
       .invoice-box table tr td:nth-child(2) {
@@ -47,22 +63,27 @@
       }
 
       .invoice-box table tr.information table td {
-        padding-bottom: 40px;
+        padding-bottom: 10px;
+        font-weight:700;
+        
       }
 
       .invoice-box table tr.heading td {
-        background: #eee;
-        border-bottom: 5px solid #ddd;
+        background:#79d1e9;
+        padding-top:5px;
+        
+        /* border-bottom: 5px solid #79d1e9; */
         font-weight: bold;
+        font-size: 12px;
       }
+      
 
-      .invoice-box table tr.details td {
-        padding-bottom: 20px;
-      }
+      
 
-      .invoice-box table tr.item td {
+      /* .invoice-box table tr.item td {
         border-bottom: 1px solid #eee;
-      }
+        
+      } */
 
       .invoice-box table tr.item.last td {
         border-bottom: none;
@@ -72,22 +93,35 @@
         border-top: 2px solid #eee;
         font-weight: bold;
       }
+      
+        
 
-      @media only screen and (max-width: 600px) {
+      @media only screen and (max-width: 1100px) {
         .invoice-box table tr.top table td {
           width: 100%;
           display: block;
           text-align: center;
+        }
+        .invoice-box {
+          width: 94%;
+          padding: 5px;
+          
         }
 
         .invoice-box table tr.information table td {
           width: 100%;
           display: block;
           text-align: center;
+          
+          
         }
+
+        /* .invoice-box table tr.details table td {
+          column-gap: 40px;
+        } */
       }
 
-      /** RTL **/
+      /* * RTL * */
       .rtl {
         direction: rtl;
         font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
@@ -100,10 +134,40 @@
       .rtl table tr td:nth-child(2) {
         text-align: left;
       }
-
+   
       /* .menu {
         top: 50px;
       } */
+      .btn-white{
+          background-color:#79d1e9;
+
+      }
+      .btn:link,.btn:visited{
+          text-transform:uppercase;
+          text-decoration:none;
+          font-size: small;
+          font-family: 'Times New Roman', Times, serif;
+          
+          padding:10px;
+          display:inline-block;
+          border-radius: 100px;
+
+          /*simple method of doing animation*/
+          }
+          .btn:hover{
+          box-shadow: 0 20px 20px rgba(0, 0, 0,0.4);
+
+          }
+          hr { 
+          display: block;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border-style: inset;
+          border-width: 2px;
+         
+        }
     </style>
 </head>
 
@@ -115,14 +179,21 @@
         <table>
           <tr>
             <td class="title">
-              <h1>WeCare Management</h1>
+              <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">WeCare Management</h1>
             </td>
-
+            <td>
+              <a href="{% url 'add-medicine' patientId %}" class="btn btn-white" role="button"
+               aria-pressed="true"><b style="color: #555;">Add Medicine</b></a>
+            </td>
+             
           
           </tr>
+          
         </table>
+        <hr> 
       </td>
     </tr>
+    
 
     <tr class="information">
       <td colspan="2">
@@ -135,18 +206,18 @@
             </td>
 
             <td>
-              Doctor Name :<br>
+              Doctor Name :
               {{assignedDoctorName}}<br>
                Date :{{todayDate}}
 
             </td>
           </tr>
+          
         </table>
       </td>
     </tr>
-
     <tr class="heading">
-      <td>
+      <td colspan="2">
         Disease and Symptoms
       </td>
       <td>
@@ -154,14 +225,15 @@
       </td>
 
     </tr>
-
-    <tr class="details">
+    <tr></tr>
+    <tr class="details" style="text-transform: uppercase; padding-top: 10px;">
       <td>
         {{symptoms}}
       </td>
     </tr>
+    <br>
     <tr class="heading">
-      <td>
+      <td colspan="2">
         Medication Order
       </td>
 
@@ -171,19 +243,17 @@
     </tr>
     {% for m in pDD %}
       {% if m.date == todayDate %}
-       
-          <tr class="item">
-            <td>
+      <td>
+       <tr class="item">
+            <td >
               Medication Item
             </td>
             <td>
               {{m.medicationItem}}
             </td>
 
-
-          </tr>
-
-          <tr class="item">
+            
+            <tr></tr>
             <td>
               Frequency
             </td>
@@ -411,14 +481,15 @@
           </tr>
           <tr class="item">
            
-            <td>
-              <a href="{% url 'update-medicine' patientId m.pk %}" class="btn btn-danger btn-lg active" role="button"aria-pressed="true">Update Medicine</a>
-            </td>
+          <td></td>
 
             <td>
-              <a href="{% url 'delete-medicine' patientId m.pk %}" class="btn btn-danger btn-lg active" role="button"aria-pressed="true">Delete Medicine</a>
+              <a href="{% url 'update-medicine' patientId m.pk %}" class="btn btn-white" role="button"aria-pressed="true"><b style="color: #555;">Update</b></a>
+            
+              <a href="{% url 'delete-medicine' patientId m.pk %}" class="btn btn-danger " role="button"aria-pressed="true"><b style="color: #fff;">Delete</b></a>
             </td>
           </tr>
+      </td>
        
       {% endif %}
       
@@ -428,8 +499,8 @@
     {% endfor %}
 
 
-    <a href="{% url 'add-medicine' patientId %}" class="btn btn-danger btn-lg active" role="button"
-      aria-pressed="true">Add Medicine</a>
+    <!-- <a href="{% url 'add-medicine' patientId %}" class="btn btn-white" role="button"
+      aria-pressed="true"><b style="color: #fff;">Add</b></a> -->
 
   </table>
 </div>
