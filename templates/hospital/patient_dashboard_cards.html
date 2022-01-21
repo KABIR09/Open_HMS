@@ -7,26 +7,28 @@
   <title></title>
 
   <style media="screen">
- 
-    #main1{
+    #main1 {
       width: 100%;
-      height: 95vh;
-      background-image:url("/static/images/groupofdoc.jpg") !important ;
+      height: 98vh;
+      background-image: url("/static/images/bg-illsutration-home.svg") !important;
       background-size: cover;
       position: relative;
     }
-    .market-updates{
+
+    .market-updates {
       display: flex;
       flex-wrap: wrap;
-      margin:2rem;
-      
+      margin: 2rem;
+
     }
-    .market-update-gd{
+
+    .market-update-gd {
       padding-bottom: 0.3rem;
     }
+
     .market-update-block {
       padding: 2em 2em;
-    
+
       background: #999;
     }
 
@@ -60,11 +62,11 @@
     } */
 
     .market-update-block.clr-block-1 {
-      background:white;
+      background: white;
       margin-right: 0.8em;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      border:solid rgba(188, 225, 243, 0.993) 1px ;
-      margin:0;
+      border: solid rgba(188, 225, 243, 0.993) 1px;
+      margin: 0;
       transition: 0.5s all;
       -webkit-transition: 0.5s all;
       -moz-transition: 0.5s all;
@@ -74,7 +76,7 @@
     .market-update-block.clr-block-2 {
       background: white;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      border:solid rgba(188, 225, 243, 0.993) 1px ;
+      border: solid rgba(188, 225, 243, 0.993) 1px;
       transition: 0.5s all;
       -webkit-transition: 0.5s all;
       -moz-transition: 0.5s all;
@@ -110,7 +112,8 @@
       color: white;
       width: 80px;
       height: 80px;
-      background:#0D98BE;;
+      background: #0D98BE;
+      ;
       text-align: center;
       border-radius: 49px;
       -webkit-border-radius: 49px;
@@ -133,12 +136,60 @@
       line-height: 1.7em;
     }
 
-    .market-update-right i.fa.fa-calendar {
+    .market-update-right i.fa.fa-phone {
       font-size: 3em;
-      color: #337AB7;
+      color: #fff;
       width: 80px;
       height: 80px;
-      background: #fff;
+      background: #0D98BE;
+      text-align: center;
+      border-radius: 49px;
+      -webkit-border-radius: 49px;
+      -moz-border-radius: 49px;
+      -o-border-radius: 49px;
+      line-height: 1.7em;
+    }
+
+    .market-update-right i.fa.fa-home {
+      font-size: 3em;
+      color: #fff;
+      width: 80px;
+      height: 80px;
+      background: #0D98BE;
+      ;
+
+      text-align: center;
+      border-radius: 49px;
+      -webkit-border-radius: 49px;
+      -moz-border-radius: 49px;
+      -o-border-radius: 49px;
+      line-height: 1.7em;
+    }
+
+    .market-update-right i.fa.fa-heartbeat {
+      font-size: 3em;
+      color: #fff;
+      width: 80px;
+      height: 80px;
+      background: #0D98BE;
+      padding-top: 5px;
+
+      text-align: center;
+      border-radius: 49px;
+      -webkit-border-radius: 49px;
+      -moz-border-radius: 49px;
+      -o-border-radius: 49px;
+      line-height: 1.7em;
+    }
+
+    .market-update-right i.fa.fa-user-md {
+      font-size: 3em;
+      color: #fff;
+      width: 80px;
+      height: 80px;
+      background: #0D98BE;
+      padding-top: 5px;
+
       text-align: center;
       border-radius: 49px;
       -webkit-border-radius: 49px;
@@ -161,14 +212,14 @@
 
 
   <div class="container">
-    
+
   </div>
   <div class="market-updates">
-   
+
     <div class="col-md-4 market-update-gd" style="width: 350px;">
       <div class="market-update-block clr-block-1">
         <div class="col-md-8 market-update-left">
-          
+
           <h4>{{doctorName}}</h4>
           <h4>Doctor Name</h4>
         </div>
@@ -186,12 +237,12 @@
 
         </div>
         <div class="col-md-4 market-update-right">
-          <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+          <i class="fa fa-heartbeat" aria-hidden="true"></i>
         </div>
         <div class="clearfix"> </div>
       </div>
     </div>
-     
+
     <div class="col-md-4 market-update-gd" style="width: 350px;">
       <div class="market-update-block clr-block-2">
         <div class="col-md-8 market-update-left">
@@ -200,58 +251,58 @@
 
         </div>
         <div class="col-md-4 market-update-right">
-          <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+          <i class="fa fa-phone" aria-hidden="true"></i>
         </div>
         <div class="clearfix"> </div>
       </div>
     </div>
-     
+
 
     <div class="clearfix"> </div>
   </div>
 
 
-<br><br>
-<div class="market-updates">
-<div class="col-md-4 market-update-gd" style="width: 350px;">
-  <div class="market-update-block clr-block-2">
-    <div class="col-md-8 market-update-left">
-      <h4>{{doctorAddress}}</h4>
-      <h4>Doctor Address</h4>
+  <br><br>
+  <div class="market-updates">
+    <div class="col-md-4 market-update-gd" style="width: 350px;">
+      <div class="market-update-block clr-block-2">
+        <div class="col-md-8 market-update-left">
+          <h4>{{doctorAddress}}</h4>
+          <h4>Doctor Address</h4>
 
+        </div>
+        <div class="col-md-4 market-update-right">
+          <i class="fa fa-home" aria-hidden="true"></i>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
     </div>
-    <div class="col-md-4 market-update-right">
-      <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+
+    <div class="col-md-4 market-update-gd" style="width: 350px;">
+      <div class="market-update-block clr-block-2">
+        <div class="col-md-8 market-update-left">
+          <h4>{{doctorDepartment}}</h4>
+          <h4>Doctor Department</h4>
+
+        </div>
+        <div class="col-md-4 market-update-right">
+          <i class="fa fa-user-md" aria-hidden="true"></i>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
     </div>
+
+
+
     <div class="clearfix"> </div>
   </div>
-</div>
-
-<div class="col-md-4 market-update-gd" style="width: 350px;">
-  <div class="market-update-block clr-block-2">
-    <div class="col-md-8 market-update-left">
-      <h4>{{doctorDepartment}}</h4>
-      <h4>Doctor Department</h4>
-
-    </div>
-    <div class="col-md-4 market-update-right">
-      <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-    </div>
-    <div class="clearfix"> </div>
-  </div>
-</div>
-
-
-
-<div class="clearfix"> </div>
-</div>
 
 
 
 
 
 
-  
+
 
 
 </body>
