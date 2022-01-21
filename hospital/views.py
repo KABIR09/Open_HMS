@@ -143,7 +143,7 @@ def doctor_patient_search_view(request):
     }
     if request.method == 'POST':
         mydict = {
-            'patients': models.Patient.objects.all().filter(assignedDoctorId=request.user.id, user_id=request.POST['patId']),
+            'patients': models.Patient.objects.all().filter(assignedDoctorId=request.user.id, id=request.POST['patId']),
             'doctor': models.Doctor.objects.get(user_id=request.user.id),
         }
     return render(request, 'hospital/doctor_patient.html', context=mydict)
@@ -360,7 +360,8 @@ def old_prescription_patient_view(request, pk):
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
 def patient_prescription_view(request):
-    patient = models.Patient.objects.get(user_id=request.user.id)
+    
+    patient = models.Patient.objects.get(id=request.user.patient.id)
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     pDD = models.PatientPrescriptionDetails.objects.all().filter(
         patientId=patient.id).order_by('-date')
@@ -370,7 +371,7 @@ def patient_prescription_view(request):
         if m.date not in date_list:
             date_list.append(m.date)
     patientDict = {
-        'patientId': patient.user_id,
+        'patientId': patient.id,
         'name': patient.get_name,
         'mobile': patient.mobile,
         'address': patient.address,
@@ -412,7 +413,7 @@ def summary_patient_view(request, pk):
 @login_required(login_url='patientlogin')
 @user_passes_test(is_patient)
 def patient_summary_view(request):
-    patient = models.Patient.objects.get(user_id=request.user.id)
+    patient = models.Patient.objects.get(id=request.user.patient.id)
     assignedDoctor = models.User.objects.all().filter(id=patient.assignedDoctorId)
     patientDict = {
         'patientId': patient.id,
@@ -430,7 +431,7 @@ def patient_summary_view(request):
         'history_procedure': patient.history_procedure,
         'past_history_of_illness': patient.past_history_of_illness,
         'diagnostic_results': patient.diagnostic_results,
-        'patient': models.Patient.objects.get(user_id=request.user.id),
+        'patient': patient
     }
 
     return render(request, 'hospital/summary_patient.html', context=patientDict)

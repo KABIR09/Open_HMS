@@ -243,7 +243,7 @@
       <img src="{% static patient.profile_pic.url %}" alt="Profile Pic" />
       <br><br>
       <h6>Patient</h6>
-      <h2>Your ID is {{request.user.id}}</h2>
+      <h2>Your ID is {{request.user.patient.id}}</h2>
       <h2>{{request.user.first_name}}</h2>
     </header>
     <ul>
