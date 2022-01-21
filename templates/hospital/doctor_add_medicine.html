@@ -5,9 +5,12 @@
 {% load widget_tweaks %}
 
 <head>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         
@@ -91,6 +94,7 @@
             overflow-y: scroll;
             
         }
+       
     </style>
     
 </head>
@@ -106,14 +110,20 @@
                 <tr>
                     <td class="first">
                         Medication Item
+                        <i class="fa fa-info-circle" title="Identification of the medication, vaccine or other therapeutic item being ordered.It is strongly recommended that the 'Medication item' be coded with a terminology capable of triggering decision support, where possible. The extent of coding may vary from the simple name of the medication item through to structured details about the actual medication pack to be used. Free text entry should only be used if there is no appropriate terminology available. 
+                        "></i>
                     </td>
                     <td class="field-top">
                         <input type="text" name="medicationItem" required  value="">
+                        
                     </td>
                 <!-- </tr>
                 <tr> -->
                     <td class="first">
                         Frequency
+                        <i class="fa fa-info-circle" title="The frequency as number of times per time period (limited to a single day)
+                        that the activity is to take place. 
+                        Comment: e.g. 4 times per day or 3 to 4 times per hour"></i>
                     </td>
                     <td class="field-top">
                         <input type="number" name="frequency" required  value="">
@@ -122,6 +132,8 @@
                 <tr>
                     <td class="table-info">
                         Dose
+                        <i class="fa fa-info-circle" title="The value of the amount of medication as a real number. 
+                        Comment: For example: 1, 1.5, 0.125 or 1-2, 12.5-20.5 "></i>
                     </td>
                     <td class="field">
                         <input type="number" name="dose" required  value="">
@@ -130,6 +142,9 @@
                 <tr> -->
                     <td class="table-info"> 
                         Dose Unit
+                    <i class="fa fa-info-circle" title="The dose unit of the amount of medication. 
+                    Comment: For example: 'tablet','mg'. Coding of the dose unit with a
+                     terminology is preferred, where possible. "></i>
                     </td>
                     <td class="field">
                         <input type="text" name="doseUnit" required  value="">
@@ -138,6 +153,9 @@
                 <tr>
                     <td class="table-info">
                         Direction Duration
+                        
+                    <i class="fa fa-info-circle" title="The duration of this dose direction. 
+                    Comment: For example: 'for 7 days','Indefinite'. "></i>
                     </td>
                     <td class="field">
                         <input type="text" name="directionDuration" required  value="">
@@ -146,6 +164,9 @@
                 <tr> -->
                     <td class="table-info">
                         Form
+                                            
+                    <i class="fa fa-info-circle" title="The formulation or presentation of the medication. 
+                    Comment: e.g. 'Tablet', 'Capsule', 'Liquid'.  "></i>
                     </td>
                     <td class="field">
                         <input type="text" name="form" required  value="">
@@ -154,6 +175,8 @@
                 <tr>
                     <td class="table-info">
                         Additional Instructions
+                       <i class="fa fa-info-circle" title=" An additional instruction on how to use the medication, vaccine or other therapeutic good. 
+                    Comment: For example: precautions as 'take with food', 'Avoid grapefruit', 'Dissolve in water'. This data element allows multiple occurrences and should be coded with a reference terminology, where possible.  "></i>
                     </td>
                     <td class="field">
                         <input type="text" name="additionalInstruc" required value="">
@@ -162,6 +185,10 @@
                 <tr> -->
                     <td class="table-info">
                         Substance
+                       
+                    <i class="fa fa-info-circle" title="  The name of the medication substance. This item should be coded if possible. 
+                    Comment: Usage of substance name will vary according to context of use."></i>
+                    </td>
                     </td>
                     <td class="field">
                         <input type="text" name="substance" required  value="">
@@ -180,6 +207,10 @@
                 <tr>
                     <td class="table-info">
                         Maximum Amount
+                         
+                    <i class="fa fa-info-circle" title="The maximum amount of medication allowed in the allowed period. 
+                    Comment: For example: 1, 1.5, 0.125."></i>
+
                     </td>
                     <td class="field">
                     
@@ -190,6 +221,8 @@
                 <tr> -->
                     <td class="table-info">
                         Maximum amount dose unit 
+                        <i class="fa fa-info-circle" title="The dose unit for the maximum amount allowed. 
+Comment: For example: 'tablet','mg'. Coding of the dose unit with a terminology is preferred, where possible. ."></i>
                     </td>
                     <td class="field">
                         <input type="text" required name="safetyDoseUnit" value="">
@@ -198,6 +231,7 @@
                 <tr>
                     <td class="table-info">
                         Allowed period
+                        <i class="fa fa-info-circle" title="The period of time during which the maximum dose is calculated."></i>
                     </td>
                     <td class="field">
                         <input type="text" required name="safetyAllowedPer" value="">
@@ -217,6 +251,8 @@
                 <tr>
                     <td class="table-info">
                         Status
+                        <i class="fa fa-info-circle" title=" The overall status of this order."></i>
+
                     </td>
                     <td>     
                         <select required name="orderStatus" >
@@ -253,6 +289,9 @@
                 <tr>
                     <td class="table-info">
                         numberOfRepeatsAllowed
+                        <i class="fa fa-info-circle" title="The number of times the expressed quantity of medicine, vaccine or other therapeutic 
+                        good may be refilled or redispensed without a new prescription."></i>
+
                     </td>
                     <td class="field">
                         <input type="number" required name="authRepeat"  value="">
@@ -261,6 +300,7 @@
                 <tr> -->
                     <td class="table-info">
                         validityPeriod
+                        <i class="fa fa-info-circle" title="The repeat supply authorisation has expired after this date."></i>
                     </td>
                     <td class="field">
                         <input type="datetime-local" required name="authValPer"  value="">
@@ -273,6 +313,9 @@
                 <tr>
                     <td class="table-info">
                         Dispense instruction
+                        <i class="fa fa-info-circle" title="An additional instruction directed primarily at the person dispensing 
+                        the medication, vaccine or therapeutic good."></i>
+
                     </td>
                     <td class="field">
                         <input type="text" required name="dispInstruc"  value="">
@@ -286,6 +329,8 @@
                 <tr>
                     <td class="table-info">
                         Amount description
+                        <i class="fa fa-info-circle" title="A narrative representation of the amount The amount of medication, vaccine or therapeutic 
+                        good intended to be supplied or actually supplied."></i>
                     </td>
                     <td class="field">
                         <input type="text" required name="dispDescrip"  value="">
@@ -294,6 +339,9 @@
                 <tr> -->
                     <td class="table-info">
                         Amount
+                        <i class="fa fa-info-circle" title="The amount of medication, vaccine or therapeutic good intended to be supplied or actually supplied. 
+                        Comment: For example: 1, 1.5, or 0.125. "></i>
+
                     </td>
                     <td class="field">
                         <input type="number" required name="dispAmount" placeholder="" value="">
@@ -302,6 +350,8 @@
                 <tr>
                     <td class="last">
                         Units
+                        <i class="fa fa-info-circle" title="The dose unit or pack unit associated with the dispense amount. 
+                        Comment: For example: 'tablets', 'packs', ml'."></i>
                     </td>
                     <td class="field-last">
                         <input type="text" required name="dispAmountUnits" placeholder="" value="">
@@ -310,6 +360,8 @@
                 <tr> -->
                     <td class="last">
                         Duration of supply
+                        <i class ="fa fa-info-circle" title="The period of time for which the medication should be dispensed or for which a suppy was dispensed. 
+        Comment: The dispenser is asked to supply sufficient quantity of medication to cover the defined period. "></i>
                     </td>
                     <td class="field-last">
                         <input type="text" required name="dispDurution" placeholder="" value="">
