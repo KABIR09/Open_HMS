@@ -7,15 +7,15 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    <style>
+   <style>
 
       .invoice-box {
-         width: 60%;
+        width: 60%;
         max-width: 3000px;
         margin: auto;
         padding: 30px;
         border: 1px solid #0D98BE;
-       
+        
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         border:solid rgba(218, 213, 213, 0.993) 1px ;
         font-size: 1.25rem;
@@ -23,6 +23,8 @@
          line-height: 14px;
         font-family:-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         color: #555; 
+        
+              
 
         /* max-width: 800px;
       margin: auto;
@@ -58,19 +60,24 @@
         font-size: 45px;
         line-height: 45px;
         color: #333;
+        padding-bottom: 5px;
       }
 
       .invoice-box table tr.information table td {
         padding-bottom: 10px;
+        font-weight:700;
         
       }
 
       .invoice-box table tr.heading td {
-        background: #0D98BE;
-        border-bottom: 5px solid #0D98BE;
+        background:#79d1e9;
+        padding-top:5px;
+        
+        /* border-bottom: 5px solid #79d1e9; */
         font-weight: bold;
-        font-size: 14px;
+        font-size: 12px;
       }
+      
 
       
 
@@ -106,7 +113,7 @@
           width: 100%;
           display: block;
           text-align: center;
-         
+          
           
         }
 
@@ -133,7 +140,9 @@
         top: 50px;
       } */
       .btn-white{
-          background-color:#0D98BE
+          background-color:#79d1e9;
+          color:white;
+         
 
       }
       .btn:link,.btn:visited{
@@ -162,7 +171,10 @@
           border-width: 2px;
          
         }
-    </style>
+    </style> 
+    
+  
+
 </head>
 
 <br>
@@ -177,7 +189,7 @@
             </td>
             <td>
               <a href="{% url 'add-medicine' patientId %}" class="btn btn-white" role="button"
-               aria-pressed="true"><b style="color: #fff;">Add Medicine</b></a>
+               aria-pressed="true"><b style="color: #555;">Add Medicine</b></a>
             </td>
              
           
@@ -219,12 +231,13 @@
       </td>
 
     </tr>
-
-    <tr class="details">
+    <tr></tr>
+    <tr class="details" style="text-transform: uppercase; padding-top: 10px;">
       <td>
         {{symptoms}}
       </td>
     </tr>
+    <br>
     <tr class="heading">
       <td colspan="2">
         Medication Order
@@ -477,7 +490,7 @@
           <td></td>
 
             <td>
-              <a href="{% url 'update-medicine' patientId m.pk %}" class="btn btn-white" role="button"aria-pressed="true"><b style="color: #fff;">Update</b></a>
+              <a href="{% url 'update-medicine' patientId m.pk %}" class="btn btn-white" role="button"aria-pressed="true"><b style="color: #555;">Update</b></a>
             
               <a href="{% url 'delete-medicine' patientId m.pk %}" class="btn btn-danger " role="button"aria-pressed="true"><b style="color: #fff;">Delete</b></a>
             </td>

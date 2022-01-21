@@ -1,27 +1,57 @@
 {% extends 'hospital/doctor_base.html' %}
 {% block content %}
 {% load static %}
-
+<head>
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <style>
-  .details:hover {
-    background-color: #ffff33;
-  }
 
+  .details:hover {
+    background-color: lightcyan;
+    
+  }
+  .details{
+    font-weight: 14px;
+    font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+  }
+  .subheadings{
+    background-color: lightblue;
+    font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 1.25rem;
+  }
   th,
   td {
     padding: 5px;
   }
 
   .heading {
-    background-color: #29a329;
+    background-color: #0D98BE;
     color: white;
+    font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 1.25rem;
   }
-</style>
+   .container{
+    
+      padding-top: 10px;
+      overflow-y: scroll;
+      /* padding-left: 0px; */
+      /* overflow-x: scroll; */
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      font-size: small;
+      border:solid rgba(188, 225, 243, 0.993) 1px ;
+    } 
 
+</style>
+</head>
 <br>
+
 {% for date in date_list %}
-<h4>Prescription Date: {{date}}</h4>
-<div>
+<div class="container">
+
+  <h4 style="font-family: 'Times New Roman', Times, serif; text-align: center; font-weight: bold;">Prescription Date: {{date}}</h4>
   <table border="2" align="center">
     <br>
     <tr class="heading" align="center">
@@ -37,7 +67,7 @@
       <th colspan="1">Dispense instruction</th>
       <th colspan="4">Dispense Amount</th>
     </tr>
-    <tr align="center">
+    <tr class="subheadings" align="center">
 
       <th>Medication Item</th>
       <th>Frequency</th>
