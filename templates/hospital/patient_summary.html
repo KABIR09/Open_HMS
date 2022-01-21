@@ -9,7 +9,7 @@
 
   <style>
     .invoice-box {
-      /* max-width: 800px;
+      max-width: 800px;
       margin: auto;
       padding: 30px;
       border: 1px solid #eee;
@@ -17,20 +17,7 @@
       font-size: 16px;
       line-height: 24px;
       font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-      color: #555; */
-      width: 60%;
-        max-width: 3000px;
-        margin: auto;
-        padding: 30px;
-        border: 1px solid #0D98BE;
-        
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border:solid rgba(218, 213, 213, 0.993) 1px ;
-        font-size: 1.25rem;
-        /* font-weight: 500; */
-         line-height: 14px;
-        font-family:-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-        color: #555; 
+      color: #555;
     }
 
     .invoice-box table {
@@ -41,44 +28,35 @@
 
     .invoice-box table td {
       padding: 5px;
-      /* vertical-align: top; */
+      vertical-align: top;
     }
 
     .invoice-box table tr td:nth-child(2) {
       text-align: right;
     }
 
-    /* .invoice-box table tr.top table td {
+    .invoice-box table tr.top table td {
       padding-bottom: 20px;
-    } */
+    }
 
     .invoice-box table tr.top table td.title {
-      /* font-size: 45px; */
+      font-size: 45px;
       line-height: 45px;
       color: #333;
     }
 
     .invoice-box table tr.information table td {
-      padding-bottom: 10px;
-        font-weight:700;
+      padding-bottom: 40px;
     }
 
     .invoice-box table tr.heading td {
-      /* background: #eee;
+      background: #eee;
       border-bottom: 1px solid #ddd;
-      font-weight: bold; */
-      background:#a3dcec;
-        padding-top:5px;
-        
-        /* border-bottom: 5px solid #79d1e9; */
-        font-weight: bold;
-        font-size: 12px;
+      font-weight: bold;
     }
 
     .invoice-box table tr.details td {
       padding-bottom: 20px;
-      font-size: 14px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     .invoice-box table tr.item td {
@@ -94,20 +72,14 @@
       font-weight: bold;
     }
 
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 600px) {
       .invoice-box table tr.top table td {
         width: 100%;
         display: block;
         text-align: center;
       }
-      .invoice-box {
-          width: 94%;
-          padding: 5px;
-          
-        }
 
       .invoice-box table tr.information table td {
-        padding-top: 5px;
         width: 100%;
         display: block;
         text-align: center;
@@ -142,47 +114,13 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-top: 0.5em;
-    margin-right: auto;
-    margin-left: auto;
+    margin-top: 15px;
+    margin-right: -235px;
+    margin-left: 65px;
     }
-    hr { 
-          display: block;
-          margin-top: 0.5em;
-          margin-bottom: 0.5em;
-          margin-left: auto;
-          margin-right: auto;
-          border-style: inset;
-          border-width: 2px;
-          
-         
-        }
-        .btn-white{
-          background-color:#0D98BE;
-          font-size: medium;
-          font-weight: bold;
 
-      }
-      .btn:link,.btn:visited{
-          text-transform:uppercase;
-          text-decoration:none;
-          font-size: small;
-          font-family: 'Times New Roman', Times, serif;
-          
-          padding:10px;
-          display:inline-block;
-          border-radius: 100px;
-
-          /*simple method of doing animation*/
-          }
-          .btn:hover{
-          box-shadow: 0 20px 20px rgba(0, 0, 0,0.4);
-
-          }
   </style>
-  
 </head>
-
 
 <br><br>
 <div class="invoice-box">
@@ -192,10 +130,10 @@
         <table>
           <tr>
             <td class="title">
-              <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">WeCare Management</h1>
-              <hr>
+              <h1>WeCare Management</h1>
             </td>
-           
+            <td>
+            </td>
           </tr>
         </table>
       </td>
@@ -209,11 +147,11 @@
               Patient Name : {{name}}<br>
               Patient Contact : {{mobile}}<br>
               Patient Address : {{address}}<br>
-              <!-- Patient ID : {{patientId}}<br> -->
+              Patient ID : {{patientId}}<br>
             </td>
 
             <td>
-              Doctor Name :
+              Doctor Name :<br>
               {{assignedDoctorName}}<br>
 
             </td>
@@ -309,23 +247,17 @@
       <td>
       </td>
     </tr>
-    <!-- <tr class="details">
+    <tr class="details">
       <td>
-        <div class="row justify-content-center"> -->
-          <!-- <center> -->
-          <!-- <a href="/static/{{diagnostic_results}}" target="_blank" class="btn btn-white">View Document</a>
-          </center>
+        <div class="row justify-content-center">
+          <a href="/static/{{diagnostic_results}}" target="_blank" class="btn btn-primary btn-lg active btn-block">View Document</a>
         </div>
-       </td>
-    </tr> --> 
+      </td>
+    </tr>
 
-    <tr></tr>
+    
 
   </table>
-  <br>
-  <center>
-    <a href="/static/{{diagnostic_results}}" target="_blank" class="btn btn-white">View Document</a>
-    </center>
 </div>
 <br><br>
 
