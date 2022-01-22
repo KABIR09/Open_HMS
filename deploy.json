@@ -68,6 +68,7 @@
     ],
     "pidMode": null,
     "requiresCompatibilities": [
+      "FARGATE",
       "EC2"
     ],
     "networkMode": null,
