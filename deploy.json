@@ -1,82 +1,257 @@
 {
-    "ipcMode": null,
-    "executionRoleArn": null,
-    "containerDefinitions": [
+  "family": "",
+  "taskRoleArn": "",
+  "executionRoleArn": "",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
       {
-        "dnsSearchDomains": null,
-        "environmentFiles": null,
-        "logConfiguration": null,
-        "entryPoint": null,
-        "portMappings": [
-          {
-            "hostPort": 8888,
-            "protocol": "tcp",
-            "containerPort": 5000
+          "name": "djangoProject",
+          "image": "",
+          "repositoryCredentials": {
+              "credentialsParameter": ""
+          },
+          "cpu": 0,
+          "memory": 0,
+          "memoryReservation": 0,
+          "links": [
+              ""
+          ],
+          "portMappings": [
+              {
+                  "containerPort": 0,
+                  "hostPort": 0,
+                  "protocol": "udp"
+              }
+          ],
+          "essential": true,
+          "entryPoint": [
+              ""
+          ],
+          "command": [
+              ""
+          ],
+          "environment": [
+              {
+                  "name": "",
+                  "value": ""
+              }
+          ],
+          "environmentFiles": [
+              {
+                  "value": "",
+                  "type": "s3"
+              }
+          ],
+          "mountPoints": [
+              {
+                  "sourceVolume": "",
+                  "containerPath": "",
+                  "readOnly": true
+              }
+          ],
+          "volumesFrom": [
+              {
+                  "sourceContainer": "",
+                  "readOnly": true
+              }
+          ],
+          "linuxParameters": {
+              "capabilities": {
+                  "add": [
+                      ""
+                  ],
+                  "drop": [
+                      ""
+                  ]
+              },
+              "devices": [
+                  {
+                      "hostPath": "",
+                      "containerPath": "",
+                      "permissions": [
+                          "read"
+                      ]
+                  }
+              ],
+              "initProcessEnabled": true,
+              "sharedMemorySize": 0,
+              "tmpfs": [
+                  {
+                      "containerPath": "",
+                      "size": 0,
+                      "mountOptions": [
+                          ""
+                      ]
+                  }
+              ],
+              "maxSwap": 0,
+              "swappiness": 0
+          },
+          "secrets": [
+              {
+                  "name": "",
+                  "valueFrom": ""
+              }
+          ],
+          "dependsOn": [
+              {
+                  "containerName": "",
+                  "condition": "HEALTHY"
+              }
+          ],
+          "startTimeout": 0,
+          "stopTimeout": 0,
+          "hostname": "",
+          "user": "",
+          "workingDirectory": "",
+          "disableNetworking": true,
+          "privileged": true,
+          "readonlyRootFilesystem": true,
+          "dnsServers": [
+              ""
+          ],
+          "dnsSearchDomains": [
+              ""
+          ],
+          "extraHosts": [
+              {
+                  "hostname": "",
+                  "ipAddress": ""
+              }
+          ],
+          "dockerSecurityOptions": [
+              ""
+          ],
+          "interactive": true,
+          "pseudoTerminal": true,
+          "dockerLabels": {
+              "KeyName": ""
+          },
+          "ulimits": [
+              {
+                  "name": "nproc",
+                  "softLimit": 0,
+                  "hardLimit": 0
+              }
+          ],
+          "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                  "KeyName": ""
+              },
+              "secretOptions": [
+                  {
+                      "name": "",
+                      "valueFrom": ""
+                  }
+              ]
+          },
+          "healthCheck": {
+              "command": [
+                  ""
+              ],
+              "interval": 0,
+              "timeout": 0,
+              "retries": 0,
+              "startPeriod": 0
+          },
+          "systemControls": [
+              {
+                  "namespace": "",
+                  "value": ""
+              }
+          ],
+          "resourceRequirements": [
+              {
+                  "value": "",
+                  "type": "GPU"
+              }
+          ],
+          "firelensConfiguration": {
+              "type": "fluentbit",
+              "options": {
+                  "KeyName": ""
+              }
           }
-        ],
-        "command": null,
-        "linuxParameters": null,
-        "cpu": 0,
-        "environment": [],
-        "resourceRequirements": null,
-        "ulimits": null,
-        "dnsServers": null,
-        "mountPoints": [],
-        "workingDirectory": null,
-        "secrets": null,
-        "dockerSecurityOptions": null,
-        "memory": null,
-        "memoryReservation": null,
-        "volumesFrom": [],
-        "stopTimeout": null,
-        "image": "052250720528.dkr.ecr.us-east-1.amazonaws.com/aws-ci-cd-group-d",
-        "startTimeout": null,
-        "firelensConfiguration": null,
-        "dependsOn": null,
-        "disableNetworking": null,
-        "interactive": null,
-        "healthCheck": null,
-        "essential": true,
-        "links": null,
-        "hostname": null,
-        "extraHosts": null,
-        "pseudoTerminal": null,
-        "user": null,
-        "readonlyRootFilesystem": null,
-        "dockerLabels": null,
-        "systemControls": null,
-        "privileged": null,
-        "name": "djangoProject"
       }
-    ],
-    "placementConstraints": [],
-    "memory": "1024",
-    "taskRoleArn": null,
-    "compatibilities": [
-      "EXTERNAL",
-      "EC2"
-    ],
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:052250720528:task-definition/aws-ci-cd-task:1",
-    "family": "aws-ci-cd-task",
-    "requiresAttributes": [
+  ],
+  "volumes": [
       {
-        "targetId": null,
-        "targetType": null,
-        "value": null,
-        "name": "com.amazonaws.ecs.capability.ecr-auth"
+          "name": "",
+          "host": {
+              "sourcePath": ""
+          },
+          "dockerVolumeConfiguration": {
+              "scope": "shared",
+              "autoprovision": true,
+              "driver": "",
+              "driverOpts": {
+                  "KeyName": ""
+              },
+              "labels": {
+                  "KeyName": ""
+              }
+          },
+          "efsVolumeConfiguration": {
+              "fileSystemId": "",
+              "rootDirectory": "",
+              "transitEncryption": "DISABLED",
+              "transitEncryptionPort": 0,
+              "authorizationConfig": {
+                  "accessPointId": "",
+                  "iam": "DISABLED"
+              }
+          },
+          "fsxWindowsFileServerVolumeConfiguration": {
+              "fileSystemId": "",
+              "rootDirectory": "",
+              "authorizationConfig": {
+                  "credentialsParameter": "",
+                  "domain": ""
+              }
+          }
       }
-    ],
-    "pidMode": null,
-    "requiresCompatibilities": [
-      "FARGATE",
-      "EC2"
-    ],
-    "networkMode": null,
-    "runtimePlatform": null,
-    "cpu": "1024",
-    "revision": 1,
-    "status": "ACTIVE",
-    "inferenceAccelerators": null,
-    "proxyConfiguration": null,
-    "volumes": []
+  ],
+  "placementConstraints": [
+      {
+          "type": "memberOf",
+          "expression": ""
+      }
+  ],
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "",
+  "memory": "",
+  "tags": [
+      {
+          "key": "",
+          "value": ""
+      }
+  ],
+  "pidMode": "task",
+  "ipcMode": "task",
+  "proxyConfiguration": {
+      "type": "APPMESH",
+      "containerName": "",
+      "properties": [
+          {
+              "name": "",
+              "value": ""
+          }
+      ]
+  },
+  "inferenceAccelerators": [
+      {
+          "deviceName": "",
+          "deviceType": ""
+      }
+  ],
+  "ephemeralStorage": {
+      "sizeInGiB": 0
+  },
+  "runtimePlatform": {
+      "cpuArchitecture": "X86_64",
+      "operatingSystemFamily": "WINDOWS_SERVER_20H2_CORE"
   }
+}
