@@ -435,3 +435,26 @@ def patient_summary_view(request):
     }
 
     return render(request, 'hospital/summary_patient.html', context=patientDict)
+
+@login_required(login_url='patientlogin')
+@user_passes_test(is_patient)
+def update_summary_view(request, pk):
+    patient = models.Patient.objects.all().filter(id=pk).first()
+    patientDict ={
+        'patient' :patient
+    }
+    if request.method=='POST':
+        patient.symptoms=request.POST['symptoms']
+        patient.allergy_substance=request.POST['allergy_substance']
+        patient.allergy_criticality=request.POST['allergy_criticality']
+        patient.problems_list=request.POST['problems_list']
+        patient.immunization=request.POST['immunization']
+        patient.history_procedure=request.POST['history_procedure']
+        patient.past_history_of_illness=request.POST['past_history_of_illness']
+
+        if request.method=='FILES':
+
+            patient.diagnostic_results=request.FILES['diagnostic_results']
+        patient.save()
+        return redirect('patient-summary')
+    return render(request,'hospital/update_summary.html',context=patientDict)

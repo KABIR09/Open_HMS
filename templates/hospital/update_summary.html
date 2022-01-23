@@ -1,0 +1,114 @@
+{% extends 'hospital/patient_base.html' %}
+{% load static %}
+{% block content %}
+
+{% load widget_tweaks %}
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- On tables -->
+    <br>
+    <h2 style="text-align: center; color: brown; font-weight: bold;">Update Medicine</h2>
+
+    <table class="table-info">
+        <tr class="table-info">
+            <tr>
+                <td class="table-info">
+                    Symptoms
+                </td>
+                <td>
+                    <input type="text" required name="symptoms" required value="{{patient.symptoms}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Allergy Substance
+                </td>
+                <td>
+                    <input type="text" required name="allergy_substance" required value="{{patient.allergy_substance}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Allergy Criticality
+                </td>
+                <td>     
+                    <select required name="allergy_criticality" >
+                        <option value="None">None</option>
+                        <option value="Low">Low</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="High">High</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Problems List
+                </td>
+                <td> 
+                    <input type="text" required name="problems_list" value="{{patient.problems_list}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Immunization
+                </td>
+                <td>
+                    <input type="text" required name="immunization" value="{{patient.immunization}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    History Procedure
+                </td>
+                <td>
+                    <input type="text" required name="history_procedure" value="{{patient.history_procedure}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Past History of Illness
+                </td>
+                <td>
+                    <input type="text" required name="past_history_of_illness" value="{{patient.past_history_of_illness}}">
+                </td>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Diagnostic Results
+                </td>
+                <td>
+                    <input type="file" name="diagnostic_results"  >
+                </td>
+            </tr>
+    </table>
+
+    <center>
+        <input type="submit" value="Update" name="submit" class="btn btn-lg btn-warning"></button>
+      
+    </center>
+
+    <style>
+        .table-info {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 50px;
+        padding-right: 60px;
+        }
+        .btn-lg {
+            margin-top: 10px;
+            padding: 0.5rem 5rem;
+        }
+    </style>
+
+</form>
+<a href="{% url 'patient-summary' %}" class="btn btn-white" role="button"aria-pressed="true"><b style="color: #555;">Cancel</b></a>
+
+<br><br><br><br>
+
+{% endblock content %}
