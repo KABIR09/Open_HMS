@@ -193,14 +193,20 @@
           <tr>
             <td class="title">
               <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">WeCare Management</h1>
-              <hr>
+             
             </td>
-           
+            <td>
+    <a href="{% url 'update-summary' patientId %}" class="btn btn-white"><b>Update</b></a>
+
+            </td>
+            
           </tr>
         </table>
+        
+        <hr>
       </td>
     </tr>
-
+   
     <tr class="information">
       <td colspan="2">
         <table>
@@ -326,7 +332,6 @@
   <br>
   <center>
     <a href="/static/{{diagnostic_results}}" target="_blank" class="btn btn-white">View Document</a>
-    <a href="{% url 'update-summary' patientId %}" class="btn btn-white"><b>Update</b></a>
     
     </center>
 </div>
