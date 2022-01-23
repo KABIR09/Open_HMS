@@ -142,10 +142,11 @@ def doctor_patient_search_view(request):
         'doctor': models.Doctor.objects.get(user_id=request.user.id),
     }
     if request.method == 'POST':
-        mydict = {
-            'patients': models.Patient.objects.all().filter(assignedDoctorId=request.user.id, id=request.POST['patId']),
-            'doctor': models.Doctor.objects.get(user_id=request.user.id),
-        }
+        if request.POST['patId'] is not '':
+            mydict = {
+                'patients': models.Patient.objects.all().filter(assignedDoctorId=request.user.id, id=request.POST['patId']),
+                'doctor': models.Doctor.objects.get(user_id=request.user.id),
+            }
     return render(request, 'hospital/doctor_patient.html', context=mydict)
 
 
