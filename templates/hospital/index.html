@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>WeCare</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,13 @@
       font-family: 'Roboto', sans-serif;
     }
 
-
+     h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+      color: #fff;
+    }
  
 
 
@@ -111,16 +117,53 @@ Emergency
   
   .slider
    {
+     
     margin-top: 0px;
       margin-bottom: 0px;
-     height:550px;
-     width: 100%;
-     opacity: 0.8;
-     background-size: cover;
+     height:600px;
+     width: 100vw;
+     /* opacity: 0.8; */
+     /* background-size: cover; */
+     background: rgba(0, 0, 0, 0.6);
+    filter:brightness(40%);
+    font-weight: bolder;
      
     }
-    h2{
-      color: black;
+   
+
+   
+
+   
+
+     h1 {
+      margin: 0 0 10px 0;
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 56px;
+      color: #fff;
+    }
+
+   
+    .main-btn {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 28px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .main-btn:hover {
+      background: rgba(0, 181, 204, 0.8);
+      border: 2px solid rgba(0, 181, 204, 0.8);
+      text-decoration: none;
+      color: #fff;
     }
   </style>
  
@@ -131,7 +174,8 @@ Emergency
   {% include "hospital/navbar.html" %}
   <!-- End Header -->
 
-<section>
+<section class = "hero">
+  
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -141,32 +185,35 @@ Emergency
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class = "slider" src="{% static "images/background.jpg" %}" alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Emergency ?</h2>
+        <div class="carousel-caption d-md-block">
+          <h1 style="text-align: center;">WeCare is available 24/7</h1>
+
           <p class="lead">
     
-            <a class="btn btn-danger btn-lg" href="/patientclick" role="button">Get Started!</a>
+            <a class="main-btn" href="/patientclick" >Get Started!</a>
           </p>
         </div>
         </div>
       
       <div class="carousel-item">
         <img class = "slider" src="{% static "images/seconds.jpg" %}" alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Emergency ?</h2>
+        <div class="carousel-caption d-md-block ">
+          <h1>WeCare is available 24/7</h1>
+
           <p class="lead">
     
-            <a class="btn btn-danger btn-lg" href="/patientclick" role="button">Get started!</a>
+            <a class="main-btn" href="/patientclick" >Get started!</a>
           </p>
       </div>
       </div>
       <div class="carousel-item">
         <img class = "slider" src="{% static "images/third.jpg" %}" alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Emergency ?</h2>
+        <div class="carousel-caption ">
+          <h1>WeCare is available 24/7</h1>
+
           <p class="lead">
     
-            <a class="btn btn-danger btn-lg" href="/patientclick" role="button">Get Started!</a>
+            <a class="main-btn" href="/patientclick">Get Started!</a>
           </p>
          
       </div>
@@ -181,7 +228,7 @@ Emergency
       <span class="sr-only">Next</span>
     </a>
   </div>
-
+  
 </section>
   <!-- End Hero -->
 
@@ -204,7 +251,7 @@ Emergency
   <!-- ======= Services Section ======= -->
   <section id="services" class="services mt-5 mb-3 py-3">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title" >
         <h2 class="text-center">Services</h2>
 
       </div>
