@@ -452,9 +452,13 @@ def update_summary_view(request, pk):
         patient.history_procedure=request.POST['history_procedure']
         patient.past_history_of_illness=request.POST['past_history_of_illness']
 
-        if request.method=='FILES':
+        if 'diagnostic_results' in request.FILES:
 
             patient.diagnostic_results=request.FILES['diagnostic_results']
-        patient.save()
+            patient.save()
+        else:
+            patient.save()
+        
+     
         return redirect('patient-summary')
     return render(request,'hospital/update_summary.html',context=patientDict)

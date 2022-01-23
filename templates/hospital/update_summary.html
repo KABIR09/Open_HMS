@@ -5,182 +5,193 @@
 {% load widget_tweaks %}
 
 <head>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<style>
+    <style>
+        .table-class {
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 50px;
+            /* border: 1px solid #eee; */
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            font-size: 1.25rem;
+            /* font-weight: 500; */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            color: #555;
+            padding-bottom: 30px;
 
-.table-class {
-margin-left: auto;
-margin-right: auto;
-padding-left: 50px;
-/* border: 1px solid #eee; */
-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-font-size: 1.25rem;
-/* font-weight: 500; */
-font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-color: #555; 
-padding-bottom: 30px;
+        }
 
-}
-.table-info{
-background-color: white;
-padding-left: 30px;
-}
-h2{
-text-align: center; 
-color: #0D98BE;
-font-weight: bold;
+        .table-info {
+            background-color: white;
+            padding-left: 30px;
+        }
 
-}
-.btn-white{
-background-color:#0D98BE
+        h2 {
+            text-align: center;
+            color: #0D98BE;
+            font-weight: bold;
 
-}
-.btn:link,.btn:visited{
-text-transform:uppercase;
-text-decoration:none;
-font-size: small;
-font-family: 'Times New Roman', Times, serif;
-padding:10px;
-display:inline-block;
-border-radius: 100px;
+        }
 
-/*simple method of doing animation*/
-}
-.btn:hover{
-box-shadow: 0 20px 20px rgba(0, 0, 0,0.4);
+        .btn-white {
+            background-color: #0D98BE
+        }
 
-}
-.field {
-padding-top: 5px;
-padding-right: 50px;
-}
-.field-top{
-padding-top: 30px;
-}
-.field-last{
-padding-bottom: 30px;
-}
-.last{
-padding-bottom: 30px;
-padding-left: 30px;
-/* padding-top: 5px; */
-}
-.first{
-padding-top: 30px;
-padding-left: 30px;
-}
-#outer
-{
-width:100%;
-text-align: center;
-}
-.inner
-{
-display: inline-block;
-}
-</style>
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: small;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 100px;
+
+            /*simple method of doing animation*/
+        }
+
+        .btn:hover {
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+
+        }
+
+        .field {
+            padding-top: 5px;
+            padding-right: 50px;
+        }
+
+        .field-top {
+            padding-top: 30px;
+        }
+
+        .field-last {
+            padding-bottom: 30px;
+        }
+
+        .last {
+            padding-bottom: 30px;
+            padding-left: 30px;
+            /* padding-top: 5px; */
+        }
+
+        .first {
+            padding-top: 30px;
+            padding-left: 30px;
+        }
+
+        #outer {
+            width: 100%;
+            text-align: center;
+        }
+
+        .inner {
+            display: inline-block;
+        }
+    </style>
 </head>
 <div class="container">
-<form method="POST" enctype="multipart/form-data">
-{% csrf_token %}
-<!-- On tables -->
-<h2 >Update Summary</h2>
-<table class="table-class">
-<tr class="tr-info">
-<tr>
-<td class="first">
-Symptoms
-</td>
-<td class="field-top">
-<input type="text" required name="symptoms" required value="{{patient.symptoms}}">
-</td>
-<!-- </tr>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- On tables -->
+        <h2>Update Summary</h2>
+        <table class="table-class">
+            <tr class="tr-info">
+            <tr>
+                <td class="first">
+                    Symptoms
+                </td>
+                <td class="field-top">
+                    <input type="text" required name="symptoms" required value="{{patient.symptoms}}">
+                </td>
+                <!-- </tr>
 <tr> -->
-</tr>
-<tr>
-<td class="table-info">
-Allergy Substance
-</td>
-<td class="field">
-<input type="text" required name="allergy_substance" required value="{{patient.allergy_substance}}">
-</td>
-<!-- </tr>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Allergy Substance
+                </td>
+                <td class="field">
+                    <input type="text" required name="allergy_substance" required value="{{patient.allergy_substance}}">
+                </td>
+                <!-- </tr>
 <tr> -->
-</tr>
-<tr>
-<td class="table-info">
-Allergy Criticality
-</td>
-<td>
-<select required name="allergy_criticality" >
-<option value="None">None</option>
-<option value="Low">Low</option>
-<option value="Intermediate">Intermediate</option>
-<option value="High">High</option>
-</select>
-</td>
-<!-- </tr>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Allergy Criticality
+                </td>
+                <td>
+                    <select required name="allergy_criticality">
+                        <option value="None">None</option>
+                        <option value="Low">Low</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="High">High</option>
+                    </select>
+                </td>
+                <!-- </tr>
 <tr> -->
-</tr>
-<tr>
-<td class="table-info">
-Problems List
-</td>
-<td class="field">
-<input type="text" required name="problems_list" value="{{patient.problems_list}}">
-</td>
-<!-- </tr>
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Problems List
+                </td>
+                <td class="field">
+                    <input type="text" required name="problems_list" value="{{patient.problems_list}}">
+                </td>
+                <!-- </tr>
 <tr> -->
-</tr>
-<tr>
-<td class="table-info">
-Immunization
-</td>
-<td class="field">
-<input type="text" required name="immunization" value="{{patient.immunization}}">
-</td>
-</tr>
-<tr class="last">
-<td class="table-info">
-History Procedure
-</td>
-<td class="field">
-<input type="text" required name="history_procedure" value="{{patient.history_procedure}}">
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Immunization
+                </td>
+                <td class="field">
+                    <input type="text" required name="immunization" value="{{patient.immunization}}">
+                </td>
+            </tr>
+            <tr class="last">
+                <td class="table-info">
+                    History Procedure
+                </td>
+                <td class="field">
+                    <input type="text" required name="history_procedure" value="{{patient.history_procedure}}">
 
-</td>
-<!-- </tr>
+                </td>
+                <!-- </tr>
 <tr> -->
-</tr>
-<tr>
-<td class="table-info">
-Past History of Illness
-</td>
-<td class="field">
-<input type="text" required name="past_history_of_illness" value="{{patient.past_history_of_illness}}">
+            </tr>
+            <tr>
+                <td class="table-info">
+                    Past History of Illness
+                </td>
+                <td class="field">
+                    <input type="text" required name="past_history_of_illness"
+                        value="{{patient.past_history_of_illness}}">
 
-</td>
-</tr>
-<tr>
-<td class="last">
-Diagnostic Results
-</td>
-<td class="field-last">
-<input type="file" name="diagnostic_results" >
-</td>
-</tr>
-</table>
-<br>
-<div id="outer">
-<div class="inner"><input type="submit" value="Update" name="submit" class="btn btn-white" role="button" aria-pressed="true"><b style="color: #fff;">Update</b></button></div>
-<div class="inner"><input type="button" name="cancel" value="Cancel" onclick="history.back()" formnovalidate class="btn btn-danger" role="button" aria-pressed="true"><b style="color: #fff;">Delete</b></div>
-</div>
-</form>
+                </td>
+            </tr>
+            <tr>
+                <td class="last">
+                    Diagnostic Results
+                </td>
+                <td class="field-last">
+                    <input type="file" name="diagnostic_results" action="image/*">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div id="outer">
+            <div class="inner"><input type="submit" value="Update" name="submit" class="btn btn-white" role="button"
+                    aria-pressed="true"><b style="color: #fff;">Update</b></button></div>
+            <div class="inner"><input type="button" name="cancel" value="Cancel" onclick="history.back()" formnovalidate
+                    class="btn btn-danger" role="button" aria-pressed="true"><b style="color: #fff;">Delete</b></div>
+        </div>
+    </form>
 </div>
 
 <br><br><br><br>
 
 {% endblock content %}
-
