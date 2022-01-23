@@ -19,48 +19,49 @@ from hospital import views
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home_view, name=''),
-    path('contactus', views.contactus_view),
-    path('doctorclick', views.doctorclick_view),
-    path('doctorlogin', LoginView.as_view(
-        template_name='hospital/doctorlogin.html')),
-    path('doctorsignup', views.doctor_signup_view, name='doctorsignup'),
+     path('admin/', admin.site.urls),
+     path('', views.home_view, name=''),
+     path('contactus', views.contactus_view),
+     path('doctorclick', views.doctorclick_view),
+     path('doctorlogin', LoginView.as_view(
+          template_name='hospital/doctorlogin.html')),
+     path('doctorsignup', views.doctor_signup_view, name='doctorsignup'),
 
-    path('afterlogin', views.afterlogin_view, name='afterlogin'),
-    path('doctor-dashboard', views.doctor_dashboard_view, name='doctor-dashboard'),
-    path('logout', LogoutView.as_view(
-        template_name='hospital/index.html'), name='logout'),
-    path('patientclick', views.patientclick_view),
-    path('patientsignup', views.patient_signup_view, name='patientsignup'),
-    path('patientlogin', LoginView.as_view(
-        template_name='hospital/patientlogin.html')),
-    path('patient-dashboard', views.patient_dashboard_view,
-         name='patient-dashboard'),
+     path('afterlogin', views.afterlogin_view, name='afterlogin'),
+     path('doctor-dashboard', views.doctor_dashboard_view, name='doctor-dashboard'),
+     path('logout', LogoutView.as_view(
+          template_name='hospital/index.html'), name='logout'),
+     path('patientclick', views.patientclick_view),
+     path('patientsignup', views.patient_signup_view, name='patientsignup'),
+     path('patientlogin', LoginView.as_view(
+          template_name='hospital/patientlogin.html')),
+     path('patient-dashboard', views.patient_dashboard_view,
+          name='patient-dashboard'),
 
-    path('doctor-patient-search', views.doctor_patient_search_view,
-         name='doctor-patient-search'),
-    path('update-summary/<int:pk>',views.update_summary_view, name='update-summary'),
-    path('patient-prescription/<int:pk>',
-         views.prescription_patient_view, name='patient-prescription'),
-    path('patient-prescription', views.patient_prescription_view,
-         name='patient-prescription'),
+     path('doctor-patient-search', views.doctor_patient_search_view,
+          name='doctor-patient-search'),
+     path('update-summary/<int:pk>',
+          views.update_summary_view, name='update-summary'),
+     path('patient-prescription/<int:pk>',
+          views.prescription_patient_view, name='patient-prescription'),
+     path('patient-prescription', views.patient_prescription_view,
+          name='patient-prescription'),
 
-    path('patient-summary/<int:pk>',
-         views.summary_patient_view, name='patient-summary'),
+     path('patient-summary/<int:pk>',
+          views.summary_patient_view, name='patient-summary'),
 
-    path('patient-summary', views.patient_summary_view, name='patient-summary'),
+     path('patient-summary', views.patient_summary_view, name='patient-summary'),
 
-    path('add-medicine/<int:pk>',
-         views.doctor_add_medicine_view, name='add-medicine'),
-    path('update-medicine/<int:pk>/<int:mpk>',
-         views.update_medicine_view, name='update-medicine'),
+     path('add-medicine/<int:pk>',
+          views.doctor_add_medicine_view, name='add-medicine'),
+     path('update-medicine/<int:pk>/<int:mpk>',
+          views.update_medicine_view, name='update-medicine'),
 
-    path('new-prescription/<int:pk>',
-         views.new_prescription_patient_view, name='new-prescription'),
-    path('old-prescription/<int:pk>',
-         views.old_prescription_patient_view, name='old-prescription'),
-    path('delete-medicine/<int:pk>/<int:mpk>',
-         views.delete_medicine_view, name='delete-medicine')
+     path('new-prescription/<int:pk>',
+          views.new_prescription_patient_view, name='new-prescription'),
+     path('old-prescription/<int:pk>',
+          views.old_prescription_patient_view, name='old-prescription'),
+     path('delete-medicine/<int:pk>/<int:mpk>',
+          views.delete_medicine_view, name='delete-medicine')
 
 ]
